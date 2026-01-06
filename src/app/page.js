@@ -11,13 +11,16 @@ import Accordion from "@/components/home/Faq";
 import TopDestination from "@/components/home/Dastination";
 import Testimonials from "@/components/home/Testimonials";
 import PlanVisit from "@/components/home/PlanVisit";
+import Samadhi from "@/components/home/Samadhi";
 export default function Home() {
   return (
     <div className="">
 <Navbar></Navbar>
 <HeroSec></HeroSec>
 <Stories></Stories>
+<Samadhi></Samadhi>
 <Offers></Offers>
+
 <Indoore></Indoore>
 <Eat></Eat>
 <Youtube></Youtube>

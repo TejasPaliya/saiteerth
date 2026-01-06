@@ -28,16 +28,13 @@ function AccordionItem({ faq, isOpen, onClick }) {
   return (
 <div className="border-b" style={isOpen ? { background: '#EAEAEA' } : {}}>
   <button
-    className="w-full text-left p-4 flex justify-between items-center"
-    onClick={onClick}
-    style={isOpen ? {
-      color: '#000',
-      fontSize: '30px',
-      fontStyle: 'normal',
-      fontWeight: 700,
-      lineHeight: '1.2', 
-      textTransform: 'capitalize'
-    } : {}}
+  className={`w-full text-left p-2 max-md:pb-2 flex justify-between items-center transition-colors duration-200 
+    font-['Anek_Latin'] capitalize
+    ${isOpen 
+      ? "text-black font-bold text-[22px] md:text-[26px] lg:text-[30px] leading-tight" 
+      : "text-[#484848] font-semibold text-[19px] leading-[22px] md:text-[22px] lg:text-[26px]"
+    }`}
+  onClick={onClick}
   >
     {faq.question}
     <span className="w-[44px] h-[44px]">
@@ -52,7 +49,11 @@ function AccordionItem({ faq, isOpen, onClick }) {
       )}
     </span>
   </button>
-  {isOpen && <div className="p-4 text-[#484848] text-[32px] font-normal">{faq.answer}</div>}
+{isOpen && (
+  <div className="p-2 max-md:pt-0 text-[#484848] font-['Anek_Kannada'] font-normal text-[13px] leading-[17px] md:text-[24px] lg:text-[32px] lg:leading-normal">
+    {faq.answer}
+  </div>
+)}
 </div>
 
   );
@@ -69,7 +70,7 @@ export default function Accordion() {
   return (
     <div className="mt-12 ">
                      <div
-            className=" text-[#892201] font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center"
+            className=" text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center"
           >
             Frequently Asked Questions
           </div>

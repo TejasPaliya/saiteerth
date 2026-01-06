@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Anek_Latin } from "next/font/google";
+import { Poppins } from 'next/font/google'
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -10,6 +11,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
+
 
 // new shit for ur Anek Latin default font
 const anek = Anek_Latin({
@@ -26,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${anek.variable} antialiased`}>
+        className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable} ${anek.variable} antialiased`}>
         {children}
       </body>
     </html>

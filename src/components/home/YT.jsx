@@ -8,13 +8,13 @@ import { Autoplay } from "swiper/modules";
 const Youtube = () => {
     const swiperRef = useRef(null);
   return (
-    <div className="p-8 mt-6 max-w-[1800px] mx-auto">
-            <div className="text-[#892201] max-lg:text-center font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">
-         Voices of the Journey
+    <div className="md:p-8 mt-6 max-w-[1800px] mx-auto">
+            <div className="text-[#892201] max-lg:text-center font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 font-['Anek_Latin']">
+         Voices of the <br className="md:hidden"/> Journey
         </div>
       <div className="flex max-lg:justify-center justify-between items-center">
       <div
-        className=" text-black font-[Poppins] max-lg:text-center  font-normal not-italic leading-[20px] text-lg sm:text-lg md:text-2xl lg:text-[24px] sm:leading-[20px] md:leading-[30px] lg:leading-[31px] mb-8"
+        className=" text-black font-['Anek_Latin'] max-lg:text-center  font-normal not-italic leading-[20px] text-lg sm:text-lg md:text-2xl lg:text-[24px] sm:leading-[20px] md:leading-[30px] lg:leading-[31px] mb-8"
       >
  Discover unique travel perspectives from experts <br className="max-sm:hidden"/> who’ve explored Sai Tirth first-hand.
       </div>
@@ -34,11 +34,11 @@ const Youtube = () => {
         </div>
       </div>
        <Swiper
-      
+      loop={true}
       spaceBetween={20}
            breakpoints={{
-          0: { slidesPerView: 1 },
-          480: { slidesPerView: 1.3 },
+          0: { slidesPerView: 1.3, centeredSlides:true },
+          480: { slidesPerView: 1.5, centeredSlides:true },
           640: { slidesPerView: 2 },
           768: { slidesPerView: 2.5 },
           1024: { slidesPerView: 3 },
@@ -46,7 +46,7 @@ const Youtube = () => {
           1880: { slidesPerView: 4 },
         }}
    onSwiper={(swiper) => (swiperRef.current = swiper)}
-      loop={true}
+
       className="w-full"
     >
       {[1, 2, 3, 4,5, 6,7 ,8].map((x) => (

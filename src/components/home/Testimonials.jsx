@@ -9,13 +9,15 @@ import "swiper/css/pagination";
 
 const Testimonials = () => {
   return (
-    <div className="bg-[#CD3F0D] flex py-10 gap-10">
-      
+    <div className="bg-[#CD3F0D] flex mt-8 md:mt-16 py-10 gap-10 max-lg:flex-col">
+              <div className="text-white md:hidden font-['Anek_Latin'] font-bold text-center text-[42px] leading-[100%] lg:text-[70px] lg:text-left mb-2">
+          Here’s what our guests says!
+        </div>
       {/* LEFT BIG RATING BLOCK */}
       <div
-        className="bg-[#7F050A] rounded-r-[37px] font-extrabold
+        className="bg-[#7F050A] rounded-r-[37px] max-lg:rounded-[37px] font-extrabold
         text-[96px] leading-[1] text-center text-[#FFFFFF]
-        flex flex-col p-8 py-12 gap-2"
+        flex flex-col p-8 py-12 gap-2 max-lg:mx-6"
       >
         <span>4.8</span>
 
@@ -38,37 +40,152 @@ const Testimonials = () => {
 
       {/* RIGHT SIDE SWIPER */}
       <div className="flex-1 min-w-0">
-        <div className="font-['Anek_Latin'] font-bold text-[70px] mb-6">
+        <div className="text-white max-md:hidden font-['Anek_Latin'] font-bold text-center text-[42px] leading-[100%] lg:text-[70px] lg:text-left mb-6">
           Here’s what our guests says!
         </div>
 <div className="flex-1 overflow-hidden">
   <Swiper
-    modules={[Pagination, Autoplay]}
+    modules={[ Autoplay]}
     spaceBetween={24}
-    slidesPerView={2.5}
+    slidesPerView={3.5}
     loop={true}
     autoplay={{
       delay: 1500,
       disableOnInteraction: false,
     }}
+    
     pagination={{ clickable: true }}
     className="w-full"
+     breakpoints={{
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+       centeredSlides:true
+    },
+    640: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2.2,
+      spaceBetween: 24,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+    1280: {
+      slidesPerView: 3.5,
+      spaceBetween: 24,
+    },
+  }}
   >
     <SwiperSlide>
-      <div className="bg-white rounded-[38px] h-[280px] p-6" />
+      <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col" >
+        <div className="flex w-full justify-between mb-4">
+          <div className="flex items-center gap-1">
+            <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
+            <div>
+              <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">Nishanth</div>
+              <div className="flex gap-0.5 justify-center">
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+        </div>
+            </div>
+          </div>
+          <img className="w-8 h-7" src="/google.png" alt="" />
+        </div>
+        <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal">The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI </div>
+        </div>
     </SwiperSlide>
-
+<SwiperSlide>
+      <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col" >
+        <div className="flex w-full justify-between mb-4">
+          <div className="flex items-center gap-1">
+            <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
+            <div>
+              <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">Nishanth</div>
+              <div className="flex gap-0.5 justify-center">
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+        </div>
+            </div>
+          </div>
+          <img className="w-8 h-7" src="/google.png" alt="" />
+        </div>
+        <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal">The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI </div>
+        </div>
+    </SwiperSlide>
     <SwiperSlide>
-      <div className="bg-white rounded-[38px] h-[280px] p-6" />
+      <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col" >
+        <div className="flex w-full justify-between mb-4">
+          <div className="flex items-center gap-1">
+            <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
+            <div>
+              <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">Nishanth</div>
+              <div className="flex gap-0.5 justify-center">
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+        </div>
+            </div>
+          </div>
+          <img className="w-8 h-7" src="/google.png" alt="" />
+        </div>
+        <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal">The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI </div>
+        </div>
     </SwiperSlide>
-
     <SwiperSlide>
-      <div className="bg-white rounded-[38px] h-[280px] p-6" />
+      <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col" >
+        <div className="flex w-full justify-between mb-4">
+          <div className="flex items-center gap-1">
+            <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
+            <div>
+              <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">Nishanth</div>
+              <div className="flex gap-0.5 justify-center">
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+        </div>
+            </div>
+          </div>
+          <img className="w-8 h-7" src="/google.png" alt="" />
+        </div>
+        <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal">The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI </div>
+        </div>
     </SwiperSlide>
-
     <SwiperSlide>
-      <div className="bg-white rounded-[38px] h-[280px] p-6" />
+      <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col" >
+        <div className="flex w-full justify-between mb-4">
+          <div className="flex items-center gap-1">
+            <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
+            <div>
+              <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">Nishanth</div>
+              <div className="flex gap-0.5 justify-center">
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+          <img className="w-3 aspect-square" src="/star.png" />
+        </div>
+            </div>
+          </div>
+          <img className="w-8 h-7" src="/google.png" alt="" />
+        </div>
+        <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal">The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI </div>
+        </div>
     </SwiperSlide>
+  
   </Swiper>
 </div>
         
