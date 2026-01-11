@@ -12,6 +12,7 @@ import TopDestination from "@/components/home/Dastination";
 import Testimonials from "@/components/home/Testimonials";
 import PlanVisit from "@/components/home/PlanVisit";
 import Samadhi from "@/components/home/Samadhi";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 export default function Home() {
   return (
     <div className="">
@@ -28,6 +29,7 @@ export default function Home() {
 <Testimonials></Testimonials>
 <Accordion></Accordion>
 <PlanVisit></PlanVisit>
+<MobileBottomBar></MobileBottomBar>
     </div>
   );
 }

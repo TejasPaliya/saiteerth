@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* Mobile */}
           <div className="flex lg:hidden items-center gap-3">
             <button
-              className={`rounded-[50px] font-extrabold text-[14px] border border-[#FEB22A]
+              className={`rounded-[50px] font-extrabold text-[16px] border border-[#FEB22A]
               ${
                 scrolled
                   ? "bg-[#FEB22A] text-black"
