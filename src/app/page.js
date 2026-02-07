@@ -14,6 +14,7 @@ import PlanVisit from "@/components/home/PlanVisit";
 import Samadhi from "@/components/home/Samadhi";
 import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Insta from "@/components/home/Insta";
+import Footer from "@/components/home/Footer";
 export default function Home() {
   return (
     <div className="">
@@ -32,6 +33,7 @@ export default function Home() {
 <Accordion></Accordion>
 <PlanVisit></PlanVisit>
 <MobileBottomBar></MobileBottomBar>
+<Footer></Footer>
     </div>
   );
 }
