@@ -13,6 +13,7 @@ import Testimonials from "@/components/home/Testimonials";
 import PlanVisit from "@/components/home/PlanVisit";
 import Samadhi from "@/components/home/Samadhi";
 import MobileBottomBar from "@/components/home/MobileBottomBar";
+import Insta from "@/components/home/Insta";
 export default function Home() {
   return (
     <div className="">
@@ -26,6 +27,7 @@ export default function Home() {
 <Eat></Eat>
 <Youtube></Youtube>
 <TopDestination></TopDestination>
+<Insta></Insta>
 <Testimonials></Testimonials>
 <Accordion></Accordion>
 <PlanVisit></PlanVisit>
