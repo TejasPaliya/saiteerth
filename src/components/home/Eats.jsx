@@ -8,12 +8,13 @@ const Eat = () => {
     return (
         <div className='bg-[#CD3F0D] py-8'>
             <div className='flex justify-between max-lg:justify-center max-w-[1600px] mx-auto items-center px-8'>
-                <span className="text-white font-bold not-italic text-[37px] sm:text-5xl md:text-[55px] font-['Anek_Latin']">
+                <span className="text-white font-bold not-italic text-[40px] sm:text-5xl md:text-[55px] font-['Anek_Latin']">
                     Delightful Eats
                 </span>
-                <span className='text-black font-bold not-italic max-lg:hidden text-xl sm:text-2xl md:text-[27px] bg-[#FCD503] rounded-[40px] p-2 px-4'>
-                    Choose your perfect meal
-                </span>
+
+                     <span className="rounded-[50px] capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503] max-lg:hidden  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+     Choose your perfect meal
+          </span>
             </div>
 
             <div className='max-md:mt-8 mt-8'>
@@ -46,9 +47,10 @@ const Eat = () => {
 
            
             <div className='flex justify-center'>
-                <span className='text-black font-bold not-italic lg:hidden text-xl sm:text-2xl mx-auto md:text-[27px] bg-[#FCD503] rounded-[40px] p-2 px-4'>
-                    Choose your perfect meal
-                </span>
+                    <span className="rounded-[50px] capitalize font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503] lg:hidden  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+     Choose your perfect meal
+          </span>
+   
             </div>
         </div>
     )

@@ -87,9 +87,10 @@ export default function Accordion() {
           ))}
         </div>
         <div className="flex justify-center my-8">
-          <button className="bg-yellow-400 mx-auto my-6 text-black font-extrabold py-3 px-10 rounded-full uppercase tracking-tight shadow-sm hover:bg-yellow-500 transition-colors duration-200">
-                Explore All FAQs
-              </button>
+               <span className="rounded-[50px] capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+     Explore All FAQs
+          </span>
+   
         </div>
     </div>
   );

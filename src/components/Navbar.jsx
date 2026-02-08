@@ -32,7 +32,7 @@ const Navbar = () => {
             : "backdrop-blur-sm bg-[linear-gradient(180deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.718173)_43.27%,rgba(0,0,0,0)_100%)]"
         }`}
       >
-        <div className="flex justify-between items-center max-w-[1500px] m-auto w-full px-8">
+        <div className="flex justify-between items-center max-w-[1500px] m-auto w-full md:px-8">
           {/* Desktop Left */}
           <div className="hidden lg:flex justify-between items-center gap-6">
             <a href="/attractions">

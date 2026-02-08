@@ -70,10 +70,10 @@ const Insta = () => {
             </div>
           </span>
         </div>
+         <span className="rounded-[50px] max-md:hidden capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+    Follow us now
+          </span>
 
-        <div className="max-xl:hidden h-fit rounded-[42px] py-4 px-6 text-white bg-[#CD3F0D] font-['Anek_Latin'] font-bold uppercase leading-[1] text-[32px]">
-          Follow us now
-        </div>
       </div>
 
       {/* swiper section */}
