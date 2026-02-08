@@ -32,20 +32,20 @@ const Navbar = () => {
             : "backdrop-blur-sm bg-[linear-gradient(180deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.718173)_43.27%,rgba(0,0,0,0)_100%)]"
         }`}
       >
-        <div className="flex justify-between items-center max-w-[1500px] m-auto w-full">
+        <div className="flex justify-between items-center max-w-[1500px] m-auto w-full px-8">
           {/* Desktop Left */}
           <div className="hidden lg:flex justify-between items-center gap-6">
             <a href="/attractions">
-              <span className={`${textColor} font-extrabold text-[18px]`}>
+              <span className={`${textColor} font-bold text-[18px]`}>
                 ATTRACTION
               </span>
             </a>
             <a href="/offers">
-              <span className={`${textColor} font-extrabold text-[18px]`}>
+              <span className={`${textColor} font-bold text-[18px]`}>
                 TICKETS & OFFERS
               </span>
             </a>
-            <span className={`${textColor} font-extrabold text-[18px]`}>
+            <span className={`${textColor} font-bold text-[18px]`}>
               PLAN YOUR VISIT
             </span>
           </div>
@@ -59,17 +59,17 @@ const Navbar = () => {
           </a>
           {/* Desktop Right */}
           <div className="hidden lg:flex justify-between items-center gap-6">
-            <span className={`${textColor} font-extrabold text-[18px]`}>
+            <span className={`${textColor} font-bold text-[18px]`}>
               ABOUT US
             </span>
-            <span className={`${textColor} font-extrabold text-[18px]`}>
+            <span className={`${textColor} font-bold text-[18px]`}>
               CONTACT US
             </span>
-            <span className={`${textColor} font-extrabold text-[18px]`}>
+            <span className={`${textColor} font-bold text-[18px]`}>
               QUICK LINKS
             </span>
             <button
-              className={`rounded-[50px] font-extrabold text-[16px] border border-[#FEB22A]
+              className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A]
               ${
                 scrolled
                   ? "bg-[#FEB22A] text-black shadow-md"
@@ -82,7 +82,7 @@ const Navbar = () => {
           {/* Mobile */}
           <div className="flex lg:hidden items-center gap-3">
             <button
-              className={`rounded-[50px] font-extrabold text-[16px] border border-[#FEB22A]
+              className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A]
               ${
                 scrolled
                   ? "bg-[#FEB22A] text-black"
@@ -135,7 +135,7 @@ const Navbar = () => {
         `}
       >
         <div className="p-2 flex justify-between items-center ">
-      <h2 className="text-xl font-extrabold">    <img
+      <h2 className="text-xl font-bold">    <img
             src={scrolled ? "/logo.png" : "/logo.png"}
             className="w-[110px] md:w-[177px] h-auto md:h-[70px]"
             alt="logo"

@@ -19,7 +19,7 @@ const Samadhi = () => {
 
           
         </div>
-        <div className="bg-white self-end h-8 w-full">
+        <div className="bg-white self-end h-2 w-full">
      
         </div>
       </div>

@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 const Testimonials = () => {
   return (
     <div className="bg-[#CD3F0D] flex mt-8 md:mt-16 py-10 gap-10 max-lg:flex-col">
-              <div className="text-white md:hidden font-['Anek_Latin'] font-bold text-center text-[42px] leading-[100%] lg:text-[70px] lg:text-left mb-2">
+              <div className="text-white md:hidden font-['Anek_Latin'] font-bold text-center text-[38px] leading-[100%] lg:text-[55px] lg:text-left mb-2">
           Here’s what our guests says!
         </div>
       {/* LEFT BIG RATING BLOCK */}
@@ -40,7 +40,7 @@ const Testimonials = () => {
 
       {/* RIGHT SIDE SWIPER */}
       <div className="flex-1 min-w-0">
-        <div className="text-white max-md:hidden font-['Anek_Latin'] font-bold text-center text-[42px] leading-[100%] lg:text-[70px] lg:text-left mb-6">
+        <div className="text-white max-md:hidden font-['Anek_Latin'] font-bold text-center text-[42px] leading-[100%] lg:text-[55px] lg:text-left mb-6">
           Here’s what our guests says!
         </div>
 <div className="flex-1 overflow-hidden">

@@ -51,7 +51,7 @@ function AccordionItem({ faq, isOpen, onClick }) {
     </span>
   </button>
 {isOpen && (
-  <div className="p-2 max-md:pt-0 text-[#484848] font-['Poppins'] font-normal text-[15px] md:text-[18px] lg:text-[21px] lg:leading-normal">
+  <div className="p-2 max-md:pt-0 text-[#484848] font-['Anek_Latin'] font-normal text-[15px] md:text-[13px] lg:text-[15px] lg:leading-normal">
     {faq.answer}
   </div>
 )}
@@ -71,7 +71,7 @@ export default function Accordion() {
   return (
     <div className="mt-12 ">
                      <div
-            className=" text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center"
+            className=" text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-[55px] text-center"
           >
             Frequently Asked Questions
           </div>
@@ -86,7 +86,7 @@ export default function Accordion() {
             />
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center my-8">
           <button className="bg-yellow-400 mx-auto my-6 text-black font-extrabold py-3 px-10 rounded-full uppercase tracking-tight shadow-sm hover:bg-yellow-500 transition-colors duration-200">
                 Explore All FAQs
               </button>

@@ -67,9 +67,9 @@ const Stories = () => {
     >
    <div className="flex flex-col items-center gap-4 px-4">
   {/* Heading: 30px on mobile (Anek), 69px on desktop */}
-  <h1 className="text-[#892201] text-center font-['Anek_Latin'] font-bold text-[40px] leading-[35px] md:text-[50px] lg:text-[69px] lg:leading-tight">
+  <div className="text-[#892201] text-center font-['Anek_Latin'] font-bold text-[40px] leading-[35px] md:text-[50px] lg:text-[50px] lg:leading-tight">
     Watch Stories Come Alive!
-  </h1>
+  </div>
 
   {/* Subtext: 14px on mobile (Poppins), 20px (xl) on desktop */}
   <p className="text-black text-center font-['Poppins'] font-normal text-[14px] leading-[19px] md:text-lg lg:text-xl lg:leading-normal max-w-2xl">

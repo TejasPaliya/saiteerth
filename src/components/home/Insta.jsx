@@ -6,7 +6,7 @@ import "swiper/css"
 
 const InstaCard = () => {
   return (
-    <div className="relative aspect-[9/13] rounded-[46px] w-full">
+    <div className="relative aspect-[9/13] rounded-[22px] w-full">
       <img
         src="/dest.png"
         alt=""
@@ -43,9 +43,9 @@ const InstaCard = () => {
 
 const Insta = () => {
   return (
-    <div>
+    <div className="px-8 mt-16">
       {/* top header */}
-      <div className="flex justify-between items-center max-w-[1600px] my-8 mx-auto">
+      <div className="flex justify-between items-center max-w-[1600px] my-12  mx-auto">
         <div className="flex gap-2">
           <div className="relative inline-flex flex-col items-center">
             <div className="w-28 h-28 md:w-44 md:h-44 rounded-full border-2 border-[#80050A] bg-white flex items-center justify-center overflow-hidden shadow-lg">
@@ -90,13 +90,13 @@ const Insta = () => {
               slidesPerView: 2.2,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 3.5,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 4.5,
             },
             1280: {
-              slidesPerView: 5,
+              slidesPerView: 5.5,
             },
           }}
         >

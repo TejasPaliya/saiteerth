@@ -8,11 +8,11 @@ import { Autoplay } from "swiper/modules";
 const Offers = () => {
     const swiperRef = useRef(null);
   return (
-    <div className="  max-w-[100vw] mx-auto mt-16 bg-[url('/circle-bg.png')] bg-bottom   bg-no-repeat
+    <div className="  max-w-[100vw] mx-auto  bg-[url('/circle-bg.png')] bg-bottom   bg-no-repeat
   bg-[length:100%_100%] ">
       <div className="md:p-2 flex flex-col">
         <div className="flex max-lg:justify-center justify-between items-center">
-        <div className="text-[#892201] font-['Anek_Latin'] font-bold text-center text-[40px] mt-4 leading-[100%] md:text-5xl lg:text-[62px] mb-8">
+        <div className="text-[#892201] font-['Anek_Latin'] font-bold text-center text-[40px] mt-4 leading-[100%] md:text-5xl lg:text-[50px] mb-8">
           Exclusive Offers & Packages
         </div>
           <div className="flex gap-2 max-lg:hidden">
@@ -58,8 +58,8 @@ const Offers = () => {
               640: { slidesPerView: 2.2 },
               768: { slidesPerView: 2.5 },
               1024: { slidesPerView: 3.5 },
-              1300: { slidesPerView: 4 },
-              1880: { slidesPerView: 4 },
+              1300: { slidesPerView: 4.2 },
+              1880: { slidesPerView: 4.5 },
             }}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
                  loop={true}
@@ -96,7 +96,7 @@ const Offers = () => {
                </Swiper>
          </div>
          <div className="h-4 w-full"></div>
-              <span className="rounded-[50px] mx-auto mt-6 bg-[#FCD503] p-2 px-8 font-bold text-lg md:text-2xl">
+              <span className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
             Explore More offers
           </span>
           <div className="h-8 w-full"></div>

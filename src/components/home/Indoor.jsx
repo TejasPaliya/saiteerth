@@ -11,23 +11,23 @@ const Indoore = () => {
         muted
       />
       <div className="absolute inset-0 flex flex-col items-center justify-between bg-[linear-gradient(180deg,rgba(0,0,0,0.9)_30.77%,rgba(0,0,0,0)_100%)] gap-8 ">
-      <div className="flex flex-col items-center gap-6 md:gap-8 px-4 text-center">
+      <div className="flex flex-col items-center  px-4 text-center">
   {/* Experience the... */}
-  <div className="text-white font-['Anek_Latin'] font-normal text-[22px] leading-[100%] md:text-4xl lg:text-6xl mt-10 md:mt-14">
+  <div className="text-white font-['Anek_Latin'] font-normal text-[17px] leading-[100%] md:text-4xl lg:text-4xl mt-10 md:mt-14">
     Experience the
   </div>
 
   {/* Indoor AC Theme Park */}
-  <div className="text-white font-['Anek_Latin'] font-bold text-[49px] leading-[47px] md:text-6xl lg:text-[96px] lg:leading-tight">
+  <div className="text-white font-['Anek_Latin'] font-bold text-[38px] leading-[37px] md:text-6xl mb-4 lg:text-[55px] lg:leading-tight">
     Indoor AC <br className="md:hidden"/> Theme Park
   </div>
 
   {/* Button */}
-  <button className="rounded-[50px] text-lg md:text-2xl font-['Anek_Latin'] bg-[#FCD503] py-3 px-6 md:px-10 font-bold transition-transform hover:scale-105">
+  <button className="rounded-[50px] text-lg md:text-2xl font-['Anek_Latin'] bg-[#FCD503] py-3 px-6 md:px-10 font-bold transition-transform hover:scale-105 mt-8">
     BOOK YOUR TICKETS NOW
   </button>
 </div>
-        <div className="bg-white self-end h-8 w-full">
+        <div className="bg-white flex items-center self-end  h-8 w-full">
           <Marquee>
             <div className="flex gap-4 items-center">
               <div className="flex items-center gap-2">
