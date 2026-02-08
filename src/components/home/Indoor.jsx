@@ -18,13 +18,13 @@ const Indoore = () => {
   </div>
 
   {/* Indoor AC Theme Park */}
-  <div className="text-white font-['Anek_Latin'] font-bold text-[40px] leading-[37px] md:text-6xl mb-4 lg:text-[55px] lg:leading-tight">
+  <div className="text-white font-['Anek_Latin'] font-bold text-[40px] leading-tight md:text-6xl  lg:text-[55px] ">
     Indoor AC <br className="md:hidden"/> Theme Park
   </div>
 
   {/* Button */}
-            <span className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
-          BOOK YOUR TICKETS NOW
+            <span className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-2 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+         Book Your Tickets Now
           </span>
 
 </div>
