@@ -12,7 +12,7 @@ const Samadhi = () => {
       />
       <div className="absolute inset-0 flex flex-col max-md:items-center items-start  justify-between bg-[linear-gradient(180.49deg,#FFFFFF_2.72%,rgba(255,255,255,0)_21.26%)] gap-4 ">
         <div className="">
-<div className="text-[#80050A] max-md:text-[#FFF2F3] font-['Anek_Latin'] font-bold text-center text-[40px] leading-[100%] tracking-normal md:text-6xl lg:text-[79px] mt-14 lg:ml-10 lg:text-left">
+<div className="text-[#FFF2F3] font-['Anek_Latin'] font-bold text-center text-[40px] leading-[100%] tracking-normal md:text-6xl lg:text-[79px] mt-14 lg:ml-10 lg:text-left">
  Just 5mins <br  className='md:hidden'/> From <br className='max-md:hidden'/> Shri Sai <br className='md:hidden'/> Baba Mandir
 </div>
 

@@ -6,7 +6,7 @@ const OfferSingleHero = ({ title, description, imageUrl }) => {
       {/* Dynamic Image from Strapi */}
       <img 
         src={imageUrl || "/single-hero.png"} 
-        className='w-full h-auto p-8 aspect-[32/9]' 
+        className='w-full h-auto p-8 max-md:aspect-square max-xl:aspect-video aspect-[32/9]' 
         alt={title} 
       />
 
