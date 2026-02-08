@@ -88,7 +88,7 @@ const RegularTicket = () => {
 const PriceBox = ({ title, price }) => {
   return (
     <div className="flex flex-col w-full max-w-[180px] rounded-xl overflow-hidden shadow-lg">
-      <div className="bg-[#fcb43a] py-2 px-2 flex items-center justify-center">
+      <div className="bg-[#fcb43a] py-2  flex items-center justify-center">
         <span className="text-[#641e0d] font-bold text-xs md:text-sm text-center leading-tight">
           {title}
         </span>

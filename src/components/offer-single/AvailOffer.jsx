@@ -1,6 +1,21 @@
 import React from 'react'
 
-const AvailOffer = () => {
+const AvailOffer = ({ details }) => {
+  if (!details) return null;
+
+  // Helper to format the date: 2026-04-24T18:30:00.000Z -> 24 Apr, 2026 | 06:30 PM
+  const formatDate = (dateString) => {
+    if (!dateString) return "Limited Time";
+    const date = new Date(dateString);
+    
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    const datePart = date.toLocaleDateString('en-GB', options); // "24 Apr 2026"
+    
+    const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+    const timePart = date.toLocaleTimeString('en-GB', timeOptions).toUpperCase(); // "06:30 PM"
+    
+    return `${datePart.replace(/ /g, ' ')} | ${timePart}`;
+  };
     const svgPaths= {
 p10b63300: "M49.7578 29.6484C51.1817 29.6484 52.3359 28.4942 52.3359 27.0703C52.3359 25.6465 51.1817 24.4922 49.7578 24.4922C48.334 24.4922 47.1797 25.6465 47.1797 27.0703C47.1797 28.4942 48.334 29.6484 49.7578 29.6484Z",
 p11014600: "M27.3281 52.0781C28.752 52.0781 29.9062 50.9239 29.9062 49.5C29.9062 48.0761 28.752 46.9219 27.3281 46.9219C25.9043 46.9219 24.75 48.0761 24.75 49.5C24.75 50.9239 25.9043 52.0781 27.3281 52.0781Z",
@@ -30,63 +45,56 @@ pa974900: "M50.4023 34.8047C41.8017 34.8047 34.8047 41.8017 34.8047 50.4023C34.8
 pb9c2480: "M57.3921 11.292C61.1055 6.92137 57.8722 -0.0499783 52.0832 0.000271444C46.2948 -0.0501033 43.0605 6.92249 46.7746 11.292C42.8609 13.2477 40.1667 17.2941 40.1667 21.9586V25.341C39.3205 24.5434 38.3592 23.8668 37.3088 23.3419C41.0222 18.9713 37.7889 12 31.9999 12.0502C26.2115 11.9998 22.9772 18.9724 26.6912 23.3419C22.7776 25.2977 20.0833 29.344 20.0833 34.0085V37.391C19.2372 36.5934 18.2758 35.9167 17.2254 35.3919C20.9388 31.0213 17.7056 24.0499 11.9165 24.1002C6.12815 24.0498 2.89389 31.0224 6.6079 35.3919C2.69426 37.3476 0 41.394 0 46.0584V48.0667C0 50.6603 1.68426 52.8677 4.01664 53.6525V62.125C4.01664 63.1605 4.85614 64 5.89165 64H17.9417C18.9772 64 19.8167 63.1605 19.8167 62.125V53.6525C22.3447 52.8275 24.0307 50.2821 23.8333 47.5298C23.9213 47.5643 24.01 47.5974 24.1 47.6277V62.125C24.1 63.1605 24.9395 64 25.975 64H38.025C39.0605 64 39.9 63.1605 39.9 62.125V47.6276C42.4272 46.8027 44.1134 44.2587 43.9167 41.5072C44.0047 41.5417 44.0933 41.5748 44.1833 41.6051V62.125C44.1833 63.1605 45.0228 64 46.0583 64H58.1084C59.1439 64 59.9834 63.1605 59.9834 62.125V41.6051C62.3157 40.8202 64 38.6129 64 36.0192V21.9586C64.0001 17.2941 61.3059 13.2477 57.3921 11.292ZM11.9165 27.8502C13.6512 27.8502 15.0624 29.2614 15.0624 30.996C14.9043 35.1636 8.92829 35.1625 8.77078 30.996C8.77078 29.2614 10.1819 27.8502 11.9165 27.8502ZM20.0833 48.0667C20.0833 49.2476 19.1226 50.2083 17.9417 50.2083C16.9062 50.2083 16.0667 51.0478 16.0667 52.0833V60.2499H7.76666V52.0833C7.76666 51.0478 6.92715 50.2083 5.89165 50.2083C4.71077 50.2083 3.75001 49.2476 3.75001 48.0667V46.0584C3.75001 41.5553 7.41365 37.8919 11.9167 37.8919C16.4197 37.8919 20.0833 41.5555 20.0833 46.0584V48.0667ZM32 15.8002C33.7346 15.8002 35.1459 17.2114 35.1459 18.9461C34.9878 23.1137 29.0117 23.1125 28.8542 18.9461C28.8541 17.2114 30.2654 15.8002 32 15.8002ZM40.1667 42.0417C40.1667 43.2226 39.2059 44.1833 38.025 44.1833C36.9895 44.1833 36.15 45.0228 36.15 46.0583V60.2499H27.85V46.0583C27.85 45.0228 27.0105 44.1833 25.975 44.1833C24.7941 44.1833 23.8333 43.2226 23.8333 42.0417V34.0084C24.242 23.1924 39.757 23.189 40.1668 34.0085C40.1667 34.0085 40.1667 42.0417 40.1667 42.0417ZM52.0833 3.75026C53.818 3.75026 55.2292 5.1615 55.2292 6.89612C55.0711 11.0637 49.0951 11.0626 48.9376 6.89612C48.9376 5.1615 50.3487 3.75026 52.0833 3.75026ZM60.2501 36.0192C60.2501 37.2001 59.2894 38.1609 58.1085 38.1609C57.073 38.1609 56.2335 39.0004 56.2335 40.0359V60.25H47.9334V40.0359C47.9334 39.0004 47.0939 38.1609 46.0584 38.1609C44.8775 38.1609 43.9168 37.2001 43.9168 36.0192V21.9586C44.3244 11.1447 59.8397 11.1373 60.2502 21.9587C60.2501 21.9586 60.2501 36.0192 60.2501 36.0192Z",
 }
 
-  return (
-       <div className="w-full mt-10 md:mt-16 bg-[url('/avail-bg.png')] bg-cover bg-center bg-no-repeat py-12 md:py-16 px-4 md:px-10">
-  
-  <h2 className="font-['Anek_Latin',sans-serif] font-bold text-white text-4xl md:text-[65px] leading-tight md:leading-[78px] text-center mb-16 md:mb-20">
-    Offer Details
-  </h2>
+return (
+    <div className="w-full mt-10 md:mt-16 bg-[url('/avail-bg.png')] bg-cover bg-center bg-no-repeat py-12 md:py-16 px-4 md:px-10">
+      <h2 className="font-['Anek_Latin',sans-serif] font-bold text-white text-4xl md:text-[65px] leading-tight md:leading-[78px] text-center mb-16 md:mb-20">
+        Offer Details
+      </h2>
 
-  {/* Grid: 
-      - 1 column on mobile
-      - 2 columns on medium screens
-      - 3 columns on large screens
-      - gap-y-20 ensures the floating icons don't overlap the card above them 
-  */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 max-w-[1300px] mx-auto mt-12">
-    
-    {/* Card 1 */}
-    <div className="relative">
-      <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
-        <svg className="w-16 h-16" fill="none" viewBox="0 0 64 64">
-          <path d={svgPaths.pb9c2480} fill="#892201" />
-        </svg>
-      </div>
-      <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
-        <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
-          Eligible age group
-        </p>
-        <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
-          For All Age Groups
-        </p>
-      </div>
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 max-w-[1300px] mx-auto mt-12">
+        
+        {/* Card 1: Age Group */}
+        <div className="relative">
+          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
+            <svg className="w-16 h-16" fill="none" viewBox="0 0 64 64">
+              <path d={svgPaths.pb9c2480} fill="#892201" />
+            </svg>
+          </div>
+          <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
+            <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
+              Eligible age group
+            </p>
+            <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
+              {details.age}
+            </p>
+          </div>
+        </div>
 
-    {/* Card 2 */}
-    <div className="relative">
-      <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
-  <svg xmlns="http://www.w3.org/2000/svg" width="119" height="119" viewBox="0 0 119 119" fill="none">
+        {/* Card 2: Mode */}
+        <div className="relative">
+          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
+<svg xmlns="http://www.w3.org/2000/svg" width="119" height="119" viewBox="0 0 119 119" fill="none">
   <circle cx="59.5" cy="59.5" r="59.5" fill="#FEB22A"/>
   <path d="M93.6672 62.4447C93.3735 61.8438 93.3735 61.1546 93.6672 60.5538L96.3897 54.9842C97.9056 51.883 96.7046 48.1868 93.6555 46.5691L88.1792 43.6634C87.5884 43.35 87.1834 42.7923 87.0677 42.1337L85.9967 36.0275C85.4003 32.6277 82.2555 30.3431 78.8384 30.8265L72.7002 31.6948C72.0376 31.7883 71.3825 31.5753 70.9019 31.1104L66.4463 26.8001C63.9654 24.4 60.0789 24.3999 57.5981 26.8001L53.1424 31.1108C52.6616 31.5759 52.0065 31.7885 51.3441 31.6952L45.2059 30.827C41.7877 30.3432 38.644 32.6281 38.0476 36.0279L36.9766 42.1339C36.8609 42.7926 36.4559 43.3502 35.8652 43.6637L30.389 46.5693C27.3399 48.187 26.1389 51.8835 27.6547 54.9846L30.3771 60.5541C30.6708 61.155 30.6708 61.8442 30.3771 62.445L27.6546 68.0145C26.1387 71.1156 27.3398 74.8118 30.3888 76.4296L35.8651 79.3353C36.4559 79.6486 36.8609 80.2064 36.9766 80.8649L38.0476 86.9712C38.5905 90.0662 41.2444 92.2367 44.2944 92.2364C44.5948 92.2364 44.8997 92.2153 45.206 92.172L51.3443 91.3037C52.0062 91.2098 52.6618 91.4232 53.1425 91.8881L57.5981 96.1984C58.8388 97.3986 60.4302 97.9986 62.0222 97.9984C63.6137 97.9983 65.2061 97.3983 66.4462 96.1984L70.9019 91.8881C71.3827 91.4232 72.0379 91.2108 72.7002 91.3037L78.8384 92.172C82.257 92.6556 85.4003 90.3709 85.9967 86.9711L87.0679 80.8651C87.1835 80.2064 87.5886 79.6488 88.1792 79.3353L93.6555 76.4296C96.7046 74.812 97.9056 71.1155 96.3897 68.0144L93.6672 62.4447ZM91.6821 72.7103L86.2059 75.616C84.4599 76.5425 83.2624 78.1904 82.921 80.1374L81.85 86.2435C81.6482 87.3938 80.5848 88.1664 79.4281 88.0032L73.2899 87.1349C71.3323 86.8576 69.3953 87.4876 67.9746 88.8619L63.5189 93.172C62.6797 93.9838 61.3647 93.9838 60.5253 93.172L56.0697 88.8617C54.869 87.7002 53.2992 87.0707 51.6605 87.0707C51.3602 87.0707 51.0575 87.0918 50.7544 87.1347L44.6162 88.003C43.4605 88.1664 42.3962 87.3937 42.1943 86.2434L41.1232 80.1371C40.7816 78.1901 39.5842 76.5421 37.8381 75.6158L32.3619 72.7102C31.3302 72.1628 30.9239 70.9123 31.4367 69.8631L34.1593 64.2935C35.0273 62.5176 35.0273 60.4808 34.1593 58.7049L31.4367 53.1353C30.9239 52.0861 31.3302 50.8356 32.3619 50.2882L37.8381 47.3826C39.5841 46.456 40.7816 44.8081 41.123 42.8611L42.194 36.755C42.3959 35.6047 43.4592 34.832 44.6159 34.9954L50.7542 35.8636C52.711 36.1407 54.6487 35.5109 56.0694 34.1367L60.5251 29.8264C61.3643 29.0146 62.6793 29.0146 63.5187 29.8264L67.9743 34.1367C69.395 35.5111 71.3325 36.1407 73.2896 35.8636L79.4278 34.9954C80.5836 34.8318 81.6479 35.6047 81.8497 36.755L82.9207 42.8613C83.2623 44.8083 84.4596 46.4563 86.2057 47.3826L91.682 50.2882C92.7136 50.8356 93.12 52.0861 92.6071 53.1353L89.8846 58.7048C89.0166 60.4805 89.0166 62.5176 89.8846 64.2933L92.6071 69.8628C93.1201 70.9123 92.7138 72.163 91.6821 72.7103Z" fill="#892201"/>
   <path d="M77.4035 46.1177C76.5816 45.2956 75.2485 45.2956 74.4265 46.1177L46.6405 73.9038C45.8184 74.7259 45.8184 76.0588 46.6405 76.8809C47.0515 77.2919 47.5903 77.4975 48.129 77.4975C48.6676 77.4975 49.2065 77.292 49.6174 76.8809L77.4034 49.0949C78.2258 48.2727 78.2258 46.9399 77.4035 46.1177Z" fill="#892201"/>
   <path d="M53.6016 42.5533C49.3455 42.5533 45.8828 46.016 45.8828 50.2721C45.8828 54.5282 49.3455 57.9909 53.6016 57.9909C57.8577 57.9909 61.3204 54.5282 61.3204 50.2721C61.3204 46.016 57.8577 42.5533 53.6016 42.5533ZM53.6016 53.7806C51.667 53.7806 50.0931 52.2067 50.0931 50.272C50.0931 48.3374 51.667 46.7635 53.6016 46.7635C55.5362 46.7635 57.1102 48.3374 57.1102 50.272C57.11 52.2067 55.5362 53.7806 53.6016 53.7806Z" fill="#892201"/>
   <path d="M70.4424 65.0078C66.1863 65.0078 62.7236 68.4705 62.7236 72.7266C62.7236 76.9827 66.1863 80.4454 70.4424 80.4454C74.6985 80.4454 78.1612 76.9827 78.1612 72.7266C78.1612 68.4705 74.6985 65.0078 70.4424 65.0078ZM70.4424 76.235C68.5078 76.235 66.9338 74.6612 66.9338 72.7266C66.9338 70.792 68.5077 69.2181 70.4424 69.2181C72.377 69.2181 73.9509 70.792 73.9509 72.7266C73.9509 74.6612 72.377 76.235 70.4424 76.235Z" fill="#892201"/>
 </svg>
-      </div>
-      <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
-        <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
-          Mode of application
-        </p>
-        <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
-          Online + Offline
-        </p>
-      </div>
-    </div>
+          </div>
+          <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
+            <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
+              Mode of application
+            </p>
+            <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
+              {details.mode}
+            </p>
+          </div>
+        </div>
 
-    {/* Card 3 - Centered on tablet if it falls to a new row */}
-    <div className="relative md:col-span-2 lg:col-span-1 md:w-1/2 lg:w-auto md:mx-auto lg:mx-0">
-      <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
-  <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
+        {/* Card 3: End Date */}
+        <div className="relative md:col-span-2 lg:col-span-1 md:w-1/2 lg:w-auto md:mx-auto lg:mx-0">
+          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[119px] h-[119px] rounded-full bg-[#feb22a] flex items-center justify-center z-10 shadow-lg">
+         <svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
   <g clip-path="url(#clip0_400_433)">
     <path d="M49.7578 29.6484C51.1817 29.6484 52.3359 28.4942 52.3359 27.0703C52.3359 25.6465 51.1817 24.4922 49.7578 24.4922C48.334 24.4922 47.1797 25.6465 47.1797 27.0703C47.1797 28.4942 48.334 29.6484 49.7578 29.6484Z" fill="#7F050A"/>
     <path d="M55.6875 5.15625H52.3359V2.57812C52.3359 1.15423 51.1817 0 49.7578 0C48.3339 0 47.1797 1.15423 47.1797 2.57812V5.15625H35.4492V2.57812C35.4492 1.15423 34.295 0 32.8711 0C31.4472 0 30.293 1.15423 30.293 2.57812V5.15625H18.6914V2.57812C18.6914 1.15423 17.5372 0 16.1133 0C14.6894 0 13.5352 1.15423 13.5352 2.57812V5.15625H10.3125C4.62619 5.15625 0 9.78244 0 15.4688V55.6875C0 61.3738 4.62619 66 10.3125 66H30.0352C31.4591 66 32.6133 64.8458 32.6133 63.4219C32.6133 61.998 31.4591 60.8438 30.0352 60.8438H10.3125C7.46934 60.8438 5.15625 58.5307 5.15625 55.6875V15.4688C5.15625 12.6256 7.46934 10.3125 10.3125 10.3125H13.5352V12.8906C13.5352 14.3145 14.6894 15.4688 16.1133 15.4688C17.5372 15.4688 18.6914 14.3145 18.6914 12.8906V10.3125H30.293V12.8906C30.293 14.3145 31.4472 15.4688 32.8711 15.4688C34.295 15.4688 35.4492 14.3145 35.4492 12.8906V10.3125H47.1797V12.8906C47.1797 14.3145 48.3339 15.4688 49.7578 15.4688C51.1817 15.4688 52.3359 14.3145 52.3359 12.8906V10.3125H55.6875C58.5307 10.3125 60.8438 12.6256 60.8438 15.4688V30.1641C60.8438 31.588 61.998 32.7422 63.4219 32.7422C64.8458 32.7422 66 31.588 66 30.1641V15.4688C66 9.78244 61.3738 5.15625 55.6875 5.15625Z" fill="#7F050A"/>
@@ -106,26 +114,26 @@ pb9c2480: "M57.3921 11.292C61.1055 6.92137 57.8722 -0.0499783 52.0832 0.00027144
     </clipPath>
   </defs>
 </svg>
+          </div>
+          <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
+            <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
+              Available till
+            </p>
+            <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
+              {formatDate(details.end_date)}
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="bg-white rounded-[27px] pt-20 pb-8 px-6 h-full shadow-sm">
-        <p className="font-['Anek_Latin',sans-serif] font-normal text-[#80050a] text-xl md:text-[28px] text-center leading-tight md:leading-[32px]">
-          Available till
-        </p>
-        <p className="font-['Anek_Latin',sans-serif] font-semibold text-[#80050a] text-2xl md:text-[34px] text-center leading-tight md:leading-[40px] mt-2">
-          25 Oct, 2025 | 11:59 PM
-        </p>
+
+      <div className="flex justify-center mt-12 md:mt-16">
+        <button className="bg-[#fbbc05] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
+          <span className="font-['Anek_Latin',sans-serif] font-bold text-[#80050a] text-xl md:text-[29px] uppercase">
+            AVAIL THIS OFFER
+          </span>
+        </button>
       </div>
     </div>
-  </div>
-
-  <div className="flex justify-center mt-12 md:mt-16">
-    <button className="bg-[#fbbc05] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
-      <span className="font-['Anek_Latin',sans-serif] font-bold text-[#80050a] text-xl md:text-[29px] uppercase">
-        AVAIL THIS OFFER
-      </span>
-    </button>
-  </div>
-</div>
   )
 }
 
