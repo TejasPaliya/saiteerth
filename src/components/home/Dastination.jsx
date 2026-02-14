@@ -1,9 +1,13 @@
 import React from 'react'
 import Marquee from 'react-fast-marquee'
-const TopDestination = () => {
+
+const TopDestination = ({ data }) => {
+  // Use the destination data from API, or a fallback array if empty
+  const destinations = data && data.length > 0 ? data : [1, 2, 3, 4, 5];
+
   return (
     <div >
-              <div
+      <div
         className=" text-[#892201]  font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl mt-8 md:text-5xl lg:text-[55px] text-center"
       >
          Shirdi's Top Tourist Destination
@@ -11,22 +15,30 @@ const TopDestination = () => {
       <div className='mt-6 md:mt-12'>
           <Marquee>
             <div className='gap-6 md:gap-8 flex ml-3 md:ml-5'>
-                <div className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl bg-[url('/dest.png')] bg-cover bg-center flex flex-col justify-end items-center p-3 h-full ">
-                <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-2 py-2 bg-white rounded-4xl'>Wet'nJoy Water Park</div>
-                </div>
-                <div className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl bg-[url('/dest.png')] bg-cover bg-center flex flex-col justify-end items-center p-3 h-full ">
-                <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-2 py-2 bg-white rounded-4xl'>Wet'nJoy Water Park</div>
-                </div>
-                <div className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl bg-[url('/dest.png')] bg-cover bg-center flex flex-col justify-end items-center p-3 h-full ">
-                <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-2 py-2 bg-white rounded-4xl'>Wet'nJoy Water Park</div>
-                </div>
-                <div className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl bg-[url('/dest.png')] bg-cover bg-center flex flex-col justify-end items-center p-3 h-full ">
-                <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-2 py-2 bg-white rounded-4xl'>Wet'nJoy Water Park</div>
-                </div>
-                <div className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl bg-[url('/dest.png')] bg-cover bg-center flex flex-col justify-end items-center p-3 h-full ">
-                <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-2 py-2 bg-white rounded-4xl'>Wet'nJoy Water Park</div>
-                </div>
+                {destinations.map((item, index) => (
+                  <div 
+                    key={item.id || index} 
+                    className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl relative overflow-hidden flex flex-col justify-end items-center p-3 h-full "
+                  >
+                    {/* Background Video/Image from API */}
+                    {item.video?.url ? (
+                      <video 
+                        src={item.video.url} 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        className="absolute inset-0 w-full h-full object-cover -z-10"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 w-full h-full bg-[url('/dest.png')] bg-cover bg-center -z-10" />
+                    )}
 
+                    <div className='text-[#892201] font-semibold not-italic text-base sm:text-[20px] md:text-[21px] rounded-4xl px-4 py-2 bg-white'>
+                      {item.title || "Wet'nJoy Water Park"}
+                    </div>
+                  </div>
+                ))}
             </div>
           </Marquee>
       </div>

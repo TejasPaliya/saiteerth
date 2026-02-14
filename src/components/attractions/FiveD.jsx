@@ -8,11 +8,16 @@ const FiveD = ({ data }) => {
     <div className="flex w-full justify-evenly mx-auto max-lg:flex-col gap-6 p-4 bg-[url('/5d-bg.png')] bg-bottom bg-no-repeat bg-[length:100%_100%]">
       
       {/* Left Image (Still static for now as requested) */}
-      <img
-        src="/5d.png"
+      <video
+        src={data.video.url}
         className="w-1/2 max-lg:w-full max-lg:aspect-square max-w-xl"
-        alt="5D Experience"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+          <source src={data.video.url || "/hero.mp4"} type="video/mp4" />
+        </video>
 
       <div className="flex flex-col w-1/2 max-lg:w-full justify-center gap-6 items-start">
         

@@ -64,7 +64,7 @@ const Section = ({ data }) => {
           </div>
         </div>
       </div>
-      <img className="w-1/2 max-lg:w-full" src="/hanuman.png" alt="" />
+      <img className="w-1/2 max-lg:w-full" src={data.image.url} alt="" />
     </div>
   );
 };

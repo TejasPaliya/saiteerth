@@ -31,10 +31,15 @@ const OfferCard = () => {
 
 const OfferGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center max-w-7xl mx-auto">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <OfferCard key={i} />
-      ))}
+    <div>
+           <div className="font-['Anek_Latin'] font-bold text-center mt-16 text-[#80050A] leading-[1] text-[40px] sm:text-[50px] md:text-[54px] lg:text-[60px] mx-auto">Exclusive Offers & Packages</div>
+           
+        <div className=' flex flex-wrap justify-center mt-12'></div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center max-w-7xl mx-auto">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <OfferCard key={i} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -10,8 +10,9 @@ export default function Offers() {
     <div className="">
 <Navbar></Navbar>
 <OfferHero></OfferHero>
-<OfferGrid></OfferGrid>
 <RegularTicket></RegularTicket>
+<OfferGrid></OfferGrid>
+
 <Notes></Notes>
 <PlanVisit></PlanVisit>
     </div>

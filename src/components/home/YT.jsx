@@ -5,18 +5,19 @@ import 'swiper/css';
 import "swiper/css/autoplay";
 
 import { Autoplay } from "swiper/modules";
-const Youtube = () => {
+
+const Youtube = ({ data }) => {
     const swiperRef = useRef(null);
   return (
     <div className="md:p-8 mt-6 max-w-[1800px] mx-auto">
             <div className="text-[#892201] max-lg:text-center font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 font-['Anek_Latin']">
-         Voices of the <br className="md:hidden"/> Journey
+          {data?.heading || <>Voices of the <br className="md:hidden"/> Journey</>}
         </div>
       <div className="flex max-lg:justify-center justify-between items-center">
       <div
         className=" text-black font-['Anek_Latin'] max-lg:text-center  font-normal not-italic leading-[20px] text-lg sm:text-lg md:text-2xl lg:text-[24px] sm:leading-[20px] md:leading-[30px] lg:leading-[31px] mb-8"
       >
- Discover unique travel perspectives from experts <br className="max-sm:hidden"/> who’ve explored Sai Tirth first-hand.
+        {data?.sub || <>Discover unique travel perspectives from experts <br className="max-sm:hidden"/> who’ve explored Sai Tirth first-hand.</>}
       </div>
       <div className="flex gap-2 max-lg:hidden">
             <span className="rounded-full bg-[#D9D9D9] h-fit p-2 py-3" onClick={() => swiperRef.current.slidePrev()}>
@@ -67,7 +68,7 @@ const Youtube = () => {
 
       className="w-full"
     >
-      {[1, 2, 3, 4,5, 6,7 ,8].map((x) => (
+      {[1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
         <SwiperSlide key={x}>
           <div className="max-w-[400px] w-full  ">
             <img

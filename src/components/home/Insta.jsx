@@ -4,7 +4,7 @@ import React from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 
-const InstaCard = () => {
+const InstaCard = ({ handle }) => {
   return (
     <div className="relative aspect-[9/13] rounded-[22px] w-full">
       <img
@@ -27,7 +27,7 @@ const InstaCard = () => {
             />
             <div>
               <div className="font-['Anek_Latin'] font-semibold text-[20px] leading-[0.93]">
-                Saiteerth
+                {handle?.replace('@', '') || "Saiteerth"}
               </div>
               <div className="font-['Anek_Latin'] text-[10px] leading-[0.93]">
                 15 days ago
@@ -41,7 +41,10 @@ const InstaCard = () => {
   )
 }
 
-const Insta = () => {
+const Insta = ({ data }) => {
+  // Use reels from data if available, otherwise fallback to static count
+  const reels = data?.reel?.length > 0 ? data.reel : [1, 2, 3, 4, 5, 6];
+
   return (
     <div className="px-8 mt-16">
       {/* top header */}
@@ -50,28 +53,28 @@ const Insta = () => {
           <div className="relative inline-flex flex-col items-center">
             <div className="w-28 h-28 md:w-44 md:h-44 rounded-full border-2 border-[#80050A] bg-white flex items-center justify-center overflow-hidden shadow-lg">
               <img
-                src="/insta-logo.png"
+                src={data?.logo?.url || "/insta-logo.png"}
                 alt="Sai Teerth Theme Park"
                 className="w-full h-auto object-contain"
               />
             </div>
 
             <div className="absolute -bottom-5 bg-[#80050A] rounded-full px-8 py-2 md:px-12 md:py-3 text-white font-['Anek_Latin'] font-bold text-xl md:text-[28px] leading-none tracking-tight shadow-md">
-              57.5K
+              {data?.followers || "15k"}
             </div>
           </div>
 
-          <span className="flex flex-col justify-center gap-3">
+          <span className="flex flex-col justify-center gap-3 ml-4">
             <div className="font-['Anek_Latin'] font-bold leading-[0.93] tracking-[-0.02em] text-[39px] md:text-[49px] text-[#80050A]">
-              @saiteerth
+              {data?.handle_name || "@saiteerth"}
             </div>
             <div className="font-['Anek_Latin'] font-medium leading-[0.93] tracking-[-0.02em] text-[18px] md:text-[30px] text-[#80050A]">
-              Sai Teerth Theme Park - Shardi
+              {data?.handle_sub || "Sai Teerth Theme Park - Shardi"}
             </div>
           </span>
         </div>
-         <span className="rounded-[50px] max-md:hidden capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
-    Follow us now
+          <span className="rounded-[50px] max-md:hidden capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+        Follow us now
           </span>
 
       </div>
@@ -100,9 +103,9 @@ const Insta = () => {
             },
           }}
         >
-          {[1, 2, 3, 4, 5, 6].map((_, i) => (
+          {reels.map((_, i) => (
             <SwiperSlide key={i}>
-              <InstaCard />
+              <InstaCard handle={data?.handle_name} />
             </SwiperSlide>
           ))}
         </Swiper>
