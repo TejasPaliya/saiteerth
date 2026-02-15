@@ -19,13 +19,7 @@ const Navbar = () => {
    
     ],
     offers: [
-        { name: "All Offers", href: "/offers" },
-      { name: "Offer1", href: "/offers/offer1" },
-      { name: "Offer2", href: "/offers/offer2" },
-      { name: "Offer3", href: "/offers/offer3" },
-      { name: "Offer4", href: "/offers/offer4" },
-      { name: "Offer5", href: "/offers/offer5" },
-      { name: "Offer5", href: "/offers/offer6" },
+        { name: "All Offers", href: "/offers" }
 
     ],
   };
