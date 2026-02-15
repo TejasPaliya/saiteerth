@@ -15,74 +15,60 @@ import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Footer from "@/components/home/Footer";
 
 async function getHomePageData() {
-  const url = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[instagram][populate]=*&populate[review][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*";
+  const homeUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[instagram][populate]=*&populate[review][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*";
+  const offersUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/offers?populate=*";
+  const attractionsUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/attractions?populate=*";
 
-  const res = await fetch(url, {
-    // This ensures Server Side Rendering by disabling static caching
-    cache: 'no-store' 
-  });
+  // Fetching all three APIs simultaneously
+  const [homeRes, offersRes, attractionsRes] = await Promise.all([
+    fetch(homeUrl, { cache: 'no-store' }),
+    fetch(offersUrl, { cache: 'no-store' }),
+    fetch(attractionsUrl, { cache: 'no-store' })
+  ]);
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch home page data');
+  if (!homeRes.ok || !offersRes.ok || !attractionsRes.ok) {
+    throw new Error('Failed to fetch page data');
   }
 
-  const json = await res.json();
-  return json.data;
+  const [homeJson, offersJson, attractionsJson] = await Promise.all([
+    homeRes.json(),
+    offersRes.json(),
+    attractionsRes.json()
+  ]);
+
+  return {
+    homeData: homeJson.data,
+    offersData: offersJson.data,
+    attractionsData: attractionsJson.data
+  };
 }
 
 export default async function Home() {
-  const data = await getHomePageData();
+  const { homeData, offersData, attractionsData } = await getHomePageData();
 
-  // We extract specific sections from the data object
   const { 
-    hero_video, 
-    stories, 
-    samadhi, 
-    package_heading, 
-    indoor, 
-    eats, 
-    youtube, 
-    destination, 
-    instagram, 
-    review, 
-    faq 
-  } = data;
+    hero_video, stories, samadhi, package_heading, 
+    indoor, eats, youtube, destination, instagram, review, faq 
+  } = homeData;
 
   return (
     <div className="">
       <Navbar />
-      
-      {/* Hero section with video data */}
       <HeroSec data={hero_video} />
-      
-      {/* Stories section */}
-      <Stories data={stories} />
-      
-      {/* Samadhi section */}
+      <Stories data={stories} attractionsList={attractionsData}/>
       <Samadhi data={samadhi} />
       
-      {/* Offers section using package_heading */}
-      <Offers heading={package_heading} />
+      {/* Offers Section */}
+      <Offers heading={package_heading} offersList={offersData} />
 
-      {/* Indoor AC Park section */}
-      <Indoore data={indoor} />
+      {/* Attractions Section (Indoor) */}
+      <Indoore data={indoor}  />
       
-      {/* Eats/Dining section */}
       <Eat data={eats} />
-      
-      {/* YouTube section */}
       <Youtube data={youtube} />
-      
-      {/* Top Destinations section */}
       <TopDestination data={destination} />
-      
-      {/* Instagram Feed section */}
       <Insta data={instagram} />
-      
-      {/* Testimonials/Reviews section */}
       <Testimonials data={review} />
-      
-      {/* FAQ Accordion section */}
       <Accordion data={faq} />
       
       <PlanVisit />

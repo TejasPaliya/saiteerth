@@ -11,8 +11,11 @@ const Navbar = () => {
 
   const menuData = {
     attractions: [
-      { name: "Kaliya Mardan", href: "/attractions/kaliya-mardan" },
+      { name: "Kaliya Mardan", href: "/attractions/kaliya" },
       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
+       { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+        { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+          { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
    
     ],
     offers: [
