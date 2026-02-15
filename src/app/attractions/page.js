@@ -10,7 +10,7 @@ export default function Attractions() {
   return (
     <div className="">
 <Navbar></Navbar>
-<AttractionHero></AttractionHero>
+<AttractionHero title="Lanka Dahan" type="5D Show" description="Spectacular 5D experience recounting the adventure of Hanuman in Lanka. Hanuman was the son of Vayu, the God of the wind, and a celestial nymph named Anjana."></AttractionHero>
 <Section></Section>
 <FiveD></FiveD>
 <Offers></Offers>
