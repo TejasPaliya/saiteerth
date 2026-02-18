@@ -10,7 +10,7 @@ async function getAttractionData(slug) {
     
   // We filter by slug using Strapi's filters[slug] query parameter
   const res = await fetch(
-    `https://diplomatic-car-77fe18c25d.strapiapp.com/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`,
+    `http://13.48.85.216:1337/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`,
     { cache: 'no-store' } // This ensures Server Side Rendering (SSR) on every request
   );
 

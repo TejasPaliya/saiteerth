@@ -15,9 +15,9 @@ import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Footer from "@/components/home/Footer";
 
 async function getHomePageData() {
-  const homeUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[instagram][populate]=*&populate[review][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*";
-  const offersUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/offers?populate=*";
-  const attractionsUrl = "https://diplomatic-car-77fe18c25d.strapiapp.com/api/attractions?populate=*";
+  const homeUrl = "http://13.48.85.216:1337/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[instagram][populate]=*&populate[review][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*";
+  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
+  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
 
   // Fetching all three APIs simultaneously
   const [homeRes, offersRes, attractionsRes] = await Promise.all([

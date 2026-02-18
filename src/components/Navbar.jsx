@@ -13,14 +13,9 @@ const Navbar = () => {
     attractions: [
       { name: "Kaliya Mardan", href: "/attractions/kaliya" },
       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
-       { name: "Dwarkamai", href: "/attractions/dwarkamai" },
-        { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
-          { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
-   
-    ],
-    offers: [
-        { name: "All Offers", href: "/offers" }
-
+      { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+      { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+      { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
     ],
   };
 
@@ -34,7 +29,7 @@ const Navbar = () => {
 
   const textColor = scrolled ? "text-black" : "text-white";
 
-  // Shared Desktop Link Component with Dropdown
+  // Desktop Dropdown Component (Specifically for Attractions)
   const DesktopDropdown = ({ title, links, href }) => (
     <div className="group relative py-4">
       <Link href={href} className={`${textColor} font-bold text-[18px] flex items-center gap-1 uppercase`}>
@@ -43,7 +38,6 @@ const Navbar = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
         </svg>
       </Link>
-      {/* Dropdown Menu */}
       <div className="absolute top-full left-0 w-56 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
         {links.map((link, idx) => (
           <Link key={idx} href={link.href} className="block px-4 py-2 text-gray-800 hover:bg-[#80050A] hover:text-white font-semibold">
@@ -62,9 +56,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center max-w-[1500px] m-auto w-full md:px-8">
           
           {/* Desktop Left */}
-          <div className="hidden lg:flex justify-between items-center gap-6">
-            <DesktopDropdown title="Attraction" links={menuData.attractions} href="/attractions" />
-            <DesktopDropdown title="Tickets & Offers" links={menuData.offers} href="/offers" />
+          <div className="hidden lg:flex justify-between items-center gap-8">
+            <DesktopDropdown title="Attractions" links={menuData.attractions} href="/attractions" />
+            <Link href="/offers" className={`${textColor} font-bold text-[18px] uppercase`}>
+              TICKETS & OFFERS
+            </Link>
             <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>PLAN YOUR VISIT</span>
           </div>
 
@@ -112,34 +108,42 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col overflow-y-auto h-[calc(100vh-100px)]">
-          {/* Mobile Menu Items */}
-          {[
-            { id: 'attractions', label: 'ATTRACTIONS', links: menuData.attractions },
-            { id: 'offers', label: 'TICKETS & OFFERS', links: menuData.offers }
-          ].map((item) => (
-            <div key={item.id} className="border-b">
-              <div 
-                onClick={() => setMobileSubMenu(mobileSubMenu === item.id ? null : item.id)}
-                className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
-              >
-                <span className="font-semibold text-[20px] text-[#616060]">{item.label}</span>
-                <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === item.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-              <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === item.id ? 'max-h-60' : 'max-h-0'}`}>
-                {item.links.map((link, idx) => (
-                  <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+          {/* Attractions Accordion */}
+          <div className="border-b">
+            <div 
+              onClick={() => setMobileSubMenu(mobileSubMenu === 'attractions' ? null : 'attractions')}
+              className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
+            >
+              <span className="font-semibold text-[20px] text-[#616060]">ATTRACTIONS</span>
+              <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'attractions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-          ))}
+            <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'attractions' ? 'max-h-80' : 'max-h-0'}`}>
+              {menuData.attractions.map((link, idx) => (
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-          {/* Simple Mobile Links */}
-          {['PLAN YOUR VISIT', 'ABOUT US', 'CONTACT US', 'QUICK LINKS'].map((link) => (
-            <div key={link} className="p-4 border-b font-semibold text-[20px] text-[#616060]">{link}</div>
+          {/* Single Link Items */}
+          {[
+            { label: 'TICKETS & OFFERS', href: '/offers' },
+            { label: 'PLAN YOUR VISIT', href: '#' },
+            { label: 'ABOUT US', href: '#' },
+            { label: 'CONTACT US', href: '#' },
+            { label: 'QUICK LINKS', href: '#' }
+          ].map((item) => (
+            <Link 
+              key={item.label} 
+              href={item.href} 
+              onClick={() => setDrawerOpen(false)}
+              className="p-4 border-b font-semibold text-[20px] text-[#616060] block hover:bg-gray-50"
+            >
+              {item.label}
+            </Link>
           ))}
           
           <div className="mt-auto p-4">

@@ -7,8 +7,8 @@ import RegularTicket from "@/components/offers/RegularTicket";
 
 async function getPageData() {
   const [allOfferRes, offersRes] = await Promise.all([
-    fetch("https://diplomatic-car-77fe18c25d.strapiapp.com/api/all-offer?populate=*", { cache: "no-store" }),
-    fetch("https://diplomatic-car-77fe18c25d.strapiapp.com/api/offers?populate=*", { cache: "no-store" })
+    fetch("http://13.48.85.216:1337/api/all-offer?populate=*", { cache: "no-store" }),
+    fetch("http://13.48.85.216:1337/api/offers?populate=*", { cache: "no-store" })
   ]);
 
   const allOfferData = await allOfferRes.json();
