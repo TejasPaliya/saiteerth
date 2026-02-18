@@ -7,7 +7,7 @@ const Indoore = ({ data }) => {
     <div className="w-full aspect-[400/800] sm:aspect-[600/800] md:aspect-[800/800] lg:aspect-[1256/800] xl:aspect-[1456/800] relative overflow-hidden">
       <video
         className="w-full h-full object-cover"
-        src={data?.video?.url || "/indoor.mp4"}
+        src={"/indoor.mp4"}
         autoPlay
         loop
         muted

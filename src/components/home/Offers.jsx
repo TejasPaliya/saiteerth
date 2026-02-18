@@ -48,7 +48,7 @@ const Offers = ({ heading, offersList = [] }) => {
               <SwiperSlide key={item.id}>
                 <div className="max-w-[400px] mx-auto w-full shadow-[-2px_17px_16px_4px_rgba(0,0,0,0.15)] rounded-[20px] overflow-hidden bg-white mb-10">
                   <img
-                    src={item.image?.url || "/offers.png"}
+                    src={"http://13.48.85.216:1337"+item.image?.url || "/offers.png"}
                     alt={item.name}
                     className="w-full aspect-[415/237] object-cover"
                   />

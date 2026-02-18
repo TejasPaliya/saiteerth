@@ -14,7 +14,7 @@ const OfferCard = ({ offer }) => {
   return (
     <div className="max-w-[400px] w-full shadow-[-2px_17px_16px_4px_rgba(0,0,0,0.20)] rounded-[20px] p-1 bg-white flex flex-col h-full">
       <img
-        src={imageUrl}
+        src={"http://13.48.85.216:1337"+imageUrl}
         alt={offer.name}
         className="w-full aspect-[415/237] rounded-[20px_20px_0_0] object-cover"
       />

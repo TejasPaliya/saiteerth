@@ -13,7 +13,7 @@ const OfferHero = ({ videoSrc, description }) => {
         key={videoSrc} 
         className="absolute inset-0 w-full h-full object-cover z-[-10]"
       >
-        <source src={videoSrc || "/hero.mp4"} type="video/mp4" />
+        <source src={"http://13.48.85.216:1337"+videoSrc || "/hero.mp4"} type="video/mp4" />
       </video>
 
       {/* dark overlay */}

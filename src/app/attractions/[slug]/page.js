@@ -39,12 +39,11 @@ export default async function Attractions({ params }) {
         title={attraction.name}
         type={attraction.show_type}
         description={attraction.show_description}
-        videoUrl={attraction.attraction_video?.url}
+        videoUrl={"http://13.48.85.216:1337"+attraction.attraction_video?.url}
       />
 <Section data={attraction.section} />
 <FiveD data={attraction.cta} />
-<Offers></Offers>
-<Stories></Stories>
+
     </div>
   );
 }

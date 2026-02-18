@@ -9,14 +9,14 @@ const FiveD = ({ data }) => {
       
       {/* Left Image (Still static for now as requested) */}
       <video
-        src={data.video.url}
+        src={"http://13.48.85.216:1337"+data.video.url}
         className="w-1/2 max-lg:w-full max-lg:aspect-square max-w-xl"
         autoPlay
         muted
         loop
         playsInline
       >
-          <source src={data.video.url || "/hero.mp4"} type="video/mp4" />
+          <source src={"http://13.48.85.216:1337"+data.video.url || "/hero.mp4"} type="video/mp4" />
         </video>
 
       <div className="flex flex-col w-1/2 max-lg:w-full justify-center gap-6 items-start">

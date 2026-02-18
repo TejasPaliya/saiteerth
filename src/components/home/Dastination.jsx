@@ -23,7 +23,7 @@ const TopDestination = ({ data }) => {
                     {/* Background Video/Image from API */}
                     {item.video?.url ? (
                       <video 
-                        src={item.video.url} 
+                        src={"http://13.48.85.216:1337"+item.video.url} 
                         autoPlay 
                         loop 
                         muted 

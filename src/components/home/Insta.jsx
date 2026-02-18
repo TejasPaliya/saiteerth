@@ -53,7 +53,7 @@ const Insta = ({ data }) => {
           <div className="relative inline-flex flex-col items-center">
             <div className="w-28 h-28 md:w-44 md:h-44 rounded-full border-2 border-[#80050A] bg-white flex items-center justify-center overflow-hidden shadow-lg">
               <img
-                src={data?.logo?.url || "/insta-logo.png"}
+                src={"http://13.48.85.216:1337"+data?.logo?.url || "/insta-logo.png"}
                 alt="Sai Teerth Theme Park"
                 className="w-full h-auto object-contain"
               />

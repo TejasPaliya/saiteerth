@@ -3,7 +3,7 @@ import React from "react";
 const Section = ({ data }) => {
   if (!data) return null;
   return (
-    <div className="flex md:pl-6 mt-8 flex-wrap max-lg:flex-col items-center">
+    <div className="flex md:pl-6 mt-8 flex-wrap max-lg:flex-col items-center ">
       <div className="w-1/2 max-lg:w-full h-full flex flex-col justify-bottom gap-6 ">
 <div className="font-['Anek_Latin'] font-medium  max-md:mx-8 max-md:text-center text-[#892201] leading-[1.3] text-[20px] sm:text-[23px] md:text-[26px] lg:text-[36px]">{data.description}</div>
 
@@ -64,7 +64,7 @@ const Section = ({ data }) => {
           </div>
         </div>
       </div>
-      <img className="w-1/2 max-lg:w-full" src={data.image.url} alt="" />
+      <img className="w-1/2 max-lg:w-full aspect-square" src={"http://13.48.85.216:1337"+data.image.url} alt="" />
     </div>
   );
 };
