@@ -52,11 +52,16 @@ const OfferGrid = ({ offers }) => {
   if (!offers || offers.length === 0) return null;
 
   return (
-    <div className="px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-stretch max-w-7xl mx-auto">
-        {offers.map((item) => (
-          <OfferCard key={item.id} offer={item} />
-        ))}
+    <div>
+           <div className="font-['Anek_Latin'] font-bold text-center mt-16 text-[#80050A] leading-[1] text-[40px] sm:text-[50px] md:text-[54px] lg:text-[60px] mx-auto">
+        Offers and Packages
+      </div>
+      <div className="px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-stretch max-w-7xl mx-auto">
+          {offers.map((item) => (
+            <OfferCard key={item.id} offer={item} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -31,11 +31,11 @@ export default async function Offers() {
         videoSrc={pageConfig?.video?.[0]?.url} 
         description={pageConfig?.description} 
       />
-      
+      <RegularTicket tickets={pageConfig?.tickets} />
       {/* Passing the list of 10% off offers etc here */}
       <OfferGrid offers={offersList} />
       
-      <RegularTicket tickets={pageConfig?.tickets} />
+      
       
       <Notes 
         notes={pageConfig?.notes} 
