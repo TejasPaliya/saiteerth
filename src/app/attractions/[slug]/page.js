@@ -1,49 +1,60 @@
 import AttractionHero from "@/components/attractions/AttractionHero";
 import FiveD from "@/components/attractions/FiveD";
 import Section from "@/components/attractions/Section";
+import Footer from "@/components/home/Footer";
 import Offers from "@/components/home/Offers";
 import Stories from "@/components/home/Stories";
+import Navbar from "@/components/Navbar";
 
-const { default: Navbar } = require("@/components/Navbar");
-async function getAttractionData(slug) {
-    console.log("slug:",slug)
-    
-  // We filter by slug using Strapi's filters[slug] query parameter
-  const res = await fetch(
-    `http://13.48.85.216:1337/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`,
-    { cache: 'no-store' } // This ensures Server Side Rendering (SSR) on every request
-  );
+async function getAttractionPageData(slug) {
+  const attractionUrl = `http://13.48.85.216:1337/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`;
+  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
+  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
 
-  if (!res.ok) {
+  const [attractionRes, offersRes, attractionsRes] = await Promise.all([
+    fetch(attractionUrl, { cache: 'no-store' }),
+    fetch(offersUrl, { cache: 'no-store' }),
+    fetch(attractionsUrl, { cache: 'no-store' })
+  ]);
+
+  if (!attractionRes.ok || !offersRes.ok || !attractionsRes.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  const result = await res.json();
-  console.log(result.data[0])
-  // Return the first item from the data array
-  return result.data[0];
+  const [attractionJson, offersJson, attractionsJson] = await Promise.all([
+    attractionRes.json(),
+    offersRes.json(),
+    attractionsRes.json()
+  ]);
 
+  return {
+    attraction: attractionJson.data[0],
+    offersData: offersJson.data,
+    attractionsData: attractionsJson.data
+  };
 }
-export default async function Attractions({ params }) {
-   const { slug } = await params;   
-  const attraction = await getAttractionData(slug);
 
-  // Handle case where attraction is not found
+export default async function Attractions({ params }) {
+  const { slug } = await params;   
+  const { attraction, offersData, attractionsData } = await getAttractionPageData(slug);
+
   if (!attraction) {
     return <div>Attraction not found</div>;
   }
+
   return (
     <div className="">
-<Navbar></Navbar>
-<AttractionHero 
+      <Navbar></Navbar>
+      <AttractionHero 
         title={attraction.name}
         type={attraction.show_type}
         description={attraction.show_description}
-        videoUrl={"http://13.48.85.216:1337"+attraction.attraction_video?.url}
+        videoUrl={"http://13.48.85.216:1337" + attraction.attraction_video?.url}
       />
-<Section data={attraction.section} />
-<FiveD data={attraction.cta} />
-
+      <Section data={attraction.section} />
+      <FiveD data={attraction.cta} />
+      <Offers offersList={offersData} />
+      <Footer></Footer>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import Footer from "@/components/home/Footer";
 import PlanVisit from "@/components/home/PlanVisit";
 import Navbar from "@/components/Navbar";
 import Notes from "@/components/offers/Notes";
@@ -43,6 +44,7 @@ export default async function Offers() {
       />
       
       <PlanVisit />
+      <Footer></Footer>
     </div>
   );
 }
