@@ -53,7 +53,6 @@ export default async function Attractions({ params }) {
       />
       <Section data={attraction.section} />
       <FiveD data={attraction.cta} />
-      <Offers offersList={offersData} />
       <Footer></Footer>
     </div>
   );

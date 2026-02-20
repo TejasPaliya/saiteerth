@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link'; // Import Link for navigation
 
 const OfferCard = ({ offer }) => {
-  const imageUrl = offer?.image?.url || "/offers.png";
+  const imageUrl = offer?.card_image?.url || "/offers.png";
 
   // Helper to create a URL-friendly string from the name if slug is missing
   // Example: "Small Group Offer" -> "small-group-offer"

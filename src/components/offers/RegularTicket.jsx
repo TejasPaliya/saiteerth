@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RegularTicket = ({ tickets }) => {
-  // Guard clause in case the API fails or returns empty
   if (!tickets || tickets.length === 0) return null;
 
   return (
@@ -10,12 +9,17 @@ const RegularTicket = ({ tickets }) => {
         Regular <br className='sm:hidden' /> Tickets Prices
       </div>
 
-      <div className='flex flex-wrap justify-center mt-12'>
+      {/* Logic remains flex-wrap, justify-center */}
+      <div className='flex flex-wrap justify-center mt-12 px-4'>
         {tickets.map((ticket) => (
           <div
             key={ticket.id}
+            /* Minimal change: 
+               Replaced flex-1 with basis-full (mobile), basis-1/2 (tablet), basis-1/3 (desktop)
+            */
             className="
-              flex-1 max-w-[600px] 
+              basis-full md:basis-1/2 lg:basis-1/3
+              max-w-[600px] 
               aspect-[1.85/1] 
               bg-[url('/ticket.png')] bg-contain bg-center bg-no-repeat
               flex flex-col items-center justify-center
@@ -33,7 +37,6 @@ const RegularTicket = ({ tickets }) => {
             </div>
 
             <div className="flex gap-6 w-full justify-center px-4 md:px-12 z-10">
-              {/* Dynamic Prices from Strapi */}
               <PriceBox title="Mon To Fri" price={ticket.weekday_price} />
               <PriceBox title="Sat, Sun & Holidays" price={ticket.weekend_price} />
             </div>
@@ -44,7 +47,6 @@ const RegularTicket = ({ tickets }) => {
   );
 };
 
-// Internal component for the price boxes
 const PriceBox = ({ title, price }) => {
   return (
     <div className="flex flex-col w-full max-w-[180px] rounded-xl overflow-hidden shadow-lg">

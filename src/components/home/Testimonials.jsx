@@ -6,6 +6,8 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+const API_BASE = "http://13.48.85.216:1337";
+
 const Testimonials = ({ data }) => {
   // Use comments from API if available
   const testimonialsList = data?.comments || [];
@@ -22,14 +24,18 @@ const Testimonials = ({ data }) => {
         text-[96px] leading-[1] text-center text-[#FFFFFF]
         flex flex-col p-8 py-12 gap-2 max-lg:mx-6"
       >
-        <span>{data?.rating || "4.8"}</span>
+        <span>{data?.rating || "5"}</span>
 
         <div className="flex gap-2 justify-center">
-          <img className="w-6 aspect-square" src="/star.png" alt="star" />
-          <img className="w-6 aspect-square" src="/star.png" alt="star" />
-          <img className="w-6 aspect-square" src="/star.png" alt="star" />
-          <img className="w-6 aspect-square" src="/star.png" alt="star" />
-          <img className="w-6 aspect-square" src="/half-star.png" alt="star" />
+          {/* Mapping stars based on the main rating */}
+          {[...Array(5)].map((_, i) => (
+            <img 
+              key={i} 
+              className="w-6 aspect-square" 
+              src={i < Math.floor(data?.rating || 5) ? "/star.png" : "/half-star.png"} 
+              alt="star" 
+            />
+          ))}
         </div>
 
         <div className="font-['Anek_Latin'] font-bold text-[29px] text-center">
@@ -82,28 +88,31 @@ const Testimonials = ({ data }) => {
               },
             }}
           >
-            {/* If API has no comments, it will map nothing, showing an empty slider or you can fallback to [1,2,3,4,5] */}
-            {(testimonialsList.length > 0 ? testimonialsList : [1, 2, 3, 4, 5]).map((item, i) => (
+            {testimonialsList.map((item, i) => (
               <SwiperSlide key={item.id || i}>
                 <div className="bg-white rounded-[38px] h-[280px] p-6 flex flex-col">
                   <div className="flex w-full justify-between mb-4">
                     <div className="flex items-center gap-1">
-                      <img className="w-[45px] aspect-square" src="/testimonial.png" alt="" />
-                      <div>
-                        <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1">
-                          Nishanth
+                      <img 
+                        className="w-[45px] h-[45px] rounded-full object-cover" 
+                        src={item.image?.url ? API_BASE + item.image.url : "/testimonial.png"} 
+                        alt={item.name} 
+                      />
+                      <div className="ml-1">
+                        <div className="font-['Plus_Jakarta_Sans'] font-semibold text-[18px] leading-[100%] tracking-normal mb-1 capitalize">
+                          {item.name || "Guest"}
                         </div>
-                        <div className="flex gap-0.5 justify-center">
+                        <div className="flex gap-0.5">
                           {[...Array(item.rating || 5)].map((_, index) => (
                             <img key={index} className="w-3 aspect-square" src="/star.png" alt="star" />
                           ))}
                         </div>
                       </div>
                     </div>
-                    <img className="w-8 h-7" src="/google.png" alt="" />
+                    <img className="w-8 h-7" src="/google.png" alt="google" />
                   </div>
-                  <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal overflow-hidden">
-                    {item.comment || "The theme park is Spiritual concept. It meets the quality and service wise an International theme park. The videos and 5D shows were amazing. It is very safe for SENIOR CITIZENS. A MUST DO WHEN AT SHIRDI"}
+                  <div className="font-['Plus_Jakarta_Sans'] font-normal text-[15px] leading-[20px] tracking-normal overflow-hidden line-clamp-6">
+                    {item.comment}
                   </div>
                 </div>
               </SwiperSlide>

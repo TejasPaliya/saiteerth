@@ -21,13 +21,9 @@ const TopDestination = ({ data }) => {
                     className="w-[200px] md:w-[250px] lg:w-[300px] aspect-[332/422] rounded-4xl relative overflow-hidden flex flex-col justify-end items-center p-3 h-full "
                   >
                     {/* Background Video/Image from API */}
-                    {item.video?.url ? (
-                      <video 
-                        src={"http://13.48.85.216:1337"+item.video.url} 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline 
+                    {item.image?.url ? (
+                      <img 
+                        src={"http://13.48.85.216:1337"+item.image.url} 
                         className="absolute inset-0 w-full h-full object-cover -z-10"
                       />
                     ) : (
