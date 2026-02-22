@@ -10,7 +10,7 @@ const RegularTicket = ({ tickets }) => {
       </div>
 
       {/* Logic remains flex-wrap, justify-center */}
-      <div className='flex flex-wrap justify-center mt-12 px-4'>
+      <div className='flex flex-wrap gap-2 justify-center mt-12 px-4'>
         {tickets.map((ticket) => (
           <div
             key={ticket.id}
@@ -19,19 +19,19 @@ const RegularTicket = ({ tickets }) => {
             */
             className="
               basis-full md:basis-1/2 lg:basis-1/3
-              max-w-[600px] 
+          
               aspect-[1.85/1] 
               bg-[url('/ticket.png')] bg-contain bg-center bg-no-repeat
               flex flex-col items-center justify-center
-              pt-4 pb-6 px-12
+             
               drop-shadow-xl
             "
           >
             <div className="text-center mb-3 md:mb-6 z-10">
-              <h2 className="text-white  text-xs md:text-5xl font-bold tracking-wide drop-shadow-md mb-1">
+              <h2 className="text-white  text-xs md:text-3xl font-bold tracking-wide drop-shadow-md mb-1">
                 {ticket.name}
               </h2>
-              <p className="text-white/90 text-sm md:text-xl font-light tracking-wide drop-shadow-sm">
+              <p className="text-white/90 text-sm md:text-lg font-light tracking-wide drop-shadow-sm">
                 [{ticket.height}]
               </p>
             </div>
