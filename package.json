@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "find-cache-dir": "^5.0.0",
+    "lucide-react": "^0.575.0",
     "next": "16.0.10",
     "next-on-netlify": "^3.0.1",
     "react": "19.2.0",
