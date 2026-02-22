@@ -1,20 +1,62 @@
 import AttractionHero from "@/components/attractions/AttractionHero";
-import FiveD from "@/components/attractions/FiveD";
-import Section from "@/components/attractions/Section";
+import Accordion from "@/components/home/Faq";
+import Footer from "@/components/home/Footer";
+import PlanVisit from "@/components/home/PlanVisit";
+import Navbar from "@/components/Navbar";
 import Offers from "@/components/home/Offers";
 import Stories from "@/components/home/Stories";
+import AttractionGrid from "@/components/attractions/AttractionsGrid";
 
-const { default: Navbar } = require("@/components/Navbar");
+async function getAttractionsPageData() {
+  const allAttractionUrl = "http://13.48.85.216:1337/api/all-attraction?populate=*";
+  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
+  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
 
-export default function Attractions() {
+  const [allAttrRes, offersRes, attractionsRes] = await Promise.all([
+    fetch(allAttractionUrl, { cache: "no-store" }),
+    fetch(offersUrl, { cache: "no-store" }),
+    fetch(attractionsUrl, { cache: "no-store" }),
+  ]);
+
+  if (!allAttrRes.ok || !offersRes.ok || !attractionsRes.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const [allAttrJson, offersJson, attractionsJson] = await Promise.all([
+    allAttrRes.json(),
+    offersRes.json(),
+    attractionsRes.json(),
+  ]);
+
+  return {
+    pageData: allAttrJson.data,
+    offersData: offersJson.data,
+    attractionsData: attractionsJson.data,
+  };
+}
+
+export default async function Attractions() {
+  const { pageData, offersData, attractionsData } = await getAttractionsPageData();
+
   return (
-    <div className="">
-<Navbar></Navbar>
-<AttractionHero title="Lanka Dahan" type="5D Show" description="Spectacular 5D experience recounting the adventure of Hanuman in Lanka. Hanuman was the son of Vayu, the God of the wind, and a celestial nymph named Anjana."></AttractionHero>
-<Section></Section>
-<FiveD></FiveD>
-<Offers></Offers>
-<Stories></Stories>
+    <div className="min-h-screen">
+      <Navbar />
+
+      <AttractionHero
+        title={pageData.heading}
+        type="Featured Attraction"
+        description={pageData.description}
+        videoUrl={pageData.video?.url}
+      />
+
+<AttractionGrid attractionsList={attractionsData} />
+
+      {/* Passing fetched offers to Offers */}
+      <Offers offersList={offersData} />
+
+      <Accordion data={pageData.faq} />
+      <PlanVisit />
+      <Footer />
     </div>
   );
 }

@@ -11,10 +11,24 @@ const Navbar = () => {
 
   const menuData = {
     attractions: [
+      { name: "All Attractions", href: "/attractions" },
+       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
       { name: "Kaliya Mardan", href: "/attractions/kaliya" },
-      { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
+       { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
+        { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+         { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+           { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
+     
 
     ],
+       reach: [
+      { name: "How To Reach", href: "/how-to-reach" },
+      { name: "Foods & Beverages", href: "/food" },
+      { name: "Guest Facilities", href: "/guest" },
+      { name: "Influencers", href: "/influencer" },
+
+    ],
+    
   };
 
   useEffect(() => {
@@ -59,7 +73,8 @@ const Navbar = () => {
             <Link href="/offers" className={`${textColor} font-bold text-[18px] uppercase`}>
               TICKETS & OFFERS
             </Link>
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>PLAN YOUR VISIT</span>
+            <DesktopDropdown title="PLAN YOUR VISIT" links={menuData.reach} href="/"></DesktopDropdown>
+         
           </div>
 
           {/* Logo */}
