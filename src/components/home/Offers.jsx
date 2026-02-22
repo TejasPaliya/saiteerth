@@ -4,8 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import { useRouter } from "next/navigation";
 
 const Offers = ({ heading, offersList = [] }) => {
+  const r=useRouter()
   const swiperRef = useRef(null);
 
   return (
@@ -34,6 +36,8 @@ const Offers = ({ heading, offersList = [] }) => {
         <div>
           <Swiper
             spaceBetween={15}
+              centeredSlides={true}
+  centeredSlidesBounds={true}
             breakpoints={{
               0: { slidesPerView: 1.2, centeredSlides: true },
               640: { slidesPerView: 2.2 },
@@ -62,9 +66,9 @@ const Offers = ({ heading, offersList = [] }) => {
                       )) || <li>No details available</li>}
                     </ul>
                     <div className="flex gap-3 mt-5">
-                      <button className="bg-[#80050A] flex-1 rounded-[12px] py-2 text-center font-semibold text-white hover:bg-red-900 transition-colors">
+                      <a href={item.link} className="bg-[#80050A] flex-1 rounded-[12px] py-2 text-center font-semibold text-white hover:bg-red-900 transition-colors">
                         Book Now
-                      </button>
+                      </a>
                       <button className="bg-[#FEB22A] flex-1 rounded-[12px] py-2 text-center font-semibold text-[#7F050A] hover:bg-yellow-500 transition-colors">
                         View More
                       </button>
@@ -76,7 +80,7 @@ const Offers = ({ heading, offersList = [] }) => {
           </Swiper>
         </div>
 
-        <span className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-2 px-8 font-bold text-lg md:text-2xl">
+        <span onClick={() => r.push("/offers")} className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-2 px-8 font-bold text-lg md:text-2xl">
           Explore More offers
         </span>
         <div className="h-12 w-full"></div>

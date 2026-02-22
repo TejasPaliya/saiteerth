@@ -26,9 +26,9 @@ const Indoore = ({ data }) => {
           </div>
 
           {/* Button */}
-          <span className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-2 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+          <a href="https://saiteerth.in/book/" className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-2 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
             Book Your Tickets Now
-          </span>
+          </a>
         </div>
         
         <div className="bg-white flex items-center self-end  h-8 w-full">

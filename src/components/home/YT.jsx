@@ -92,8 +92,8 @@ const Youtube = ({ data }) => {
                     </div>
                   )}
                 </div>
-                <div className="mt-3 text-black font-normal not-italic text-base sm:text-lg md:text-[20px] leading-tight">
-                  Sai Teerth Theme Park Shirdi • Video Experience
+                <div className="mt-3 text-black font-bold not-italic text-base sm:text-lg md:text-[20px] leading-tight">
+                 {item.title}
                 </div>
               </div>
             </SwiperSlide>

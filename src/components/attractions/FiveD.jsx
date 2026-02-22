@@ -5,16 +5,13 @@ const FiveD = ({ data }) => {
   if (!data) return null;
 
   return (
-    <div className="flex w-full justify-evenly mx-auto max-lg:flex-col gap-6 p-4 bg-[url('/5d-bg.png')] bg-bottom bg-no-repeat bg-[length:100%_100%]">
+    <div className="flex w-full justify-evenly mx-auto max-lg:flex-col gap-6 p-4 bg-[url('/5d-bg.png')] bg-bottom bg-no-repeat bg-[length:100%_100%] py-16">
       
       {/* Left Image (Still static for now as requested) */}
       <video
         src={"http://13.48.85.216:1337"+data.video.url}
-        className="w-1/2 max-lg:w-full max-lg:aspect-square max-w-xl"
-        autoPlay
-        muted
-        loop
-        playsInline
+        className="w-1/2 max-lg:w-full aspect-[7/8] object-cover max-w-xl"
+controls
       >
           <source src={"http://13.48.85.216:1337"+data.video.url || "/hero.mp4"} type="video/mp4" />
         </video>
@@ -32,9 +29,9 @@ const FiveD = ({ data }) => {
           {data.description}
         </div>
 
-        <span className="bg-yellow-400 max-md:mx-auto my-6 text-black font-extrabold py-3 px-10 rounded-full uppercase tracking-tight shadow-sm hover:bg-yellow-500 transition-colors duration-200 cursor-pointer">
+        <a href='https://saiteerth.in/book/' className="bg-yellow-400 max-md:mx-auto my-6 text-black font-extrabold py-3 px-10 rounded-full uppercase tracking-tight shadow-sm hover:bg-yellow-500 transition-colors duration-200 cursor-pointer">
           Plan Your Visit Now
-        </span>
+        </a>
 
       </div>
     </div>

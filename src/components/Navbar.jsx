@@ -72,18 +72,18 @@ const Navbar = () => {
             <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>ABOUT US</span>
             <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>CONTACT US</span>
             <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>QUICK LINKS</span>
-            <button className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A] p-2 px-4 transition-all ${
+            <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A] p-2 px-4 transition-all ${
                 scrolled ? "bg-[#FEB22A] text-black shadow-md" : "bg-[#C47E00] text-white shadow-[0_0_24.3px_0_rgba(255,255,255,0.66)]"
               }`}>
               BOOK NOW
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
           <div className="flex lg:hidden items-center gap-3">
-            <button className={`rounded-[50px] font-bold text-[14px] border border-[#FEB22A] ${scrolled ? "bg-[#FEB22A] text-black" : "bg-[#C47E00] text-white"} p-1 px-3`}>
+            <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[14px] border border-[#FEB22A] ${scrolled ? "bg-[#FEB22A] text-black" : "bg-[#C47E00] text-white"} p-1 px-3`}>
               BOOK NOW
-            </button>
+            </Link>
             <button onClick={() => setDrawerOpen(true)}>
               <svg width="36" height="26" viewBox="0 0 36 26" fill="none">
                 <path d="M34.5938 11.25H1.40625M34.5938 1.40625H1.40625M34.5938 23.9062H1.40625" stroke={scrolled ? "#000" : "#fff"} strokeWidth="3" />

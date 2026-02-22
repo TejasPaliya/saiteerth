@@ -28,7 +28,7 @@ const RegularTicket = ({ tickets }) => {
             "
           >
             <div className="text-center mb-3 md:mb-6 z-10">
-              <h2 className="text-white text-2xl md:text-5xl font-bold tracking-wide drop-shadow-md mb-1">
+              <h2 className="text-white  text-xs md:text-5xl font-bold tracking-wide drop-shadow-md mb-1">
                 {ticket.name}
               </h2>
               <p className="text-white/90 text-sm md:text-xl font-light tracking-wide drop-shadow-sm">
@@ -51,7 +51,7 @@ const PriceBox = ({ title, price }) => {
   return (
     <div className="flex flex-col w-full max-w-[180px] rounded-xl overflow-hidden shadow-lg">
       <div className="bg-[#fcb43a] py-2 flex items-center justify-center">
-        <span className="text-[#641e0d] font-bold text-xs md:text-sm text-center leading-tight">
+        <span className="text-[#641e0d] font-bold text-[8px] md:text-sm text-center leading-tight">
           {title}
         </span>
       </div>

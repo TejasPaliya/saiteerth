@@ -3,7 +3,7 @@ import React from 'react'
 // Destructure the props we passed from the page
 const AttractionHero = ({ title, type, description, videoUrl }) => {
   return (
-    <div className="relative w-full h-[60vh] md:h-[100vh] overflow-hidden flex flex-col">
+    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden flex flex-col">
 
       {/* Dynamic bg video */}
       <video

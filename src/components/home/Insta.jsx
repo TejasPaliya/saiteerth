@@ -3,10 +3,13 @@
 import React from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
+import { useRouter } from "next/navigation"
+ 
 
 const API_BASE = "http://13.48.85.216:1337";
 
 const InstaCard = ({ handle, reelData }) => {
+ const router = useRouter();
   // Helper to calculate "days ago"
   const getTimeAgo = (dateString) => {
     if (!dateString) return "Recently";
@@ -20,7 +23,7 @@ const InstaCard = ({ handle, reelData }) => {
   const videoUrl = reelData?.reel?.url ? `${API_BASE}${reelData.reel.url}` : "";
 
   return (
-    <div className="relative aspect-[9/13] rounded-[22px] w-full overflow-hidden">
+    <div className="relative aspect-[9/13] rounded-[22px] w-full overflow-hidden"  onClick={() => router.push(reelData.link)}>
       {/* Dynamic Video with Autoplay */}
       <video
         src={videoUrl}
@@ -91,9 +94,9 @@ const Insta = ({ data }) => {
             </div>
           </span>
         </div>
-          <span className="rounded-[50px] max-md:hidden capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
+          <a href="https://www.instagram.com/saiteerth/" className="rounded-[50px] max-md:hidden capitalize font-['Anek_Latin']  mt-6 bg-[#FCD503]  hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl">
         Follow us now
-          </span>
+          </a>
 
       </div>
 

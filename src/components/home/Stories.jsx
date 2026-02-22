@@ -64,11 +64,11 @@ const Stories = ({ data, attractionsList = [] }) => {
     >
       <div className="flex flex-col items-center gap-4 px-4">
         <div className="text-[#892201] text-center font-['Anek_Latin'] font-bold text-[40px] leading-[35px] md:text-[50px] lg:text-[50px] lg:leading-tight">
-          {data?.heading || "Watch Stories Come Alive!"}
+          {data?.heading || "Other Attractions "}
         </div>
 
         <p className="text-black text-center font-['Poppins'] font-normal text-[14px] leading-[19px] md:text-lg lg:text-xl lg:leading-normal max-w-2xl">
-          {data?.sub || "6 spectacular shows powered by 5D technology, robotics, and stunning visuals."}
+          {data?.sub || "Experience Sai Baba’s life and teachings through immersive 5D shows, virtual pilgrimages, and powerful narratives."}
         </p>
       </div>
 
@@ -94,9 +94,7 @@ const Stories = ({ data, attractionsList = [] }) => {
               <div className="aspect-[2/3] relative overflow-hidden rounded-2xl group cursor-pointer">
                 <video
                   src={"http://13.48.85.216:1337"+item.attraction_video?.url || "/stories.mp4"}
-                  loop
-                  muted
-                  autoPlay
+                 
                   playsInline
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
