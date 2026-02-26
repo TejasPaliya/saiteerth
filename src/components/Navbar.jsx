@@ -6,29 +6,28 @@ import Link from "next/link";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  // Track which mobile accordion is open
+  // Track which mobile accordion is open: null, 'attractions', 'reach', or 'quickLinks'
   const [mobileSubMenu, setMobileSubMenu] = useState(null);
 
   const menuData = {
     attractions: [
       { name: "All Attractions", href: "/attractions" },
-       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
+      { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
       { name: "Kaliya Mardan", href: "/attractions/kaliya" },
-       { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
-        { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
-         { name: "Dwarkamai", href: "/attractions/dwarkamai" },
-           { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
-     
-
+      { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
+      { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+      { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+      { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
     ],
-       reach: [
+    reach: [
       { name: "How To Reach", href: "/how-to-reach" },
       { name: "Foods & Beverages", href: "/food" },
       { name: "Guest Facilities", href: "/guest" },
       { name: "Influencers", href: "/influencer" },
-
     ],
-    
+    quickLinks: [
+      { name: "Blog", href: "/blog" },
+    ],
   };
 
   useEffect(() => {
@@ -41,7 +40,7 @@ const Navbar = () => {
 
   const textColor = scrolled ? "text-black" : "text-white";
 
-  // Desktop Dropdown Component (Specifically for Attractions)
+  // Desktop Dropdown Component
   const DesktopDropdown = ({ title, links, href }) => (
     <div className="group relative py-4">
       <Link href={href} className={`${textColor} font-bold text-[18px] flex items-center gap-1 uppercase`}>
@@ -73,8 +72,8 @@ const Navbar = () => {
             <Link href="/offers" className={`${textColor} font-bold text-[18px] uppercase`}>
               TICKETS & OFFERS
             </Link>
-            <DesktopDropdown title="PLAN YOUR VISIT" links={menuData.reach} href="/"></DesktopDropdown>
-         
+            {/* Plan Your Visit Dropdown */}
+            <DesktopDropdown title="PLAN YOUR VISIT" links={menuData.reach} href="/how-to-reach" />
           </div>
 
           {/* Logo */}
@@ -84,9 +83,9 @@ const Navbar = () => {
 
           {/* Desktop Right */}
           <div className="hidden lg:flex justify-between items-center gap-6">
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>ABOUT US</span>
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>CONTACT US</span>
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer`}>QUICK LINKS</span>
+            <span className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>ABOUT US</span>
+            <span className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>CONTACT US</span>
+            <DesktopDropdown title="QUICK LINKS" links={menuData.quickLinks} href="#" />
             <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A] p-2 px-4 transition-all ${
                 scrolled ? "bg-[#FEB22A] text-black shadow-md" : "bg-[#C47E00] text-white shadow-[0_0_24.3px_0_rgba(255,255,255,0.66)]"
               }`}>
@@ -127,13 +126,53 @@ const Navbar = () => {
               onClick={() => setMobileSubMenu(mobileSubMenu === 'attractions' ? null : 'attractions')}
               className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
             >
-              <span className="font-semibold text-[20px] text-[#616060]">ATTRACTIONS</span>
+              <span className="font-semibold text-[20px] text-[#616060] uppercase">Attractions</span>
               <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'attractions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
-            <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'attractions' ? 'max-h-80' : 'max-h-0'}`}>
+            <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'attractions' ? 'max-h-96' : 'max-h-0'}`}>
               {menuData.attractions.map((link, idx) => (
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Plan Your Visit Accordion */}
+          <div className="border-b">
+            <div 
+              onClick={() => setMobileSubMenu(mobileSubMenu === 'reach' ? null : 'reach')}
+              className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
+            >
+              <span className="font-semibold text-[20px] text-[#616060] uppercase">Plan Your Visit</span>
+              <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'reach' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'reach' ? 'max-h-60' : 'max-h-0'}`}>
+              {menuData.reach.map((link, idx) => (
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links Accordion */}
+          <div className="border-b">
+            <div 
+              onClick={() => setMobileSubMenu(mobileSubMenu === 'quickLinks' ? null : 'quickLinks')}
+              className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
+            >
+              <span className="font-semibold text-[20px] text-[#616060] uppercase">Quick Links</span>
+              <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'quickLinks' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'quickLinks' ? 'max-h-60' : 'max-h-0'}`}>
+              {menuData.quickLinks.map((link, idx) => (
                 <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
                   {link.name}
                 </Link>
@@ -144,16 +183,14 @@ const Navbar = () => {
           {/* Single Link Items */}
           {[
             { label: 'TICKETS & OFFERS', href: '/offers' },
-            { label: 'PLAN YOUR VISIT', href: '#' },
             { label: 'ABOUT US', href: '#' },
             { label: 'CONTACT US', href: '#' },
-            { label: 'QUICK LINKS', href: '#' }
           ].map((item) => (
             <Link 
               key={item.label} 
               href={item.href} 
               onClick={() => setDrawerOpen(false)}
-              className="p-4 border-b font-semibold text-[20px] text-[#616060] block hover:bg-gray-50"
+              className="p-4 border-b font-semibold text-[20px] text-[#616060] block hover:bg-gray-50 uppercase"
             >
               {item.label}
             </Link>

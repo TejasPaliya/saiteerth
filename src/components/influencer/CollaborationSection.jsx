@@ -74,7 +74,7 @@ const collaborationReasons = [
 
 export default function CollaborationSection() {
   return (
-    <section className={`${anekLatin.variable} font-sans bg-[#FFF5E2] py-20 px-6 min-h-screen flex flex-col items-center`}>
+    <section className={`${anekLatin.variable} font-sans bg-[#FFF5E2] py-20 pb-4 px-6 min-h-screen flex flex-col items-center`}>
       <h2 className="text-4xl md:text-5xl font-bold text-[#333] mb-16 text-center">
         Why Collaborate{' '}
         <span className="bg-gradient-to-b from-[#CD3F0D] to-[#80050A] bg-clip-text text-transparent">

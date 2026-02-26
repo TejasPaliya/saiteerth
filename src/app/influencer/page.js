@@ -10,8 +10,9 @@ export default function Influencer(){
   return (
     <>
     <Navbar></Navbar>
-    <InfluencerHero></InfluencerHero>
+    <InfluencerHero heading="Create Unforgettable Group Experiences" description="Plan the perfect group outing with our specialized group packages. From team-building to family gatherings, we've curated everything you need for an amazing day at the park."></InfluencerHero>
       <CollaborationSection />
+      
       <InfluencerForm />
       <InfluencerTerms></InfluencerTerms>
       <InfluencerFaq></InfluencerFaq>

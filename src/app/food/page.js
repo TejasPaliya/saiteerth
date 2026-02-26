@@ -8,7 +8,7 @@ export default function Food(){
     return(
         <div>
             <Navbar></Navbar>
-            <InfluencerHero></InfluencerHero>
+            <InfluencerHero heading="Foods & Beverages" description="After enjoying the amazing shows at Sai Teerth, head to our restaurants for a delightful dining experience. We offer a variety of delicious and hygienic food and beverages to suit all tastes."></InfluencerHero>
         <RestaurantFoodZone></RestaurantFoodZone>
         <FoodGrid></FoodGrid>
         <Footer></Footer>

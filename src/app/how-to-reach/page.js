@@ -11,7 +11,7 @@ export default function HowToReach(){
     return(
         <>
         <Navbar></Navbar>
-        <InfluencerHero></InfluencerHero>
+        <InfluencerHero heading="How To Reach" description="Plan the perfect day with exciting ticket combos designed to give you endless fun and incredible savings!"></InfluencerHero>
         <Nearby></Nearby>
         <Cities></Cities>
         <Journey></Journey>

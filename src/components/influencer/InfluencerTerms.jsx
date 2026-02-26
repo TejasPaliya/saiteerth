@@ -24,7 +24,7 @@ const InfluencerTerms = () => {
 
         <ul className=" mb-12 md:px-6">
           {terms.map((term, index) => (
-            <li key={index} className="flex items-center gap-3 text-lg md:text-[39px] ">
+            <li key={index} className="flex items-center gap-3 text-lg md:text-[29px] ">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white flex-shrink-0" />
               <span>{term}</span>
             </li>
