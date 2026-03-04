@@ -70,9 +70,9 @@ export default function AttractionGrid({ attractionsList = [] }) {
                         {item.show_type}
                     </span>
                   </div>
-                  <div className="bg-[#a32e14] p-2 rounded-full transform group-hover:scale-110 transition-transform">
+                  <a href={"/attractions/"+item.slug} className="bg-[#a32e14] p-2 rounded-full transform group-hover:scale-110 transition-transform">
                     <ArrowUpRight size={18} className="text-white" strokeWidth={3} />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

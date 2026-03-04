@@ -27,7 +27,7 @@ const AttractionHero = ({ title, type, description, videoUrl }) => {
       <div className="flex-1 flex flex-col items-center justify-center lg:mt-40 z-10 mx-4">
         
         <div className="font-['Anek_Latin'] font-extrabold text-white text-center leading-[1.16] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[58px]">
-          {title} <span className="font-semibold">- {type}</span>
+          {title}
         </div>
 
         <div className="max-w-3xl mx-auto text-white text-center font-['Anek_Latin'] font-normal text-[18px] sm:text-[20px] md:text-[23px] lg:text-[27px] leading-[1.1] mt-4">

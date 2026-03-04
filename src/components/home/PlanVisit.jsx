@@ -5,7 +5,7 @@ const PlanVisit = () => {
     <div className="bg-[url('/plan-visit.png')] bg-cover bg-center flex flex-col p-6 md:p-12 lg:p-16 items-center w-full">
       
       <div className="font-['Anek_Latin'] font-semibold text-[28px] leading-[32px] sm:text-[36px] sm:leading-[40px] md:text-[49px] md:leading-[49px] lg:text-[55px] lg:leading-[56px] text-center text-white mb-2">
-        Plan your visit with ease
+        Plan Your Visit With Ease
       </div>
 
       <div className="font-['Anek_Latin'] font-medium text-[16px] leading-[22px] sm:text-[18px] sm:leading-[24px] md:text-[20px] md:leading-[25px] lg:text-[25px] lg:leading-[31px] text-center text-white max-w-4xl">

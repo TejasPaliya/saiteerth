@@ -4,33 +4,33 @@ const services = [
   {
     title: "First Aid",
     description: "We offer first aid services at the reception to ensure your safety. We handle any minor medical needs, ensuring you have a safe and enjoyable visit.",
-    image: "/g1.png"
+    image: "/g4.png"
   },
   {
     title: "Handicap-Friendly Space",
     description: "We welcome guests of all abilities and provide accessible pathways and seating areas to make exploring the park comfortable for everyone.",
-    image: "/g2.png"
+    image: "/g3.png"
   },
   {
     title: "Elevators for Easy Access",
     description: "We have elevators that provide easy access to all areas of the park, ensuring guests of all ages and abilities can enjoy the attractions comfortably.",
-    image: "/g3.png"
+    image: "/g6.png"
   },
   {
     title: "Food Courts and Kiosks",
     description: "We serve a variety of culinary delights at our food courts and kiosks. We offer fresh beverages, chaat, Punjabi meals, Chinese meals, and more for a satisfying lunch or snack. We also provide ice creams, cold drinks, popcorn, chips, and other treats to satisfy your cravings.",
-    image: "/g4.png",
+    image: "/g2.png",
 
   },
   {
-    title: "Pay-and-Use Parking",
-    description: "We provide convenient pay-and-use parking facilities. We offer parking for bikes at Rs. 50, cars at Rs. 100, and buses at Rs. 150, ensuring a hassle-free visit.",
-    image: "/g5.png"
+    title: "Baggage Counter",
+    description: "We provide a secure baggage counter where you can store your belongings safely for just Rs. 50 per bag.",
+    image: "/g1.png"
   },
   {
     title: "Photography Counter",
     description: "We provide professional photographers to help you capture your memories. We offer numerous photo points where you can get your pictures clicked to cherish your visit forever.",
-    image: "/g6.png"
+    image: "/g5.png"
   }
 ];
 

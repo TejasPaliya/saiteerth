@@ -19,7 +19,7 @@ const Samadhi = ({ data }) => {
           <div className="text-[#80050A] max-md:text-[#FFF2F3] font-['Anek_Latin'] font-bold text-center text-[40px] leading-[100%] tracking-normal md:text-6xl lg:text-[79px] mt-14 lg:ml-10 lg:text-left">
             {/* Using the dynamic heading from Strapi */}
             {data?.heading || "Just 5mins From"} 
-            <br className='md:hidden'/> Shri Sai <br className='max-md:hidden'/> Baba Mandir
+           
           </div>
         </div>
         <div className="bg-white self-end h-2 w-full"></div>

@@ -13,7 +13,7 @@ const TopDestination = ({ data }) => {
       <div
         className="text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl mt-8 md:text-5xl lg:text-[55px] text-center"
       >
-         Shirdi's Top Tourist Destination
+         Shirdi's Top Tourist Destinations
       </div>
       <div className='mt-6 md:mt-12'>
           <Marquee>

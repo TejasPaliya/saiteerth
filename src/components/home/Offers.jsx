@@ -69,9 +69,9 @@ const Offers = ({ heading, offersList = [] }) => {
                       <a href={item.link} className="bg-[#80050A] flex-1 rounded-[12px] py-2 text-center font-semibold text-white hover:bg-red-900 transition-colors">
                         Book Now
                       </a>
-                      <button className="bg-[#FEB22A] flex-1 rounded-[12px] py-2 text-center font-semibold text-[#7F050A] hover:bg-yellow-500 transition-colors">
+                      <a href={"/offers/"+item.slug} className="bg-[#FEB22A] flex-1 rounded-[12px] py-2 text-center font-semibold text-[#7F050A] hover:bg-yellow-500 transition-colors">
                         View More
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
