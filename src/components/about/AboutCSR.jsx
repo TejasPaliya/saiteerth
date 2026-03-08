@@ -16,7 +16,7 @@ const AboutCSR = () => {
         <div className="w-full md:w-1/2">
           <div className="relative h-[400px] w-full rounded-[2rem] overflow-hidden shadow-2xl">
             <img
-              src="https://via.placeholder.com/600x400" 
+              src="/about.png" 
               alt="Malpani Group Transformation"
               className="object-cover w-full h-full"
             />

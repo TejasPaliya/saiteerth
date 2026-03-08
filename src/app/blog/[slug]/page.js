@@ -1,3 +1,4 @@
+import Footer from '@/components/home/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react';
 
@@ -70,6 +71,7 @@ export default async function BlogPage({ params }) {
             })}
           </div>
         </article>
+        <Footer></Footer>
     </div>
   );
 }

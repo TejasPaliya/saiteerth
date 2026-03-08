@@ -66,7 +66,7 @@ const AboutCta = () => {
           <div className="relative aspect-video lg:aspect-square overflow-hidden rounded-[2rem] border-4 border-[#fbb03b] bg-gray-200 shadow-2xl">
             {/* Placeholder Image */}
             <img 
-              src="/api/placeholder/800/800" 
+              src="/about.png" 
               alt="Sai Teerth Theme Park" 
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />

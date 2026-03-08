@@ -53,7 +53,7 @@ const AboutMalpani = () => {
   <div className="relative z-10 overflow-hidden rounded-[40px] border-[10px] border-[#892201]">
     <div className="aspect-[5/5] relative bg-gray-200">
       <Image 
-        src="/api/placeholder/600/750" 
+        src="/about.png" 
         alt="Malpani Group Leadership"
         fill
         className="object-cover grayscale hover:grayscale-0 transition-all duration-500"

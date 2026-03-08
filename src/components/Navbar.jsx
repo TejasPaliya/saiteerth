@@ -27,6 +27,8 @@ const Navbar = () => {
     ],
     quickLinks: [
       { name: "Blog", href: "/blog" },
+      { name: "Gallery", href: "/gallary" },
+       { name: "Group Enquiries", href: "/group" },
     ],
   };
 
@@ -83,8 +85,8 @@ const Navbar = () => {
 
           {/* Desktop Right */}
           <div className="hidden lg:flex justify-between items-center gap-6">
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>ABOUT US</span>
-            <span className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>CONTACT US</span>
+            <a href="/about" className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>ABOUT US</a>
+            <a href="/contact" className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>CONTACT US</a>
             <DesktopDropdown title="QUICK LINKS" links={menuData.quickLinks} href="#" />
             <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[16px] border border-[#FEB22A] p-2 px-4 transition-all ${
                 scrolled ? "bg-[#FEB22A] text-black shadow-md" : "bg-[#C47E00] text-white shadow-[0_0_24.3px_0_rgba(255,255,255,0.66)]"
@@ -183,8 +185,8 @@ const Navbar = () => {
           {/* Single Link Items */}
           {[
             { label: 'TICKETS & OFFERS', href: '/offers' },
-            { label: 'ABOUT US', href: '#' },
-            { label: 'CONTACT US', href: '#' },
+            { label: 'ABOUT US', href: '/about' },
+            { label: 'CONTACT US', href: '/contact' },
           ].map((item) => (
             <Link 
               key={item.label} 

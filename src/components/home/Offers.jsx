@@ -42,7 +42,7 @@ const Offers = ({ heading, offersList = [] }) => {
               0: { slidesPerView: 1.2, centeredSlides: true },
               640: { slidesPerView: 2.2 },
               1024: { slidesPerView: 3.5 },
-              1300: { slidesPerView: 4.2 },
+              1300: { slidesPerView: 3.7 },
             }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             loop={offersList.length > 4}
@@ -60,7 +60,7 @@ const Offers = ({ heading, offersList = [] }) => {
                     <div className="text-[#80050A] font-semibold text-xl sm:text-[24px] md:text-[26px] line-clamp-1">
                       {item.name}
                     </div>
-                    <ul className="list-disc ml-5 mt-2 text-[#474747] font-normal text-sm h-[60px] overflow-hidden">
+                    <ul className="list-disc  mt-2 text-[#474747] font-normal text-sm h-[60px] overflow-hidden">
                       {item.point?.map((p) => (
                         <li key={p.id} className="line-clamp-2">{p.point}</li>
                       )) || <li>No details available</li>}

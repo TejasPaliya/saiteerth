@@ -9,7 +9,7 @@ const TopDestination = ({ data }) => {
   const charLimit = 20;
 
   return (
-    <div>
+    <div className='hidden'>
       <div
         className="text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl mt-8 md:text-5xl lg:text-[55px] text-center"
       >
