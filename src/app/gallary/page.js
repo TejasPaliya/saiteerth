@@ -4,6 +4,7 @@ import GalleryTabs from "@/components/gallary/GallaryTabs";
 import PhotoTips from "@/components/gallary/PhotoTips";
 import PhotoTypes from "@/components/gallary/PhotoTypes";
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import InfluencerHero from "@/components/influencer/InfluencerHero";
 import Navbar from "@/components/Navbar";
 
@@ -16,5 +17,6 @@ export default function Group(){
         <PhotoTypes></PhotoTypes>
         <PhotoTips></PhotoTips>
         <Footer></Footer>
+        <MobileBottomBar></MobileBottomBar>
     </div>);
 }

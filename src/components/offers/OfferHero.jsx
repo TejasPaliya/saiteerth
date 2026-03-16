@@ -2,7 +2,7 @@ import React from 'react';
 
 const OfferHero = ({ videoSrc, description }) => {
   return (
-  <div className="relative w-full h-[60vh] md:h-[100vh] overflow-hidden flex flex-col">
+  <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden flex flex-col">
 
       {/* bg video */}
       <video

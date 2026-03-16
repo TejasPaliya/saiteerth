@@ -1,6 +1,7 @@
 import BlogHero from "@/components/blog/BlogHero";
 import BlogList from "@/components/blog/BlogList";
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import PlanVisit from "@/components/home/PlanVisit";
 import Navbar from "@/components/Navbar";
 
@@ -31,6 +32,7 @@ export default async function Blog({ searchParams }) {
       <BlogList blogs={blogs} pagination={pagination} />
       <PlanVisit />
       <Footer />
+      <MobileBottomBar></MobileBottomBar>
     </div>
   );
 }

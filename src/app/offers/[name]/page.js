@@ -1,4 +1,5 @@
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Navbar from "@/components/Navbar";
 import AvailFaq from "@/components/offer-single/AvailFaq";
 import AvailNavbar from "@/components/offer-single/AvailNavbar";
@@ -42,6 +43,7 @@ export default async function Offers({ params }) {
 <AvailOffer details={offerData.details} />
 <AvailSteps steps={offerData.steps} />
 <AvailFaq faqs={offerData.faq} />
+<MobileBottomBar></MobileBottomBar>
 <Footer></Footer>
     </div>
   );

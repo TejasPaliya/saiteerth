@@ -39,7 +39,7 @@ const BlogList = ({ blogs = [], pagination = {} }) => {
   const pageNumbers = getPageNumbers(currentPage, pageCount);
 
   return (
-    <div className="bg-[#FFF5E2]">
+    <div className="">
       <div className="grid grid-cols-1 mx-auto md:grid-cols-3 gap-6 p-4 md:p-16 max-w-[1600px]">
         {blogs.length === 0 && (
           <div className="col-span-full text-center py-16">

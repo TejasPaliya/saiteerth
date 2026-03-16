@@ -3,10 +3,10 @@ import { CheckCircle2, Heart, MapPin, BookOpen } from 'lucide-react';
 
 const GallaryImages = () => {
   const mainGallery = [
-    { title: "Samadhi Mandir", subtitle: "Holy Shrine", featured: true },
-    { title: "Shirdi Temple", subtitle: "Sacred Place", featured: false },
-    { title: "Darshan Pictures", subtitle: "Divine Moments", featured: false },
-    { title: "Sai Baba HD", subtitle: "High Quality", featured: false },
+    { title: "Samadhi Mandir", subtitle: "Holy Shrine", featured: true, img:"/s1.png" },
+    { title: "Shirdi Temple", subtitle: "Sacred Place", featured: false, img:"/s2.png"},
+    { title: "Darshan Pictures", subtitle: "Divine Moments", featured: false, img:"/s3.png" },
+    { title: "Sai Baba HD", subtitle: "High Quality", featured: false, img:"/s4.png" },
   ];
 
   const features = [
@@ -39,7 +39,7 @@ const GallaryImages = () => {
                 </span>
               )}
               <img
-                src={`/s1.png`}
+                src={item.img}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />

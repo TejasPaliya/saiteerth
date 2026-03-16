@@ -38,7 +38,7 @@ const OfferCard = ({ offer }) => {
           {/* View More Link */}
           <Link 
             href={detailUrl} 
-            className="bg-[#FEB22A] flex-1 rounded-[12px] p-2 text-center font-semibold text-[#7F050A] cursor-pointer hover:bg-[#ffc14d] transition-colors"
+            className="bg-[#FEB22A] flex-1 rounded-[12px] p-2 text-center font-semibold text-black cursor-pointer hover:bg-[#ffc14d] transition-colors"
           >
             View More
           </Link>

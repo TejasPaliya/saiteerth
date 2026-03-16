@@ -1,4 +1,5 @@
 import Footer from '@/components/home/Footer';
+import MobileBottomBar from '@/components/home/MobileBottomBar';
 import Navbar from '@/components/Navbar';
 import React from 'react';
 
@@ -32,9 +33,9 @@ export default async function BlogPage({ params }) {
   return (
     <div>
         <Navbar></Navbar>
-        <article className=" mt-16 mx-auto px-6 lg:px-12 py-16 font-sans antialiased text-slate-900">
+        <article className=" mt-36 mx-auto px-6 lg:px-12 py-16 font-sans antialiased text-slate-900">
           {/* 1. Main Heading */}
-          <h1 className="text-4xl max-w-4xl mx-auto md:text-5xl font-black text-center mb-12 tracking-tight">
+          <h1 className="text-4xl font-['Anek_Latin'] max-w-4xl mx-auto md:text-6xl font-black text-center mb-12 tracking-tight">
             {heading}
           </h1>
           {/* 2. Featured Image (Static for now, as per your screenshot) */}
@@ -72,6 +73,7 @@ export default async function BlogPage({ params }) {
           </div>
         </article>
         <Footer></Footer>
+        <MobileBottomBar></MobileBottomBar>
     </div>
   );
 }

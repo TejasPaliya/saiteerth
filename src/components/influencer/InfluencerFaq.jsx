@@ -67,7 +67,7 @@ export default function InfluencerFaq() {
   };
 
   return (
-    <div className="mt-12 px-4">
+    <div className="mt-8 px-4 mb-8">
       <div className="text-[#892201] font-['Anek_Latin'] font-bold not-italic text-3xl sm:text-4xl md:text-5xl lg:text-[55px] text-center">
         Frequently Asked Questions
       </div>
@@ -83,11 +83,7 @@ export default function InfluencerFaq() {
         ))}
       </div>
 
-      <div className="flex justify-center my-8">
-        <button className="rounded-[50px] capitalize font-['Anek_Latin'] mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-3 px-10 font-bold text-lg md:text-2xl cursor-pointer">
-          Explore All FAQs
-        </button>
-      </div>
+    
     </div>
   );
 }

@@ -2,6 +2,7 @@ import AttractionHero from "@/components/attractions/AttractionHero"
 import FoodGrid from "@/components/food/FoodGrid"
 import RestaurantFoodZone from "@/components/food/RestaurantFoodZone"
 import Footer from "@/components/home/Footer"
+import MobileBottomBar from "@/components/home/MobileBottomBar"
 import InfluencerHero from "@/components/influencer/InfluencerHero"
 import Navbar from "@/components/Navbar"
 export default function Food(){
@@ -12,6 +13,7 @@ export default function Food(){
         <RestaurantFoodZone></RestaurantFoodZone>
         <FoodGrid></FoodGrid>
         <Footer></Footer>
+        <MobileBottomBar></MobileBottomBar>
         </div>
     )
 }

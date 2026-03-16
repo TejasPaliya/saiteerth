@@ -1,4 +1,5 @@
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import CollaborationSection from "@/components/influencer/CollaborationSection";
 import InfluencerFaq from "@/components/influencer/InfluencerFaq";
 import InfluencerForm from "@/components/influencer/InfluencerForm";
@@ -10,12 +11,13 @@ export default function Influencer(){
   return (
     <>
     <Navbar></Navbar>
-    <InfluencerHero heading="Create Unforgettable Group Experiences" description="Plan the perfect group outing with our specialized group packages. From team-building to family gatherings, we've curated everything you need for an amazing day at the park."></InfluencerHero>
+    <InfluencerHero heading="Are you a content creator" description="Interested in collaborating with us? Fill out the form below and we’ll reach out to you."></InfluencerHero>
       <CollaborationSection />
       
       <InfluencerForm />
       <InfluencerTerms></InfluencerTerms>
       <InfluencerFaq></InfluencerFaq>
+      <MobileBottomBar></MobileBottomBar>
       <Footer></Footer>
     </>
   );

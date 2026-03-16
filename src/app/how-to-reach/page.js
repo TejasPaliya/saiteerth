@@ -1,4 +1,5 @@
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Cities from "@/components/how-to-reach/Cities";
 import Journey from "@/components/how-to-reach/Journey";
 import JourneyAndCTA from "@/components/how-to-reach/JourneyAndCTA";
@@ -17,6 +18,7 @@ export default function HowToReach(){
         <Journey></Journey>
         <InfluencerFaq></InfluencerFaq>
         <JourneyAndCTA></JourneyAndCTA>
+        <MobileBottomBar></MobileBottomBar>
         <Footer></Footer>
         </>
     );

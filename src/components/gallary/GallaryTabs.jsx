@@ -17,56 +17,48 @@ const GalleryTabs = () => {
     'AMBIANCE': {
       description: "Sai Teerth, located in the holy town of Shirdi, is India's first devotional theme park dedicated to the revered saint Sai Baba. The park boasts an impressive ambiance with exceptional architectural design and finishing that is well-managed, clean and highly innovative.",
       images: [
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
+        '/i11.png',
+        '/i12.png',
+        '/i13.png',
+        '/i14.png',
+        '/i15.png',
+        '/i16.png',
       ]
     },
     'TEERTH YATRA': {
       description: "Embark on a divine journey across India's most famous pilgrimage sites. Experience the spiritual essence of the 12 Jyotirlingas and Char Dham in one spectacular robotic show.",
       images: [
-         '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
+         '/i21.png',
+        '/i22.png',
+        '/i23.png',
+        '/i24.png',
+        '/i25.png',
+        '/i26.png',
+      
       ]
     },
     'LANKA DAHAN': {
       description: "Witness the epic 5D experience of Hanuman's heroics in Lanka. Feel the heat, the wind, and the thrill of the battle in this state-of-the-art cinematic attraction.",
       images: [
-          '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
+        '/i31.png',
+        '/i32.png',
+        '/i33.png',
       ]
     },
     'SABKA MALIK EK': {
       description: "A soul-stirring hour-long show portraying the life and teachings of Sai Baba. This production uses giant screens and incredible acoustics to bring history to life.",
       images: [
-   '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
+
+         '/i41.png',
+        '/i42.png',
       ]
     },
     'DWARKAMAI': {
       description: "Step into a world-class animatronics show where Sai Baba himself speaks to the devotees. A truly immersive experience that bridges the gap between the past and present.",
       images: [
-       '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
-        '/i1.jpg',
-        '/i2.jpg',
-        '/i3.jpg',
+      '/i51.png',
+        '/i52.png',
+        '/i53.png',
       ]
     }
   };

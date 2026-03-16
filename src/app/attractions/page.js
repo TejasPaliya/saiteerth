@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Offers from "@/components/home/Offers";
 import Stories from "@/components/home/Stories";
 import AttractionGrid from "@/components/attractions/AttractionsGrid";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 
 async function getAttractionsPageData() {
   const allAttractionUrl = "http://13.48.85.216:1337/api/all-attraction?populate=*";
@@ -57,6 +58,7 @@ export default async function Attractions() {
       <Accordion data={pageData.faq} />
       <PlanVisit />
       <Footer />
+      <MobileBottomBar></MobileBottomBar>
     </div>
   );
 }

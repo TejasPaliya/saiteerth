@@ -18,17 +18,20 @@ const Navbar = () => {
       { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
       { name: "Dwarkamai", href: "/attractions/dwarkamai" },
       { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
+      { name: "Laser Show", href: "/attractions/laser-show" },
+      { name: "Saibaba Mosaic", href: "/attractions/saibaba-mosaic" },
     ],
     reach: [
       { name: "How To Reach", href: "/how-to-reach" },
       { name: "Foods & Beverages", href: "/food" },
       { name: "Guest Facilities", href: "/guest" },
-      { name: "Influencers", href: "/influencer" },
+     
     ],
     quickLinks: [
       { name: "Blog", href: "/blog" },
       { name: "Gallery", href: "/gallary" },
        { name: "Group Enquiries", href: "/group" },
+        { name: "Influencers", href: "/influencer" },
     ],
   };
 
@@ -96,14 +99,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center gap-2">
             <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[14px] border border-[#FEB22A] ${scrolled ? "bg-[#FEB22A] text-black" : "bg-[#C47E00] text-white"} p-1 px-3`}>
               BOOK NOW
             </Link>
             <button onClick={() => setDrawerOpen(true)}>
-              <svg width="36" height="26" viewBox="0 0 36 26" fill="none">
-                <path d="M34.5938 11.25H1.40625M34.5938 1.40625H1.40625M34.5938 23.9062H1.40625" stroke={scrolled ? "#000" : "#fff"} strokeWidth="3" />
-              </svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
+  <path d="M19.5 0C8.74735 0 0 8.74735 0 19.5C0 30.2526 8.74735 39 19.5 39C30.2526 39 39 30.2526 39 19.5C39 8.74735 30.2526 0 19.5 0ZM27.625 27.625H11.375C10.4764 27.625 9.75 26.8971 9.75 26.0001C9.75 25.1031 10.4764 24.3751 11.375 24.3751H27.6249C28.5235 24.3751 29.2499 25.1031 29.2499 26.0001C29.25 26.897 28.5236 27.625 27.625 27.625ZM27.625 21.125H11.375C10.4764 21.125 9.75 20.397 9.75 19.5C9.75 18.603 10.4764 17.875 11.375 17.875H27.6249C28.5235 17.875 29.2499 18.603 29.2499 19.5C29.2499 20.397 28.5236 21.125 27.625 21.125ZM27.625 14.625H11.375C10.4764 14.625 9.75 13.897 9.75 13C9.75 12.103 10.4764 11.3751 11.375 11.3751H27.6249C28.5235 11.3751 29.2499 12.103 29.2499 13C29.2499 13.897 28.5236 14.625 27.625 14.625Z" fill="white"/>
+</svg>
             </button>
           </div>
         </div>
@@ -126,16 +129,16 @@ const Navbar = () => {
           <div className="border-b">
             <div 
               onClick={() => setMobileSubMenu(mobileSubMenu === 'attractions' ? null : 'attractions')}
-              className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
+              className="flex justify-between items-center p-4 pb-4 cursor-pointer hover:bg-gray-50"
             >
-              <span className="font-semibold text-[20px] text-[#616060] uppercase">Attractions</span>
+              <span className="font-semibold text-[15px] text-[#000000] uppercase">Attractions</span>
               <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'attractions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'attractions' ? 'max-h-96' : 'max-h-0'}`}>
               {menuData.attractions.map((link, idx) => (
-                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-2 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
                   {link.name}
                 </Link>
               ))}
@@ -148,14 +151,14 @@ const Navbar = () => {
               onClick={() => setMobileSubMenu(mobileSubMenu === 'reach' ? null : 'reach')}
               className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
             >
-              <span className="font-semibold text-[20px] text-[#616060] uppercase">Plan Your Visit</span>
+              <span className="font-semibold text-[15px] text-[#000000] uppercase">Plan Your Visit</span>
               <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'reach' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'reach' ? 'max-h-60' : 'max-h-0'}`}>
               {menuData.reach.map((link, idx) => (
-                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-2 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
                   {link.name}
                 </Link>
               ))}
@@ -168,14 +171,14 @@ const Navbar = () => {
               onClick={() => setMobileSubMenu(mobileSubMenu === 'quickLinks' ? null : 'quickLinks')}
               className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
             >
-              <span className="font-semibold text-[20px] text-[#616060] uppercase">Quick Links</span>
+              <span className="font-semibold text-[15px] text-[#000000] uppercase">Quick Links</span>
               <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'quickLinks' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
             <div className={`bg-gray-50 overflow-hidden transition-all duration-300 ${mobileSubMenu === 'quickLinks' ? 'max-h-60' : 'max-h-0'}`}>
               {menuData.quickLinks.map((link, idx) => (
-                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-3 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
+                <Link key={idx} href={link.href} onClick={() => setDrawerOpen(false)} className="block p-2 pl-8 text-[#80050A] font-medium border-b border-gray-100 last:border-none">
                   {link.name}
                 </Link>
               ))}
@@ -192,7 +195,7 @@ const Navbar = () => {
               key={item.label} 
               href={item.href} 
               onClick={() => setDrawerOpen(false)}
-              className="p-4 border-b font-semibold text-[20px] text-[#616060] block hover:bg-gray-50 uppercase"
+              className="p-4 border-b font-semibold text-[15px] text-[#000000] block hover:bg-gray-50 uppercase"
             >
               {item.label}
             </Link>

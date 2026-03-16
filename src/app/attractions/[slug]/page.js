@@ -2,6 +2,7 @@ import AttractionHero from "@/components/attractions/AttractionHero";
 import FiveD from "@/components/attractions/FiveD";
 import Section from "@/components/attractions/Section";
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Offers from "@/components/home/Offers";
 import Stories from "@/components/home/Stories";
 import Navbar from "@/components/Navbar";
@@ -60,6 +61,7 @@ export default async function Attractions({ params }) {
                     </a>
           </div>
       <Footer></Footer>
+      <MobileBottomBar></MobileBottomBar>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Footer from "@/components/home/Footer";
+import MobileBottomBar from "@/components/home/MobileBottomBar";
 import PlanVisit from "@/components/home/PlanVisit";
 import Navbar from "@/components/Navbar";
 import Notes from "@/components/offers/Notes";
@@ -9,7 +10,7 @@ import RegularTicket from "@/components/offers/RegularTicket";
 async function getPageData() {
   const [allOfferRes, offersRes] = await Promise.all([
     fetch("http://13.48.85.216:1337/api/all-offer?populate=*", { cache: "no-store" }),
-    fetch("http://13.48.85.216:1337/api/offers?populate=*", { cache: "no-store" })
+    fetch("http://13.48.85.216:1337/api/offers?populate=*&sort=seq", { cache: "no-store" })
   ]);
 
   const allOfferData = await allOfferRes.json();
@@ -44,6 +45,7 @@ export default async function Offers() {
       />
       
       <PlanVisit />
+      <MobileBottomBar></MobileBottomBar>
       <Footer></Footer>
     </div>
   );

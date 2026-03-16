@@ -74,7 +74,7 @@ const collaborationReasons = [
 
 export default function CollaborationSection() {
   return (
-    <section className={`${anekLatin.variable} font-sans bg-[#FFF5E2] py-20 pb-4 px-6 min-h-screen flex flex-col items-center`}>
+    <section className={`${anekLatin.variable} font-sans bg-white py-0 pb-4 pt-20 px-6 min-h-screen flex flex-col items-center`}>
       <h2 className="text-4xl md:text-5xl font-bold text-[#333] mb-16 text-center">
         Why Collaborate{' '}
         <span className="bg-gradient-to-b from-[#CD3F0D] to-[#80050A] bg-clip-text text-transparent">
@@ -86,7 +86,7 @@ export default function CollaborationSection() {
         {collaborationReasons.map((item, index) => (
           <div 
             key={index} 
-            className="bg-white rounded-[40px] p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start gap-4"
+            className="bg-[#FFF5E2] rounded-[40px] p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start gap-4"
           >
             {/* Icon Container */}
             <div className="bg-[#FBBC05] text-[#5A0308] p-4 rounded-full flex items-center justify-center">

@@ -16,7 +16,7 @@ const InfluencerTerms = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#CD3F0D] flex flex-col items-center justify-center p-6 font-['Anek_Latin'] text-white">
+    <div className="min-h-screen hidden bg-[#CD3F0D] flex flex-col items-center justify-center p-6 font-['Anek_Latin'] text-white">
       <div className=" w-full">
         <h1 className="text-3xl md:text-[60px] font-['Anek_Latin'] font-bold text-center mb-10 tracking-wide">
           Terms & Conditions

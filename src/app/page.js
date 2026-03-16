@@ -13,6 +13,7 @@ import Accordion from "@/components/home/Faq";
 import PlanVisit from "@/components/home/PlanVisit";
 import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Footer from "@/components/home/Footer";
+import Vip from "@/components/home/Vip";
 
 async function getHomePageData() {
   const homeUrl = "http://13.48.85.216:1337/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*&populate[review][populate][comments][populate]=*&populate[instagram][populate][logo][populate]=*&populate[instagram][populate][reel][populate]=*";
@@ -65,6 +66,7 @@ export default async function Home() {
       <Indoore data={indoor}  />
       
       <Eat data={eats} />
+      <Vip></Vip>
       <Youtube data={youtube} />
       <TopDestination data={destination} />
       <Insta data={instagram} />
