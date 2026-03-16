@@ -35,10 +35,10 @@ export default function RestaurantFoodZone() {
         
         {/* Left Column: Text & Video */}
         <div className="flex flex-col pr-0 lg:pr-8">
-          <p className="text-[#D34E24] font-['Anek_Latin'] text-sm font-semibold mb-2">
+          <p className="text-[#D34E24] font-['Anek_Latin'] max-md:text-center text-sm font-semibold mb-2">
             Main Restaurant
           </p>
-          <h2 className="text-4xl font-['Anek_Latin'] md:text-5xl font-extrabold text-[#7A1517] leading-tight mb-4">
+          <h2 className="text-4xl font-['Anek_Latin'] md:text-5xl max-md:text-center font-extrabold text-[#7A1517] leading-tight mb-4">
             Restaurant & <br /> Food Zone
           </h2>
           <p className="text-gray-800 text-base mb-8 font-['Anek_Latin']">

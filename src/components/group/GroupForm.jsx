@@ -27,7 +27,7 @@ export default function GroupForm() {
   };
 
   return (
-    <div className="min-h-screen relative bg-[#CD3F0D] overflow-hidden flex flex-col items-center py-16 pt-4 px-4 font-sans">
+    <div className=" relative bg-[#CD3F0D] overflow-hidden flex flex-col items-center py-16 pb-0 pt-4 px-4 font-sans">
       
       {/* Curved Background Shape (Cream) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] h-[300px] md:h-[400px] bg-[#FFF5E2] rounded-b-[50%_90%] z-0 pointer-events-none"></div>

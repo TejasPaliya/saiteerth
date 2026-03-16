@@ -1,7 +1,7 @@
 import Footer from "@/components/home/Footer";
 import MobileBottomBar from "@/components/home/MobileBottomBar";
 import Navbar from "@/components/Navbar";
-import AvailFaq from "@/components/offer-single/AvailFaq";
+import Accordion from "@/components/home/Faq";
 import AvailNavbar from "@/components/offer-single/AvailNavbar";
 import AvailOffer from "@/components/offer-single/AvailOffer";
 import AvailSteps from "@/components/offer-single/AvailSteps";
@@ -42,7 +42,7 @@ export default async function Offers({ params }) {
 />
 <AvailOffer details={offerData.details} />
 <AvailSteps steps={offerData.steps} />
-<AvailFaq faqs={offerData.faq} />
+<Accordion data={offerData.faq} />
 <MobileBottomBar></MobileBottomBar>
 <Footer></Footer>
     </div>

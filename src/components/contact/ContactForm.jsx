@@ -10,7 +10,7 @@ const ContactForm = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className="text-5xl font-bold text-[#892201]">Let's Connect</h2>
-            <p className="text-gray-700 text-lg max-w-md">
+            <p className="text-gray-700 text-2xl max-w-md">
               We're here to help with any questions or requests you have—reach out to us today!
             </p>
             <div className="w-full h-[1px] bg-gray-200 mt-4"></div>
@@ -20,9 +20,9 @@ const ContactForm = () => {
             {/* Address */}
             <div className="flex items-start gap-4">
               <div className="bg-[#892201] p-3 rounded-full shrink-0">
-                <MapPin className="text-white w-6 h-6" />
+                <MapPin className="text-white w-10 h-10" />
               </div>
-              <p className="text-gray-800 leading-tight">
+              <p className="text-gray-800 text-2xl leading-tight">
                 Near Sun-N-Sand Hotel, Post. Nighoj, Taluka. Rahata, Ahilyanagari (Ahmednagar), Shirdi, Maharashtra 423109
               </p>
             </div>
@@ -30,17 +30,17 @@ const ContactForm = () => {
             {/* Phone */}
             <div className="flex items-center gap-4">
               <div className="bg-[#892201] p-3 rounded-full shrink-0">
-                <Phone className="text-white w-6 h-6" />
+                <Phone className="text-white w-10 h-10" />
               </div>
-              <p className="text-gray-800 font-medium">+91 97675 40000</p>
+              <p className="text-gray-800 text-2xl font-medium">+91 97675 40000</p>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-4">
               <div className="bg-[#892201] p-3 rounded-full shrink-0">
-                <Mail className="text-white w-6 h-6" />
+                <Mail className="text-white w-10 h-10" />
               </div>
-              <p className="text-gray-800 font-medium">enquiry@saiteerth.in</p>
+              <p className="text-gray-800 text-2xl font-medium">enquiry@saiteerth.in</p>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export default function Influencer(){
   return (
     <>
     <Navbar></Navbar>
-    <InfluencerHero heading="Are you a content creator" description="Interested in collaborating with us? Fill out the form below and we’ll reach out to you."></InfluencerHero>
+    <InfluencerHero heading="Are You A Content Creator?" description="Interested in collaborating with us? Fill out the form below and we’ll reach out to you."></InfluencerHero>
       <CollaborationSection />
       
       <InfluencerForm />

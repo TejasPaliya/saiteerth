@@ -21,8 +21,12 @@ const OfferSingleHero = ({ title, description, imageUrl }) => {
       </div>
 
       {/* CTA Button */}
-      <div className="text-[#80050A] cursor-pointer hover:bg-[#eab004] transition-colors font-['Anek_Latin'] text-[23px] font-bold leading-normal uppercase rounded-[41.5px] bg-[#FBBC05] p-4 py-2 mt-6 mx-auto w-fit">
-        Avail This Offer
+     <div className="flex justify-center mt-8 md:mt-12 pb-16 md:pb-0">
+        <button className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
+          <span className="font-['Anek_Latin',sans-serif] font-bold text-[#000000] text-xl md:text-[29px] uppercase">
+            AVAIL THIS OFFER
+          </span>
+        </button>
       </div>
     </div>
   )

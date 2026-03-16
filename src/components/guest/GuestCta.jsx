@@ -9,7 +9,7 @@ const anekLatin = Anek_Latin({
 export default function GuestCta() {
   return (
     <section className={`${anekLatin.className} flex justify-center p-6`}>
-      <div className="bg-[#CD3F0D] w-full max-w-4xl rounded-[40px] px-8 py-2 md:py-16 flex flex-col items-center text-center text-white shadow-xl">
+      <div className="bg-[#CD3F0D] w-full max-w-4xl rounded-[40px] px-2 md:px-8 py-8 md:py-16 flex flex-col items-center text-center text-white shadow-xl">
         
         {/* Main Heading */}
         <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">

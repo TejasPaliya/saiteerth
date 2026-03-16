@@ -9,10 +9,10 @@ const AboutCta = () => {
         {/* Left Content Side */}
         <div className="space-y-8">
           <header>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#892201] leading-tight mb-6">
-              India's First Devotional <br /> Theme Park
+            <h2 className="text-4xl md:text-5xl lg:text-6xl max-md:text-center font-extrabold text-[#892201] leading-tight mb-6">
+              India's First Devotional <br className='max-md:hidden'/> Theme Park
             </h2>
-            <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-700 max-md:text-center text-lg leading-relaxed">
               <p>
                 Situated in the holy town of Shirdi, Sai Teerth is India's first 
                 devotional theme park dedicated to the revered saint Sai Baba. 
@@ -28,7 +28,7 @@ const AboutCta = () => {
           </header>
 
           {/* Icons/Features Section */}
-          <div className="flex flex-wrap gap-8 pt-4">
+          <div className="flex  gap-8 pt-4">
             <div className="flex flex-col items-center gap-3 w-32">
               <div className="w-16 h-16 bg-[#cc3300] rounded-2xl flex items-center justify-center text-white shadow-lg">
                 <Theater size={32} />

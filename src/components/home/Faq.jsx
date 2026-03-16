@@ -60,11 +60,7 @@ export default function Accordion({ data }) {
           />
         ))}
       </div>
-      <div className="flex justify-center my-8">
-        <span className="rounded-[50px] capitalize font-['Anek_Latin'] mt-6 bg-[#FCD503] hover:text-[25px] p-2 px-8 font-bold text-lg md:text-2xl cursor-pointer">
-          Explore All FAQs
-        </span>
-      </div>
+   
     </div>
   );
 }

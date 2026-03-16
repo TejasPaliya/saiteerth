@@ -43,7 +43,7 @@ const features = [
 
 const GroupGrid = () => {
   return (
-    <section className="font-['Anek_Latin'] min-h-screen py-16 px-4 flex flex-col items-center justify-center bg-[linear-gradient(180deg,#CD3F0D_0%,#80050A_100%)]">
+    <section className="font-['Anek_Latin'] min-h-screen py-16 pt-12 px-4 flex flex-col items-center justify-center bg-[linear-gradient(180deg,#CD3F0D_0%,#80050A_100%)]">
       {/* Header Section */}
       <div className="text-center mb-12 max-w-2xl">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

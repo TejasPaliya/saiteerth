@@ -29,9 +29,9 @@ const PlanVisit = () => {
           <div className="font-['Anek_Latin'] font-semibold text-[24px] md:text-[26px] md:text-[32px] lg:text-[38px] text-center text-[#CD3F0D] mt-2 mb-4">
             How To Reach?
           </div>
-          <div className="rounded-[22.5px] px-6 py-2 bg-[#CD3F0D] font-['Anek_Latin'] font-semibold text-white cursor-pointer">
+          <a href='/how-to-reach' className="rounded-[22.5px] px-6 py-2 bg-[#CD3F0D] font-['Anek_Latin'] font-semibold text-white cursor-pointer">
             Get Directions
-          </div>
+          </a>
         </div>
 
         <div className="bg-white rounded-2xl p-6 flex flex-col items-center w-full max-w-[350px] hover:shadow-lg transition-shadow">
@@ -39,9 +39,9 @@ const PlanVisit = () => {
           <div className="font-['Anek_Latin'] font-semibold text-[24px] md:text-[26px] md:text-[32px] lg:text-[38px] text-center text-[#CD3F0D] mt-2 mb-4">
            Group Enquiry
           </div>
-          <div className="rounded-[22.5px] px-6 py-2 bg-[#CD3F0D] font-['Anek_Latin'] font-semibold text-white cursor-pointer">
+          <a href='/group' className="rounded-[22.5px] px-6 py-2 bg-[#CD3F0D] font-['Anek_Latin'] font-semibold text-white cursor-pointer">
             Enquire Now
-          </div>
+          </a>
         </div>
 
       </div>

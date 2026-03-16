@@ -31,16 +31,13 @@ const JourneyAndCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="bg-white text-[#CD3F0D] px-10 py-5 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-transform flex items-center gap-3">
+            <a href='https://maps.app.goo.gl/yYvcYSNkhXZKHvcM9?g_st=iwb' className="bg-white text-[#CD3F0D] px-10 py-5 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-transform flex items-center gap-3">
               <MapPin size={20} className="fill-[#CD3F0D]/20" />
               Get Directions
               <MoveRight size={20} />
-            </button>
+            </a>
             
-            <button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-full font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3">
-              <Compass size={20} />
-              Explore Nearby
-            </button>
+          
           </div>
         </div>
       </section>

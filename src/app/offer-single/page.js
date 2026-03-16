@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import AvailFaq from "@/components/offer-single/AvailFaq";
+import Accordion from "@/components/home/Faq";
 import AvailNavbar from "@/components/offer-single/AvailNavbar";
 import AvailOffer from "@/components/offer-single/AvailOffer";
 import AvailSteps from "@/components/offer-single/AvailSteps";
@@ -12,7 +12,7 @@ export default function OffersSingle() {
 <OfferSingleHero></OfferSingleHero>
 <AvailOffer></AvailOffer>
 <AvailSteps></AvailSteps>
-<AvailFaq></AvailFaq>
+<Accordion></Accordion>
     </div>
   );
 }
