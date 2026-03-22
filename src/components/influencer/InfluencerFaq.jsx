@@ -59,8 +59,10 @@ function AccordionItem({ faq, isOpen, onClick }) {
   );
 }
 
-export default function InfluencerFaq() {
+export default function InfluencerFaq({ faqData }) {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const displayFaqs = faqData && faqData.length > 0 ? faqData : DUMMY_FAQS;
 
   const handleClick = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -73,7 +75,7 @@ export default function InfluencerFaq() {
       </div>
       
       <div className="max-w-6xl mx-auto mt-10 border rounded shadow-sm overflow-hidden">
-        {DUMMY_FAQS.map((faq, index) => (
+        {displayFaqs.map((faq, index) => (
           <AccordionItem
             key={faq.id}
             faq={faq}

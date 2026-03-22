@@ -8,7 +8,16 @@ import InfluencerFaq from "@/components/influencer/InfluencerFaq";
 import InfluencerHero from "@/components/influencer/InfluencerHero";
 import Navbar from "@/components/Navbar";
 
-export default function HowToReach(){
+export default async function HowToReach(){
+    let faqData = null;
+    try {
+        const res = await fetch("http://13.48.85.216:1337/api/how-to-reach?populate=*", { next: { revalidate: 60 } });
+        const json = await res.json();
+        faqData = json?.data?.faq || null;
+    } catch (error) {
+        console.error(error);
+    }
+
     return(
         <>
         <Navbar></Navbar>
@@ -16,7 +25,7 @@ export default function HowToReach(){
         <Nearby></Nearby>
         <Cities></Cities>
         <Journey></Journey>
-        <InfluencerFaq></InfluencerFaq>
+        <InfluencerFaq faqData={faqData}></InfluencerFaq>
         <JourneyAndCTA></JourneyAndCTA>
         <MobileBottomBar></MobileBottomBar>
         <Footer></Footer>

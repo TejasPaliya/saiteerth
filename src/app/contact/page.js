@@ -7,13 +7,22 @@ import InfluencerFaq from "@/components/influencer/InfluencerFaq";
 import InfluencerHero from "@/components/influencer/InfluencerHero";
 import Navbar from "@/components/Navbar";
 
-export default function Contact(){
+export default async function Contact(){
+    let faqData = null;
+    try {
+        const res = await fetch("http://13.48.85.216:1337/api/contact?populate=*", { next: { revalidate: 60 } });
+        const json = await res.json();
+        faqData = json?.data?.faq || null;
+    } catch (error) {
+        console.error(error);
+    }
+
     return (<div>
         <Navbar></Navbar>
         <InfluencerHero heading="Contact Us" description="If you got any questions, please do not hesitate to send us a message. We reply within 24 hours !"></InfluencerHero>
         <ContactForm> </ContactForm>
 <ContactMap></ContactMap>
-        <InfluencerFaq></InfluencerFaq>
+        <InfluencerFaq faqData={faqData}></InfluencerFaq>
         <Footer></Footer>
         <MobileBottomBar></MobileBottomBar>
     </div>);
