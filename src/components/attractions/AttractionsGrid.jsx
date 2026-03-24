@@ -7,11 +7,7 @@ export default function AttractionGrid({ attractionsList = [] }) {
 
   const tabs = [
     "All Shows",
-    "5D Shows",
-    "Robotic Show",
-    "Temple Rides",
-    "Movies",
-    "Other Activity",
+ 
   ];
 
   // Filtering logic: "All Shows" shows everything, others filter by show_type
@@ -25,21 +21,7 @@ export default function AttractionGrid({ attractionsList = [] }) {
     <div className="mx-auto p-4 sm:p-6 md:px-12 bg-[#fff9ef]">
       {/* Categories Bar */}
       <div className="flex justify-center ">
-        <div className="bg-[#ffdb99] px-2 py-2 rounded-xl flex flex-wrap items-center justify-center gap-1 md:gap-4 shadow-sm">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 md:px-6 py-2 rounded-xl text-sm md:text-base font-bold transition-all duration-200 ${
-                activeTab === tab
-                  ? "bg-[#892201] text-white shadow-md" 
-                  : "text-[#4a3728] hover:bg-[#f5cc84]"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+
       </div>
 
       {/* Grid Content */}
