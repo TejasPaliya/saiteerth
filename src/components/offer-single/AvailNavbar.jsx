@@ -13,7 +13,7 @@ const AvailNavbar = () => {
     attractions: [
       { name: "All Attractions", href: "/attractions" },
       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
-      { name: "Kaliya Mardan", href: "/attractions/kaliya" },
+      { name: "Kaliya Mardan", href: "/attractions/kaliya-mardan" },
       { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
       { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
       { name: "Dwarkamai", href: "/attractions/dwarkamai" },

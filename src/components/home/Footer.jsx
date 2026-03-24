@@ -96,7 +96,7 @@ const footerData = {
     { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
     { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
     { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
-    { name: "Kaliya Mardan", href: "/attractions/kaliya" },
+    { name: "Kaliya Mardan", href: "/attractions/kaliya-mardan" },
     { name: "Laser Show", href: "/attractions/laser-show" },
     { name: "Saibaba Mosaic", href: "/attractions/saibaba-mosaic" },
   ],
