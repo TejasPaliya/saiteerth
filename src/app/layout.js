@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Anek_Latin } from "next/font/google";
-import { Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google';
+import Loader from "@/components/Loader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable} ${anek.variable} antialiased`}>
+        <Loader />
         {children}
       </body>
     </html>
