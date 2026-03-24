@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import { 
   User, 
   Phone, 
@@ -11,6 +13,48 @@ import {
 } from 'lucide-react';
 
 export default function GroupForm() {
+  const [formData, setFormData] = useState({
+    event_type: '',
+    name: '',
+    email: '',
+    number: '',
+    city: '',
+    date: '',
+    guest_num: ''
+  });
+  const [status, setStatus] = useState('idle');
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const response = await fetch('http://13.48.85.216:1337/api/group-forms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: formData }),
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ event_type: '', name: '', email: '', number: '', city: '', date: '', guest_num: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
+  };
+
   // Styles based on your provided theme
   const textGradientStyle = {
     background: 'linear-gradient(180deg, #CD3F0D 0%, #80050A 100%)',
@@ -50,7 +94,7 @@ export default function GroupForm() {
 
         {/* Form Card */}
         <div className="bg-white rounded-[2rem] p-6 md:p-10 w-full shadow-2xl">
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             
             {/* Event Type (Full Width) */}
             <div className="flex flex-col gap-2">
@@ -60,8 +104,10 @@ export default function GroupForm() {
               <div className="relative">
                 <select
                   required
+                  name="event_type"
+                  value={formData.event_type}
+                  onChange={handleChange}
                   className="w-full bg-[#F4F5F7] text-gray-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20 appearance-none cursor-pointer"
-                  defaultValue=""
                 >
                   <option value="" disabled>Select, School/ College, Corporate</option>
                   <option value="school">School</option>
@@ -85,6 +131,10 @@ export default function GroupForm() {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Full name"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
@@ -95,6 +145,10 @@ export default function GroupForm() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="your@email.com"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
@@ -109,6 +163,10 @@ export default function GroupForm() {
                 </label>
                 <input
                   type="tel"
+                  name="number"
+                  value={formData.number}
+                  onChange={handleChange}
+                  required
                   placeholder="10-digit number"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
@@ -119,6 +177,10 @@ export default function GroupForm() {
                 </label>
                 <input
                   type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
                   placeholder="Your city"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
@@ -133,6 +195,10 @@ export default function GroupForm() {
                 </label>
                 <input
                   type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-[#F4F5F7] text-gray-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
               </div>
@@ -143,6 +209,10 @@ export default function GroupForm() {
                 <input
                   type="number"
                   min="20"
+                  name="guest_num"
+                  value={formData.guest_num}
+                  onChange={handleChange}
+                  required
                   placeholder="Minimum 20"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent"
                 />
@@ -153,12 +223,16 @@ export default function GroupForm() {
             <div className="pt-6">
               <button
                 type="submit"
+                disabled={status === 'loading'}
                 style={buttonStyle}
-                className="w-full flex items-center justify-center gap-2 text-white font-bold text-lg py-4 transition-transform hover:scale-[1.01] active:scale-[0.99] shadow-lg"
+                className="w-full flex items-center justify-center gap-2 text-white font-bold text-lg py-4 transition-transform hover:scale-[1.01] active:scale-[0.99] shadow-lg disabled:opacity-50"
               >
-                Submit Enquiry <Send size={20} className="ml-1" />
+                {status === 'loading' ? 'Submitting...' : 'Submit Enquiry'} <Send size={20} className="ml-1" />
               </button>
             </div>
+            
+            {status === 'success' && <p className="text-green-600 font-semibold text-center mt-2">Enquiry submitted successfully!</p>}
+            {status === 'error' && <p className="text-red-600 font-semibold text-center mt-2">Failed to submit. Please try again.</p>}
             
           </form>
         </div>

@@ -1,4 +1,7 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { 
   User, 
   Phone, 
@@ -11,6 +14,48 @@ import {
 } from 'lucide-react';
 
 export default function InfluencerForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    number: '',
+    mail: '',
+    date: '',
+    subscribers: '',
+    insta_link: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('idle');
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const response = await fetch('http://13.48.85.216:1337/api/influencer-forms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: formData }),
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', number: '', mail: '', date: '', subscribers: '', insta_link: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
+  };
+
   // Custom styles provided in the prompt
   const textGradientStyle = {
     background: 'linear-gradient(180deg, #CD3F0D 0%, #80050A 100%)',
@@ -50,7 +95,7 @@ export default function InfluencerForm() {
 
         {/* Form Card */}
         <div className="bg-white rounded-[2rem] p-8 md:p-10 w-full shadow-2xl">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             
             {/* Full Name */}
             <div className="flex flex-col gap-2">
@@ -59,6 +104,10 @@ export default function InfluencerForm() {
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
                 placeholder="Enter your full name"
                 className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20"
               />
@@ -72,6 +121,10 @@ export default function InfluencerForm() {
                 </label>
                 <input
                   type="tel"
+                  name="number"
+                  value={formData.number}
+                  onChange={handleChange}
+                  required
                   placeholder="+91 XXXXXXXXXX"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20"
                 />
@@ -83,6 +136,10 @@ export default function InfluencerForm() {
                 </label>
                 <input
                   type="email"
+                  name="mail"
+                  value={formData.mail}
+                  onChange={handleChange}
+                  required
                   placeholder="your@email.com"
                   className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20"
                 />
@@ -91,17 +148,15 @@ export default function InfluencerForm() {
 
             {/* Two Column Grid: DOB & Followers */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-              {/* Note: In standard form flows, putting a line separator between rows is optional, 
-                  but the image shows a blue guiding line. You can uncomment this if needed 
-              <div className="absolute top-0 -left-10 w-[calc(100%+5rem)] h-[2px] bg-blue-500/50 hidden md:block"></div> 
-              */}
-              
               <div className="flex flex-col gap-2 z-10">
                 <label className="flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-700">
                   <Calendar size={16} className="text-[#CD3F0D]" /> Date of Birth
                 </label>
                 <input
                   type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
                   className="w-full bg-[#F4F5F7] text-gray-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20"
                 />
               </div>
@@ -112,8 +167,11 @@ export default function InfluencerForm() {
                 </label>
                 <div className="relative">
                   <select
+                    name="subscribers"
+                    value={formData.subscribers}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-[#F4F5F7] text-gray-500 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20 appearance-none cursor-pointer"
-                    defaultValue=""
                   >
                     <option value="" disabled hidden>Select follower range</option>
                     <option value="1k-10k">1K - 10K</option>
@@ -137,6 +195,10 @@ export default function InfluencerForm() {
               </label>
               <input
                 type="url"
+                name="insta_link"
+                value={formData.insta_link}
+                onChange={handleChange}
+                required
                 placeholder="https://instagram.com/yourprofile"
                 className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20"
               />
@@ -149,6 +211,9 @@ export default function InfluencerForm() {
               </label>
               <textarea
                 rows={4}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Tell us about your content style and collaboration ideas..."
                 className="w-full bg-[#F4F5F7] text-gray-800 placeholder-gray-400 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-[#CD3F0D]/40 transition-all border border-transparent focus:border-[#CD3F0D]/20 resize-none"
               ></textarea>
@@ -159,10 +224,11 @@ export default function InfluencerForm() {
               <input
                 type="checkbox"
                 id="terms"
+                required
                 className="w-4 h-4 accent-[#CD3F0D] bg-[#F4F5F7] border-gray-300 rounded cursor-pointer transition-colors"
               />
               <label htmlFor="terms" className="text-sm text-gray-700 font-semibold cursor-pointer select-none">
-                I agree to the Terms & Conditions *
+                I agree to the <Link href="/terms-and-conditions" className="text-[#CD3F0D] hover:underline" target="_blank" onClick={(e) => e.stopPropagation()}>Terms & Conditions</Link> *
               </label>
             </div>
 
@@ -170,12 +236,16 @@ export default function InfluencerForm() {
             <div className="pt-4 pb-2">
               <button
                 type="submit"
+                disabled={status === 'loading'}
                 style={buttonStyle}
-                className="w-full flex items-center justify-center gap-2 text-white font-medium text-[1.05rem] py-4 transition-transform hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full flex items-center justify-center gap-2 text-white font-medium text-[1.05rem] py-4 transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
               >
-                Submit Application <Send size={18} className="ml-1" />
+                {status === 'loading' ? 'Submitting...' : 'Submit Application'} <Send size={18} className="ml-1" />
               </button>
             </div>
+            
+            {status === 'success' && <p className="text-green-600 font-semibold text-center mt-2">Application submitted successfully!</p>}
+            {status === 'error' && <p className="text-red-600 font-semibold text-center mt-2">Failed to submit. Please try again.</p>}
             
           </form>
         </div>

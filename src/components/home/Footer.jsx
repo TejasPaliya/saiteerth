@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 /** * PLACEHOLDER DATA */
 const PLACEHOLDER_IMG = "/footer-bg.png";
@@ -88,6 +89,31 @@ function AccordionSection({ title, children, defaultOpen = false }) {
 
 // --- Main Footer Component ---
 
+const footerData = {
+  attractions: [
+    { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+    { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
+    { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
+    { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+    { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
+    { name: "Kaliya Mardan", href: "/attractions/kaliya" },
+    { name: "Laser Show", href: "/attractions/laser-show" },
+    { name: "Saibaba Mosaic", href: "/attractions/saibaba-mosaic" },
+  ],
+  plan: [
+    { name: "Foods & Beverages", href: "/foods-and-beverages" },
+    { name: "Guest Facility", href: "/guest-facility-at-saiteerth" },
+    { name: "How to Reach", href: "/how-to-reach" },
+
+  ],
+  quick: [
+    { name: "Gallery", href: "/gallery" },
+    { name: "Web Stories", href: "#" },
+    { name: "Blogs", href: "/blog" },
+    { name: "Influencer Collaboration", href: "/influencer" },
+  ]
+};
+
 const Footer = () => {
   return (
     <footer className="relative w-full min-h-screen overflow-hidden flex flex-col justify-between font-sans">
@@ -160,8 +186,10 @@ const Footer = () => {
               <div className="col-span-1">
                 <h3 className="font-bold text-lg mb-6">Attractions</h3>
                 <ul className="text-sm space-y-3 opacity-90">
-                  {['Dwarkamai', 'Lanka Dahan', 'Sabka Malik Ek', 'Teerth Yatra', 'Mushak Maharaj', 'Kaliya Mardan', 'Laser Show', 'Saibaba Mosaic'].map(item => (
-                    <li key={item} className="hover:text-white cursor-pointer transition-colors">{item}</li>
+                  {footerData.attractions.map(item => (
+                    <li key={item.name} className="hover:text-white cursor-pointer transition-colors">
+                      <Link href={item.href}>{item.name}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -171,18 +199,20 @@ const Footer = () => {
                 <div className="mb-8">
                   <h3 className="font-bold text-lg mb-6">Plan Your Visit</h3>
                   <ul className="text-sm space-y-3 opacity-90">
-                    {['Foods & Beverages', 'Guest Facility', 'How to Reach', 'FAQ'].map(item => (
-                      <li key={item} className="hover:text-white cursor-pointer transition-colors">{item}</li>
+                    {footerData.plan.map(item => (
+                      <li key={item.name} className="hover:text-white cursor-pointer transition-colors">
+                        <Link href={item.href}>{item.name}</Link>
+                      </li>
                     ))}
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-6">Legal</h3>
-                  <ul className="text-sm space-y-3 opacity-90">
-                    {['Terms & Conditions', 'Rules & Regulations', 'Investor Relations'].map(item => (
-                      <li key={item} className="hover:text-white cursor-pointer transition-colors">{item}</li>
-                    ))}
-                  </ul>
+                  <div className="text-sm space-y-3 opacity-90 flex flex-col">
+                    <Link href="/terms-and-conditions" className="hover:text-white cursor-pointer transition-colors">Terms & Conditions</Link>
+                    <Link href="/rules-and-regulations" className="hover:text-white cursor-pointer transition-colors">Rules & Regulations</Link>
+                    <a href="https://www.imagicaaworld.com/investor-relations/" target="_blank" rel="noopener noreferrer" className="hover:text-white cursor-pointer transition-colors">Investor Relations</a>
+                  </div>
                 </div>
               </div>
 
@@ -191,9 +221,9 @@ const Footer = () => {
                 <div className="mb-8">
                   <h3 className="font-bold text-lg mb-6">About us</h3>
                   <ul className="text-sm space-y-3 opacity-90">
-                    <li className="cursor-pointer hover:text-white">SaiTeerth- Theme park</li>
-                    <li className="cursor-pointer hover:text-white">Wet'n Joy shirdi waterpark</li>
-                    <li className="cursor-pointer hover:text-white">About Malpani Group</li>
+                    <li className="cursor-pointer hover:text-white"><Link href="/about-sai-teerth">SaiTeerth- Theme park</Link></li>
+                    <li className="cursor-pointer hover:text-white"><Link href="https://www.shirdi.wetnjoy.in/">Wet'n Joy shirdi waterpark</Link></li>
+                  
                   </ul>
                 </div>
                 <div>
@@ -205,22 +235,13 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Col 5: Quick Links & Tickets */}
-              <div className="col-span-1">
-                 <h3 className="font-bold text-lg mb-6">Quick Links</h3>
-                 <ul className="text-sm space-y-3 opacity-90 mb-8">
-                    {['Gallery', 'Web Stories', 'Blogs', 'Influencer Collaboration'].map(item => (
-                      <li key={item} className="hover:text-white cursor-pointer transition-colors">{item}</li>
-                    ))}
-                 </ul>
-                 <h3 className="font-bold text-lg mb-6 cursor-pointer hover:opacity-80">Tickets & Offers</h3>
-              </div>
+             
             </div>
 
             {/* Bottom Footer Row */}
             <div className="flex justify-between items-center text-xs text-white opacity-80 pt-4">
               <p>© 2025 Imagicaaworld Entertainment Ltd. All rights reserved.</p>
-              <p className="cursor-pointer hover:opacity-100">Privacy Policy</p>
+              <p className="cursor-pointer hover:opacity-100"><Link href="/privacy-policy">Privacy Policy</Link></p>
             </div>
 
           </div>
@@ -248,26 +269,33 @@ const Footer = () => {
             <div className="space-y-2">
               <AccordionSection title="Attractions">
                 <ul className="text-white/80 space-y-2 text-sm pl-2">
-                  <li>Dwarkamai</li><li>Lanka Dahan</li><li>Sabka Malik Ek</li><li>Teerth Yatra</li>
+                  {footerData.attractions.map(item => (
+                    <li key={item.name}><Link href={item.href}>{item.name}</Link></li>
+                  ))}
                 </ul>
               </AccordionSection>
 
               <AccordionSection title="Plan Your Visit">
                  <ul className="text-white/80 space-y-2 text-sm pl-2">
-                  <li>Guest Facility</li><li>How to Reach</li><li>FAQ</li>
+                  {footerData.plan.map(item => (
+                    <li key={item.name}><Link href={item.href}>{item.name}</Link></li>
+                  ))}
                 </ul>
               </AccordionSection>
               
                <AccordionSection title="Legal & About">
-                 <ul className="text-white/80 space-y-2 text-sm pl-2">
-                  <li>Terms & Conditions</li><li>About Malpani Group</li><li>Investor Relations</li>
-                </ul>
+                 <div className="text-white/80 space-y-2 text-sm pl-2 flex flex-col">
+                  <Link href="/terms-and-conditions">Terms & Conditions</Link>
+                  <Link href="/rules-and-regulations">Rules & Regulations</Link>
+                  <span>About Malpani Group</span>
+                  <a href="https://www.imagicaaworld.com/investor-relations/" target="_blank" rel="noopener noreferrer">Investor Relations</a>
+                </div>
               </AccordionSection>
             </div>
 
             <div className="flex flex-col items-center gap-2 mt-8 text-xs opacity-60">
               <p>© 2025 Imagicaaworld Entertainment Ltd.</p>
-              <p>Privacy Policy</p>
+              <p><Link href="/privacy-policy">Privacy Policy</Link></p>
             </div>
           </div>
         </div>
