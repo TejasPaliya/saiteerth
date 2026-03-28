@@ -43,7 +43,7 @@ const InstaCard = ({ handle, reelData }) => {
           <div className="flex gap-2">
             <img
               className="w-[30px] h-[36px]"
-              src="/insta-logo.png"
+              src="/logo.png"
               alt=""
             />
             <div>

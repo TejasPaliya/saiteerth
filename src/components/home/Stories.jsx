@@ -1,58 +1,11 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const Stories = ({ data, attractionsList = [] }) => {
   const swiperRef = useRef(null);
-  const containerRef = useRef(null);
-  const isThrottled = useRef(false);
-  const [lockScroll, setLockScroll] = useState(false);
-
-  // Detect when slider enters viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setLockScroll(entry.isIntersecting);
-      },
-      { threshold: 0.6 }
-    );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const onWheel = (e) => {
-    if (!lockScroll || !swiperRef.current) return;
-
-    const swiper = swiperRef.current;
-
-    // Release scroll if at boundaries
-    if (e.deltaY > 0 && swiper.isEnd) {
-      setLockScroll(false);
-      return;
-    }
-    if (e.deltaY < 0 && swiper.isBeginning) {
-      setLockScroll(false);
-      return;
-    }
-
-    e.preventDefault(); 
-
-    if (isThrottled.current) return;
-    isThrottled.current = true;
-
-    if (e.deltaY > 0) {
-      swiper.slideNext();
-    } else {
-      swiper.slidePrev();
-    }
-
-    setTimeout(() => {
-      isThrottled.current = false;
-    }, 120);
-  };
 
   return (
     <div
@@ -62,7 +15,7 @@ const Stories = ({ data, attractionsList = [] }) => {
       bg-top
       bg-[length:100%_auto]"
     >
-      <div className="flex flex-col items-center gap-4 px-4">
+      <div className="relative flex flex-col items-center gap-4 px-4 w-full mb-8">
         <div className="text-[#892201] text-center font-['Anek_Latin'] font-bold text-[40px] leading-[35px] md:text-[50px] lg:text-[50px] lg:leading-tight">
           {data?.heading || "Other Attractions "}
         </div>
@@ -70,12 +23,24 @@ const Stories = ({ data, attractionsList = [] }) => {
         <p className="text-black text-center font-['Poppins'] font-normal text-[14px] leading-[19px] md:text-lg lg:text-xl lg:leading-normal max-w-2xl">
           {data?.sub || "Experience Sai Baba’s life and teachings through immersive 5D shows, virtual pilgrimages, and powerful narratives."}
         </p>
+
+        {/* Navigation Arrows */}
+        <div className="absolute right-4 md:right-10 lg:right-20 top-1/2 -translate-y-1/2 flex gap-2 max-lg:hidden">
+          <button className="rounded-full bg-[#D9D9D9] h-fit p-2 py-3 hover:bg-gray-300 transition-colors" onClick={() => swiperRef.current?.slidePrev()}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="28" viewBox="0 0 35 28" fill="none">
+              <path d="M13.0405 27.3469C13.9121 28.1805 15.3252 28.1802 16.1965 27.3469C17.0683 26.5128 17.0683 25.161 16.1962 24.3269L7.6205 16.1222L32.4539 16.1199C33.6864 16.1196 34.6853 15.1639 34.6853 13.9841C34.685 12.8049 33.6861 11.8494 32.4536 11.8494L7.61931 11.8517L16.1971 3.64527C17.0686 2.81139 17.0686 1.45908 16.1971 0.625481C15.7611 0.208683 15.1901 0 14.6188 0C14.0478 0 13.4768 0.208683 13.0408 0.625196L0.653739 12.4766C0.235073 12.8769 0 13.4198 0 13.9864C0.000297559 14.5529 0.23537 15.0955 0.654036 15.4967L13.0405 27.3469Z" fill="#80050A"/>
+            </svg>
+          </button>
+          <button className="rounded-full bg-[#D9D9D9] h-fit p-2 py-3 hover:bg-gray-300 transition-colors" onClick={() => swiperRef.current?.slideNext()}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="28" viewBox="0 0 35 28" fill="none">
+              <path d="M21.6448 27.3469C20.7732 28.1805 19.3601 28.1802 18.4888 27.3469C17.617 26.5128 17.617 25.161 18.4891 24.3269L27.0648 16.1222L2.23139 16.1199C0.998898 16.1196 -1.14441e-05 15.1639 -1.14441e-05 13.9841C0.000286102 12.8049 0.999195 11.8494 2.23169 11.8494L27.066 11.8517L18.4883 3.64527C17.6167 2.81139 17.6167 1.45908 18.4883 0.625481C18.9242 0.208683 19.4952 0 20.0665 0C20.6375 0 21.2085 0.208683 21.6445 0.625196L34.0316 12.4766C34.4502 12.8769 34.6853 13.4198 34.6853 13.9864C34.685 14.5529 34.4499 15.0955 34.0313 15.4967L21.6448 27.3469Z" fill="#80050A"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div
-        ref={containerRef}
-        onWheel={onWheel}
-        className="w-full overflow-hidden mt-16"
+        className="w-full overflow-hidden mt-8 md:mt-16"
       >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}

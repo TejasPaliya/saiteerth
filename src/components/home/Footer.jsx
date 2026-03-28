@@ -91,14 +91,14 @@ function AccordionSection({ title, children, defaultOpen = false }) {
 
 const footerData = {
   attractions: [
-    { name: "Dwarkamai", href: "/attractions/dwarkamai" },
-    { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
-    { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
-    { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
-    { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
-    { name: "Kaliya Mardan", href: "/attractions/kaliya-mardan" },
-    { name: "Laser Show", href: "/attractions/laser-show" },
-    { name: "Saibaba Mosaic", href: "/attractions/saibaba-mosaic" },
+       { name: "Lanka Dahan", href: "/attractions/lanka-dahan" },
+      { name: "Kaliya Mardan", href: "/attractions/kaliya-mardan" },
+      { name: "Sabka Malik Ek", href: "/attractions/sabka-malik-ek" },
+      { name: "Teerth Yatra", href: "/attractions/teerth-yatra" },
+      { name: "Dwarkamai", href: "/attractions/dwarkamai" },
+      { name: "Mushak Maharaj", href: "/attractions/mushak-maharaj" },
+      { name: "Laser Show", href: "/attractions/laser-show" },
+      { name: "Saibaba Mosaic", href: "/attractions/saibaba-mosaic" },
   ],
   plan: [
     { name: "Foods & Beverages", href: "/foods-and-beverages" },
@@ -154,7 +154,7 @@ const Footer = () => {
                 <InstagramIcon />
                 <YouTubeIcon />
                 <FacebookIcon />
-                <XIcon />
+             
               </div>
             </div>
 
@@ -172,13 +172,10 @@ const Footer = () => {
                     Maharashtra- 423109
                   </p>
                   <div className="space-y-1">
-                    <p>+91 9767840000</p>
-                    <p>+91 9767540000</p>
+                    <p><a href="tel:+919767840000" className="hover:text-white transition-colors">+91 9767840000</a></p>
+                    <p><a href="tel:+919767540000" className="hover:text-white transition-colors">+91 9767540000</a></p>
                   </div>
-                  <div className="mt-4 space-y-1">
-                    <p>enquiry@saiteerth.in</p>
-                    <p>care@saiteerth.in</p>
-                  </div>
+         
                 </div>
               </div>
 
@@ -229,8 +226,8 @@ const Footer = () => {
                 <div>
                   <h3 className="font-bold text-lg mb-6">Contact Us</h3>
                   <div className="text-sm space-y-3 opacity-90">
-                    <p className="cursor-pointer hover:text-white">enquiry@saiteerth.in</p>
-                    <p className="cursor-pointer hover:text-white">care@saiteerth.in</p>
+                    <a href="mailto:enquiry@saiteerth.in" className="block cursor-pointer hover:text-white transition-colors">enquiry@saiteerth.in</a>
+                    <a href="mailto:care@saiteerth.in" className="block cursor-pointer hover:text-white transition-colors">care@saiteerth.in</a>
                   </div>
                 </div>
               </div>
@@ -240,7 +237,7 @@ const Footer = () => {
 
             {/* Bottom Footer Row */}
             <div className="flex justify-between items-center text-xs text-white opacity-80 pt-4">
-              <p>© 2025 Imagicaaworld Entertainment Ltd. All rights reserved.</p>
+              <p>© 2026 Imagica. All Rights Reserved.</p>
               <p className="cursor-pointer hover:opacity-100"><Link href="/privacy-policy">Privacy Policy</Link></p>
             </div>
 
@@ -253,7 +250,7 @@ const Footer = () => {
             <h2 className="text-2xl font-bold mb-6 text-center">Come with us to experience<br />Sai's divine journey!</h2>
             
             <div className="flex justify-center gap-6 mb-8">
-              <InstagramIcon /> <YouTubeIcon /> <FacebookIcon /> <XIcon />
+              <InstagramIcon /> <YouTubeIcon /> <FacebookIcon />
             </div>
 
             <div className="flex justify-center mb-8">
@@ -262,8 +259,10 @@ const Footer = () => {
 
             <div className="space-y-2 mb-8 text-center text-sm opacity-90">
               <p>Shirdi, Maharashtra- 423109</p>
-              <p>+91 9767840000</p>
-              <p>enquiry@saiteerth.in</p>
+              <p><a href="tel:+919767840000" className="hover:text-white transition-colors">+91 9767840000</a></p>
+              <p><a href="tel:+919767540000" className="hover:text-white transition-colors">+91 9767540000</a></p>
+              <p><a href="mailto:enquiry@saiteerth.in" className="hover:text-white transition-colors">enquiry@saiteerth.in</a></p>
+              <p><a href="mailto:care@saiteerth.in" className="hover:text-white transition-colors">care@saiteerth.in</a></p>
             </div>
 
             <div className="space-y-2">

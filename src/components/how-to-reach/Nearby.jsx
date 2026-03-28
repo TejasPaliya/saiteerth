@@ -137,7 +137,7 @@ const Nearby = () => {
                     <FaWater className="text-2xl md:text-3xl text-white" />
                 </div>
                 <div>
-                    <h4 className="text-lg md:text-xl font-bold text-gray-900">Wet'n'Joy Water Park</h4>
+                    <h4 className="text-lg md:text-xl font-bold text-gray-900">Wet n Joy Water Park</h4>
                     <p className="text-sm text-gray-500">Entertainment nearby</p>
                 </div>
              </div>

@@ -14,7 +14,7 @@ const AttractionHero = ({ title, type, description, videoUrl }) => {
         key={videoUrl} // Helps React reset video when slug changes
         className="absolute inset-0 w-full h-full object-cover z-[-10]"
       >
-        <source src={"http://13.48.85.216:1337"+videoUrl || "/hero.mp4"} type="video/mp4" />
+        <source src={videoUrl || "/hero.mp4"} type="video/mp4" />
       </video>
 
       {/* dark overlay */}

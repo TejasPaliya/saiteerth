@@ -57,7 +57,7 @@ const PriceBox = ({ title, price }) => {
       </div>
       <div className="bg-white py-2 flex items-center justify-center">
         <span className="text-[#7a2b15] font-bold text-2xl md:text-4xl">
-          {price}
+          ₹{price}*
         </span>
       </div>
     </div>
