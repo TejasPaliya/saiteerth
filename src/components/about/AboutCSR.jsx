@@ -28,7 +28,7 @@ const AboutCSR = () => {
           <h2 className="text-[2.5rem] font-bold leading-tight mb-6 text-[#892201]">
             Transforming Communities
           </h2>
-          <div className="text-gray-700 space-y-4 leading-relaxed">
+          <div className="text-black space-y-4 leading-relaxed">
             <p>
               <span className="font-bold">Malpani Group</span> is glad to have played an active role in 
               the transformation of Sangamner and in putting it on the industrial map of the world. 
@@ -45,7 +45,7 @@ const AboutCSR = () => {
           {/* Checklist */}
           <ul className="mt-8 space-y-3">
             {features.map((item, index) => (
-              <li key={index} className="flex items-center gap-3 text-gray-700">
+              <li key={index} className="flex items-center gap-3 text-black">
                 <div className="bg-[#CD3F0D] rounded-full p-1 flex items-center justify-center">
                   <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />

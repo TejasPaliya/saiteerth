@@ -6,7 +6,7 @@ const JourneyAndCTA = () => {
   const mainGradient = "linear-gradient(180deg, #CD3F0D 0%, #80050A 100%)";
 
   return (
-    <div className="font-['Anek_Latin'] bg-[#FFFBF7] min-h-screen pb-20">
+    <div className="font-['Anek_Latin'] bg-[#FFFBF7] mb-16">
       
     
 

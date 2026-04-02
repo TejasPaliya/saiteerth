@@ -7,30 +7,30 @@ export default function AttractionGrid({ attractionsList = [] }) {
 
   const tabs = [
     "All Shows",
- 
+
   ];
 
   // Filtering logic: "All Shows" shows everything, others filter by show_type
-  const filteredItems = activeTab === "All Shows" 
-    ? attractionsList 
+  const filteredItems = activeTab === "All Shows"
+    ? attractionsList
     : attractionsList.filter(item => item.show_type === activeTab);
 
   const STRAPI_BASE_URL = "http://13.48.85.216:1337";
 
   return (
-    <div className="mx-auto p-4 sm:p-6 md:px-12 bg-[#fff9ef]">
+    <div className="mx-auto p-4 sm:p-6 md:px-12 bg-white">
       {/* Categories Bar */}
       <div className="flex justify-center ">
 
       </div>
 
       {/* Grid Content */}
-      <div className="bg-[#fdf6e9] border-[3px] border-[#892201] rounded-3xl p-6 md:p-10">
+      <div className="bg-white border-[3px] border-[#892201] rounded-3xl p-6 md:p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-black group cursor-pointer shadow-lg"
+              className="relative rounded-2xl overflow-hidden aspect-[5/8] bg-black group cursor-pointer shadow-lg"
             >
               <video
                 src={`${STRAPI_BASE_URL}${item.attraction_video?.url}`}
@@ -38,21 +38,21 @@ export default function AttractionGrid({ attractionsList = [] }) {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-[100%] h-[100%] object-cover"
               />
-              
+
               {/* Overlay with Title and Icon */}
               <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col">
                     <span className="text-white font-bold text-lg drop-shadow-sm leading-tight">
-                        {item.name}
+                      {item.name}
                     </span>
                     <span className="text-white/80 text-xs font-medium uppercase tracking-wider">
-                        {item.show_type}
+                      {item.show_type}
                     </span>
                   </div>
-                  <a href={"/attractions/"+item.slug} className="bg-[#a32e14] p-2 rounded-full transform group-hover:scale-110 transition-transform">
+                  <a href={"/attractions/" + item.slug} className="bg-[#a32e14] p-2 rounded-full transform group-hover:scale-110 transition-transform">
                     <ArrowUpRight size={18} className="text-white" strokeWidth={3} />
                   </a>
                 </div>
@@ -61,7 +61,7 @@ export default function AttractionGrid({ attractionsList = [] }) {
           ))}
         </div>
         {filteredItems.length === 0 && (
-            <p className="text-center text-[#4a3728] py-10 font-medium">No shows found in this category.</p>
+          <p className="text-center text-[#4a3728] py-10 font-medium">No shows found in this category.</p>
         )}
       </div>
     </div>

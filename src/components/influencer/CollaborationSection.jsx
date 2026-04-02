@@ -95,10 +95,10 @@ export default function CollaborationSection() {
 
             {/* Text Content */}
             <div className="space-y-2">
-              <h3 className="text-xl  text-gray-800 leading-tight">
+              <h3 className="text-xl  text-black leading-tight">
                 {item.title}
               </h3>
-              <p className="text-gray-500 text-sm font-medium">
+              <p className="text-black text-sm font-medium">
                 {item.description}
               </p>
             </div>

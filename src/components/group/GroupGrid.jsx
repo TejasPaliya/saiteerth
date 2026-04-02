@@ -70,7 +70,7 @@ const GroupGrid = () => {
               {feature.title}
             </h3>
             
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-black text-sm leading-relaxed">
               {feature.description}
             </p>
           </div>

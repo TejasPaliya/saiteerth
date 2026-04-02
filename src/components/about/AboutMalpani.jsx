@@ -15,7 +15,7 @@ const AboutMalpani = () => {
               About Malpani Group
             </h2>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+            <div className="space-y-4 text-black leading-relaxed text-lg">
               <p>
                 Malpani Group is a well-diversified business house active in renewable 
                 energy, FMCG products, amusement and water parks, real estate, hotels, 
@@ -73,7 +73,7 @@ const AboutMalpani = () => {
               <Target size={32} className="text-white" />
             </div>
             <h3 className="text-2xl font-bold text-[#CD3F0D] mb-4">Our Vision</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-black text-lg leading-relaxed">
               To improve the quality of rural life through professional, 
               material and spiritual advancement.
             </p>
@@ -85,7 +85,7 @@ const AboutMalpani = () => {
               <Lightbulb size={32} className="text-white" />
             </div>
             <h3 className="text-2xl font-bold text-[#CD3F0D] mb-4">Our Mission</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-black text-lg leading-relaxed">
               "Spreading plenty through transparent practices. Presenting 
               the customer with a wider choice of products."
             </p>

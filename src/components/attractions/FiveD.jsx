@@ -25,11 +25,11 @@ controls
 
         {/* Dynamic Description */}
         {/* Added whitespace-pre-line so that line breaks from Strapi actually show up */}
-        <div className="font-['Anek_Latin'] max-md:text-center font-normal text-[#5D5D5D] leading-[1.4] text-[16px] sm:text-[18px] md:text-[21px] lg:text-[25px] whitespace-pre-line">
+        <div className="font-['Anek_Latin'] max-md:text-center font-normal text-[#000000] leading-[1.4] text-[16px] sm:text-[18px] md:text-[21px] lg:text-[25px] whitespace-pre-line">
           {data.description}
         </div>
 
-        <a href='https://saiteerth.in/book/' className="bg-yellow-400 max-md:mx-auto my-6 text-black font-extrabold py-3 px-10 rounded-full uppercase tracking-tight shadow-sm hover:bg-yellow-500 transition-colors duration-200 cursor-pointer">
+        <a href='https://saiteerth.in/book/' className="rounded-[50px] font-['Anek_Latin']  mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-2 px-8 font-bold text-lg md:text-2xl">
           Plan Your Visit Now
         </a>
 

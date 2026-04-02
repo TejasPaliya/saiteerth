@@ -78,7 +78,7 @@ export default function FoodGrid() {
                 <h2 className="text-[#CD3F0D] text-2xl font-bold mb-3 leading-tight">
                   {kiosk.title}
                 </h2>
-                <p className="text-gray-700 text-sm md:text-base mb-6 flex-grow leading-relaxed">
+                <p className="text-black text-sm md:text-base mb-6 flex-grow leading-relaxed">
                   {kiosk.description}
                 </p>
                 

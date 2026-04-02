@@ -13,15 +13,15 @@ export default function RestaurantFoodZone() {
     },
     {
       title: 'Chennai Menia',
-      content: ['Mega Punjabi Meal', 'Chennai Meal', 'Mega Dahi Combo']
+      content: ['Dosa', 'Uttapam', 'Medu Vada', 'Soft Steamed Idlis']
     },
     {
       title: 'Street Food',
-      content: ['Mega Punjabi Meal', 'Chennai Meal', 'Mega Dahi Combo']
+      content: ['Butter Mumbai Pav Bhaji', 'Delhi Wali Chole Puri']
     },
     {
       title: 'Drinks & Beverages',
-      content: ['Mega Punjabi Meal', 'Chennai Meal', 'Mega Dahi Combo']
+      content: ['Chilled Mango Lassi', 'Masala Chass', 'Refreshing Coffee', 'Masala Chai']
     }
   ];
 
@@ -35,9 +35,7 @@ export default function RestaurantFoodZone() {
         
         {/* Left Column: Text & Video */}
         <div className="flex flex-col pr-0 lg:pr-8">
-          <p className="text-[#D34E24] font-['Anek_Latin'] max-md:text-center text-sm font-semibold mb-2">
-            Main Restaurant
-          </p>
+        
           <h2 className="text-4xl font-['Anek_Latin'] md:text-5xl max-md:text-center font-extrabold text-[#7A1517] leading-tight mb-4">
             Restaurant & <br /> Food Zone
           </h2>

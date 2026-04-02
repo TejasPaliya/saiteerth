@@ -82,17 +82,17 @@ const Journey = () => {
               <div className="flex gap-2 items-start">
                 <MapPin size={18} className="text-[#CD3F0D] mt-1 shrink-0" />
                 <div>
-                  <p className="text-xs font-bold text-gray-800 uppercase leading-none mb-1">{item.locationType}</p>
-                  <p className="text-[13px] text-gray-600 font-medium leading-snug">{item.locationName}</p>
+                  <p className="text-xs font-bold text-black uppercase leading-none mb-1">{item.locationType}</p>
+                  <p className="text-[13px] text-black font-medium leading-snug">{item.locationName}</p>
                 </div>
               </div>
 
               {/* Distance Highlight Box */}
               <div className="bg-[#FFF7F2] rounded-2xl p-4 flex justify-between items-center relative overflow-hidden">
                 <div>
-                  <p className="text-[11px] font-bold text-gray-500 uppercase tracking-tighter">Distance</p>
+                  <p className="text-[11px] font-bold text-black uppercase tracking-tighter">Distance</p>
                   <p className="text-2xl font-extrabold text-[#CD3F0D]">{item.distance}</p>
-                  <p className="text-[10px] text-gray-400 font-bold">{item.time}</p>
+                  <p className="text-[10px] text-black font-bold">{item.time}</p>
                 </div>
                 <Clock size={20} className="text-[#CD3F0D] opacity-60" />
               </div>
@@ -100,8 +100,8 @@ const Journey = () => {
               {/* Detail Sections */}
               {item.details.map((detail, dIdx) => (
                 <div key={dIdx} className="space-y-1">
-                  <h4 className="text-[13px] font-extrabold text-gray-800">{detail.label}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                  <h4 className="text-[13px] font-extrabold text-black">{detail.label}</h4>
+                  <p className="text-xs text-black leading-relaxed font-medium">
                     {detail.text}
                   </p>
                 </div>

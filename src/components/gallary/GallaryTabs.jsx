@@ -72,12 +72,12 @@ const GalleryTabs = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
           Attractions at <span className="text-[#5A0308]">Sai Teerth</span> Theme Park
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-600 max-w-3xl mx-auto text-sm md:text-base leading-relaxed mb-10 font-medium">
+        <p className="text-black max-w-3xl mx-auto text-sm md:text-base leading-relaxed mb-10 font-medium">
           Sai Teerth blends devotion, technology, and entertainment, offering a 
           must-visit experience for families and devotees. Explore ambiance, attractions, and shows.
         </p>
@@ -92,7 +92,7 @@ const GalleryTabs = () => {
                 className={`px-6 py-4 text-xs font-bold transition-all duration-300 border-b-4 ${
                   activeTab === tab
                     ? 'border-[#CD3F0D] text-[#CD3F0D]'
-                    : 'border-transparent text-gray-400 hover:text-gray-600'
+                    : 'border-transparent text-black hover:text-black'
                 }`}
               >
                 {tab}
@@ -104,7 +104,7 @@ const GalleryTabs = () => {
         {/* Content Area */}
         <div className="bg-white rounded-[2rem] p-6 md:p-12 shadow-xl border border-gray-50 transition-all duration-500">
           <div className="text-left mb-10 animate-fadeIn">
-            <p className="text-gray-700 text-sm md:text-lg leading-relaxed font-medium">
+            <p className="text-black text-sm md:text-lg leading-relaxed font-medium">
               {tabData[activeTab].description}
             </p>
           </div>

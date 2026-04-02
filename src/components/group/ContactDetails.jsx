@@ -9,7 +9,7 @@ const ContactDetails = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-[#80050A] mb-4">
             Perfect for Every Group
           </h2>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+          <p className="text-black text-lg max-w-2xl mx-auto">
             Whether it's a corporate event, family reunion, or school trip, we've got you covered
           </p>
         </div>
@@ -80,7 +80,7 @@ const ContactDetails = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-[#CD3F0D]">Corporate Events</h4>
-                <p className="text-gray-500 text-sm">Perfect for team building, company outings, and employee celebrations</p>
+                <p className="text-black text-sm">Perfect for team building, company outings, and employee celebrations</p>
               </div>
             </div>
 
@@ -96,7 +96,7 @@ const ContactDetails = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-[#CD3F0D]">School & College Trips</h4>
-                <p className="text-gray-500 text-sm">Educational and fun experiences for students of all ages</p>
+                <p className="text-black text-sm">Educational and fun experiences for students of all ages</p>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ const ContactDetails = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-[#CD3F0D]">Family Gatherings</h4>
-                <p className="text-gray-500 text-sm">Reunions, birthdays, and special family celebrations made memorable</p>
+                <p className="text-black text-sm">Reunions, birthdays, and special family celebrations made memorable</p>
               </div>
             </div>
 

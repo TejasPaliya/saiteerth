@@ -86,9 +86,9 @@ const Insta = ({ data }) => {
           </div>
 
           <span className="flex flex-col justify-center gap-3 ml-4">
-            <div className="font-['Anek_Latin'] font-bold leading-[0.93] tracking-[-0.02em] text-[39px] md:text-[49px] text-[#80050A]">
+            <a href="https://www.instagram.com/saiteerth/" className="font-['Anek_Latin'] font-bold leading-[0.93] tracking-[-0.02em] text-[39px] md:text-[49px] text-[#80050A]">
               {data?.handle_name || "@saiteerth"}
-            </div>
+            </a>
             <div className="font-['Anek_Latin'] font-medium leading-[0.93] tracking-[-0.02em] text-[18px] md:text-[30px] text-[#80050A]">
               {data?.handle_sub || "Sai Teerth Theme Park - Shardi"}
             </div>

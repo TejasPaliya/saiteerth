@@ -68,7 +68,7 @@ export default async function Home() {
       <Eat data={eats} />
       <Vip></Vip>
       <Youtube data={youtube} />
-      <TopDestination data={destination} />
+  
       <Insta data={instagram} />
       <Testimonials data={review} />
       <Accordion data={faq} />

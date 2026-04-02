@@ -62,7 +62,7 @@ const Stories = ({ data, attractionsList = [] }) => {
                    autoPlay
                    muted
                   playsInline
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover "
                 />
 
                 <div className="absolute bottom-0 left-0 w-full p-6 bg-[linear-gradient(0deg,#4A0202_0%,rgba(64,0,0,0)_100%)] flex justify-between items-end">

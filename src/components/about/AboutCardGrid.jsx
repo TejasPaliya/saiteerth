@@ -107,10 +107,10 @@ const FeatureCard = ({ title, description, icon }) => (
     <div className="bg-[#CD3F0D] p-3 rounded-2xl text-white mb-6">
       {icon}
     </div>
-    <h3 className="text-gray-900 text-xl font-bold mb-3 font-['Anek_Latin']">
+    <h3 className="text-black text-xl font-bold mb-3 font-['Anek_Latin']">
       {title}
     </h3>
-    <p className="text-gray-600 text-sm leading-relaxed font-['Anek_Latin']">
+    <p className="text-black text-sm leading-relaxed font-['Anek_Latin']">
       {description}
     </p>
   </div>

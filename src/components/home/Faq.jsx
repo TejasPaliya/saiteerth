@@ -1,6 +1,50 @@
 "use client"
 import React, { useState } from "react";
 
+const renderRichText = (blocks) => {
+  if (!blocks || !Array.isArray(blocks)) return null;
+
+  return blocks.map((block, index) => {
+    switch (block.type) {
+      case "paragraph":
+        return (
+          <p key={index} className="mb-2 last:mb-0">
+            {renderRichText(block.children)}
+          </p>
+        );
+      case "list":
+        const ListTag = block.format === "ordered" ? "ol" : "ul";
+        const listClass =
+          block.format === "ordered"
+            ? "list-decimal ml-6 mb-2 last:mb-0"
+            : "list-disc ml-6 mb-2 last:mb-0";
+        return (
+          <ListTag key={index} className={listClass}>
+            {renderRichText(block.children)}
+          </ListTag>
+        );
+      case "list-item":
+        return (
+          <li key={index} className="mb-1 last:mb-0">
+            {renderRichText(block.children)}
+          </li>
+        );
+      case "text":
+        let textContent = block.text;
+        if (block.bold) textContent = <strong key={index}>{textContent}</strong>;
+        if (block.italic) textContent = <em key={index}>{textContent}</em>;
+        if (block.underline) textContent = <u key={index}>{textContent}</u>;
+        if (block.code) textContent = <code key={index}>{textContent}</code>;
+        return <React.Fragment key={index}>{textContent}</React.Fragment>;
+      default:
+        if (block.children) {
+          return <React.Fragment key={index}>{renderRichText(block.children)}</React.Fragment>;
+        }
+        return null;
+    }
+  });
+};
+
 function AccordionItem({ faq, isOpen, onClick }) {
   return (
     <div className="border-b" style={isOpen ? { background: '#EAEAEA' } : {}}>
@@ -28,7 +72,7 @@ function AccordionItem({ faq, isOpen, onClick }) {
       </button>
       {isOpen && (
         <div className="p-2 max-md:pt-0 text-[#484848] font-['Anek_Latin'] font-normal text-[15px] md:text-[13px] lg:text-[15px] lg:leading-normal">
-          {faq.answer}
+          {faq.answer_block ? renderRichText(faq.answer_block) : faq.answer}
         </div>
       )}
     </div>
