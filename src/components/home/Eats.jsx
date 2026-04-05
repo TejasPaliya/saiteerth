@@ -23,7 +23,7 @@ const Eat = ({ data }) => {
                     <div className='flex gap-6 mx-3'>
                         {displayImages.map((src, index) => (
                             <div key={index} className='rounded-[42px] p-0.5 px-1 md:p-1 md:px-2 aspect-[275/196] w-[200px] sm:w-[280px] md:w-[300px] lg:w-[320px] bg-white flex justify-center items-center'>
-                                <img className='rounded-[42px] w-full h-full object-cover' src={"http://13.48.85.216:1337"+src} alt="food" />
+                                <img className='rounded-[42px] w-full h-full object-cover' src={"https://strapi.saiteerth.in"+src} alt="food" />
                             </div>
                         ))}
                     </div>
@@ -35,7 +35,7 @@ const Eat = ({ data }) => {
                     <div className='flex gap-6 mx-3'>
                         {displayImages.map((src, index) => (
                             <div key={index} className='rounded-[42px] p-0.5 px-1 md:p-1 md:px-2 aspect-[275/196] w-[200px] sm:w-[280px] md:w-[320px] lg:w-[400px] bg-white flex justify-center items-center'>
-                                <img className='rounded-[42px] w-full h-full object-cover' src={"http://13.48.85.216:1337"+src} alt="food" />
+                                <img className='rounded-[42px] w-full h-full object-cover' src={"https://strapi.saiteerth.in"+src} alt="food" />
                             </div>
                         ))}
                     </div>

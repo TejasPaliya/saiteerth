@@ -35,7 +35,7 @@ export default function GroupForm() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const response = await fetch('http://13.48.85.216:1337/api/group-forms', {
+      const response = await fetch('https://strapi.saiteerth.in/api/group-forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

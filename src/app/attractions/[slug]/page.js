@@ -8,9 +8,9 @@ import Stories from "@/components/home/Stories";
 import Navbar from "@/components/Navbar";
 
 async function getAttractionPageData(slug) {
-  const attractionUrl = `http://13.48.85.216:1337/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`;
-  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
-  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
+  const attractionUrl = `https://strapi.saiteerth.in/api/attractions?filters[slug][$eq]=${slug}&populate[attraction_video][populate]=*&populate[section][populate]=*&populate[cta][populate]=*`;
+  const offersUrl = "https://strapi.saiteerth.in/api/offers?populate=*";
+  const attractionsUrl = "https://strapi.saiteerth.in/api/attractions?populate=*";
 
   const [attractionRes, offersRes, attractionsRes] = await Promise.all([
     fetch(attractionUrl, { cache: 'no-store' }),
@@ -50,7 +50,7 @@ export default async function Attractions({ params }) {
         title={attraction.name}
         type={attraction.show_type}
         description={attraction.show_description}
-        videoUrl={"http://13.48.85.216:1337" + attraction.attraction_video?.url}
+        videoUrl={"https://strapi.saiteerth.in" + attraction.attraction_video?.url}
       />
       <Section data={attraction.section} />
       <FiveD data={attraction.cta} />

@@ -9,7 +9,7 @@ import OfferSingleHero from "@/components/offer-single/OfferSingleHero";
 async function getOfferData(name) {
   // We filter where name equals the slug/parameter from the URL
   const res = await fetch(
-    `http://13.48.85.216:1337/api/offers?filters[slug][$eq]=${name}&populate=*`,
+    `https://strapi.saiteerth.in/api/offers?filters[slug][$eq]=${name}&populate=*`,
     { cache: 'no-store' }
   );
 

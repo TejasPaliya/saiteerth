@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const STRAPI_BASE = "http://13.48.85.216:1337";
+const STRAPI_BASE = "https://strapi.saiteerth.in";
 
 function getPageNumbers(currentPage, pageCount) {
   const pages = [];

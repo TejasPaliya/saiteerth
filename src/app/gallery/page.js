@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import TopDestination from "@/components/home/Dastination";
 
 async function getDestinationData() {
-  const homeUrl = "http://13.48.85.216:1337/api/home?populate[destination][populate]=*";
+  const homeUrl = "https://strapi.saiteerth.in/api/home?populate[destination][populate]=*";
   try {
     const res = await fetch(homeUrl, { cache: 'no-store' });
     if (!res.ok) {

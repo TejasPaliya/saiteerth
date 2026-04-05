@@ -15,7 +15,7 @@ export default function AttractionGrid({ attractionsList = [] }) {
     ? attractionsList
     : attractionsList.filter(item => item.show_type === activeTab);
 
-  const STRAPI_BASE_URL = "http://13.48.85.216:1337";
+  const STRAPI_BASE_URL = "https://strapi.saiteerth.in";
 
   return (
     <div className="mx-auto p-4 sm:p-6 md:px-12 bg-white">

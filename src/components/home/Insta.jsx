@@ -6,7 +6,7 @@ import "swiper/css"
 import { useRouter } from "next/navigation"
  
 
-const API_BASE = "http://13.48.85.216:1337";
+const API_BASE = "https://strapi.saiteerth.in";
 
 const InstaCard = ({ handle, reelData }) => {
  const router = useRouter();

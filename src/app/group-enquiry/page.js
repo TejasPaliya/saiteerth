@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 export default async function Group(){
     let faqData = null;
     try {
-        const res = await fetch("http://13.48.85.216:1337/api/group?populate=*", { next: { revalidate: 60 } });
+        const res = await fetch("https://strapi.saiteerth.in/api/group?populate=*", { next: { revalidate: 60 } });
         console.log(res)
         const json = await res.json();
         faqData = json?.data?.faq || null;

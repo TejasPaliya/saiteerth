@@ -58,7 +58,7 @@ const Stories = ({ data, attractionsList = [] }) => {
             <SwiperSlide key={item.id}>
               <div className="aspect-[2/3] relative overflow-hidden rounded-2xl group cursor-pointer">
                 <video
-                  src={"http://13.48.85.216:1337"+item.attraction_video?.url || "/stories.mp4"}
+                  src={"https://strapi.saiteerth.in"+item.attraction_video?.url || "/stories.mp4"}
                    autoPlay
                    muted
                   playsInline

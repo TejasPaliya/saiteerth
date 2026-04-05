@@ -3,13 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-default: var(--font-anek); /* new var */
+  --font-default: var(--font-anek);
+  /* new var */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-default); /* make it default */
+  --font-sans: var(--font-default);
+  /* make it default */
   --font-mono: var(--font-geist-mono);
 }
 
@@ -18,3 +20,48 @@ body {
   color: var(--foreground);
   font-family: var(--font-default), sans-serif;
 }
+
+/* ── Blog content: links ── */
+article a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+article a:hover { color: #1d4ed8; }
+
+/* ── Blog content: tables ── */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+article thead {
+  background: #80050a;
+  color: #fff;
+}
+article thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+article tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+article tbody tr:nth-child(even) { background: #fdf2f2; }
+article tbody tr:hover { background: #fee2e2; transition: background 0.15s; }
+article td {
+  padding: 0.65rem 1rem;
+  color: #374151;
+  vertical-align: middle;
+}
+article td:first-child { font-weight: 600; color: #80050a; }
+
+/* ── Blog content: strong / bold ── */
+article strong, article b { font-weight: 700; color: #1e293b; }

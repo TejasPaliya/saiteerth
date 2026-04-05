@@ -6,7 +6,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const API_BASE = "http://13.48.85.216:1337";
+const API_BASE = "https://strapi.saiteerth.in";
 
 const Testimonials = ({ data }) => {
   // Use comments from API if available

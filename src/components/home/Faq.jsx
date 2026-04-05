@@ -53,7 +53,7 @@ function AccordionItem({ faq, isOpen, onClick }) {
         font-['Anek_Latin'] 
         ${isOpen
             ? "text-black font-bold font-['Anek_Latin']  text-[19px] md:text-[21px] lg:text-[26px] leading-tight"
-            : "text-[#484848] font-semibold text-[19px] font-['Anek_Latin']  leading-[22px] md:text-[22px] lg:text-[26px]"
+            : "text-[#000000] font-semibold text-[19px] font-['Anek_Latin']  leading-[22px] md:text-[22px] lg:text-[26px]"
           }`}
         onClick={onClick}
       >
@@ -71,7 +71,7 @@ function AccordionItem({ faq, isOpen, onClick }) {
         </span>
       </button>
       {isOpen && (
-        <div className="p-2 max-md:pt-0 text-[#484848] font-['Anek_Latin'] font-normal text-[15px] md:text-[13px] lg:text-[15px] lg:leading-normal">
+        <div className="p-2 max-md:pt-0 text-[#000000] font-['Anek_Latin'] font-normal text-[15px] md:text-[13px] lg:text-[15px] lg:leading-normal">
           {faq.answer_block ? renderRichText(faq.answer_block) : faq.answer}
         </div>
       )}

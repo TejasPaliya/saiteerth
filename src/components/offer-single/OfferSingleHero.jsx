@@ -5,7 +5,7 @@ const OfferSingleHero = ({ title, description, imageUrl }) => {
     <div>
       {/* Dynamic Image from Strapi */}
       <img 
-        src={"http://13.48.85.216:1337"+imageUrl || "/single-hero.png"} 
+        src={"https://strapi.saiteerth.in"+imageUrl || "/single-hero.png"} 
         className='w-full h-auto p-8 max-md:aspect-square max-xl:aspect-video aspect-[32/9]' 
         alt={title} 
       />

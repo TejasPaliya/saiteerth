@@ -8,7 +8,7 @@ const HeroSec = ({ data }) => {
   return (
     <div className='w-full h-[100vh]'>   
       <video 
-        src={"http://13.48.85.216:1337"+data.url} // Dynamic URL from Strapi
+        src={"https://strapi.saiteerth.in"+data.url} // Dynamic URL from Strapi
         autoPlay 
         loop 
         muted 

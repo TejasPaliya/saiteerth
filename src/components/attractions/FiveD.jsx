@@ -9,11 +9,11 @@ const FiveD = ({ data }) => {
       
       {/* Left Image (Still static for now as requested) */}
       <video
-        src={"http://13.48.85.216:1337"+data.video.url}
+        src={"https://strapi.saiteerth.in"+data.video.url}
         className="w-1/2 rounded-[20px] max-lg:w-full aspect-[7/8] object-cover max-w-xl"
 controls
       >
-          <source src={"http://13.48.85.216:1337"+data.video.url || "/hero.mp4"} type="video/mp4" />
+          <source src={"https://strapi.saiteerth.in"+data.video.url || "/hero.mp4"} type="video/mp4" />
         </video>
 
       <div className="flex flex-col w-1/2 max-lg:w-full justify-center gap-6 items-start">

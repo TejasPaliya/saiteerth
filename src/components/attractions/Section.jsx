@@ -3,7 +3,7 @@ import React from "react";
 const Section = ({ data }) => {
   if (!data) return null;
 
-  const BASE_URL = "http://13.48.85.216:1337";
+  const BASE_URL = "https://strapi.saiteerth.in";
 
   // Helper to render the point with its dynamic icon
   const Point = ({ text, icon }) => (

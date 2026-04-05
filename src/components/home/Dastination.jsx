@@ -33,7 +33,7 @@ const TopDestination = ({ data }) => {
                   {/* Background Video/Image from API */}
                   {item.image?.url ? (
                     <img
-                      src={"http://13.48.85.216:1337" + item.image.url}
+                      src={"https://strapi.saiteerth.in" + item.image.url}
                       className="absolute inset-0 w-full h-full object-cover -z-10"
                       alt={title}
                     />

@@ -5,7 +5,7 @@ import MobileBottomBar from "@/components/home/MobileBottomBar";
 import PlanVisit from "@/components/home/PlanVisit";
 import Navbar from "@/components/Navbar";
 
-const STRAPI_BASE = "http://13.48.85.216:1337";
+const STRAPI_BASE = "https://strapi.saiteerth.in";
 const PAGE_SIZE = 6;
 
 async function getBlogs(page = 1) {

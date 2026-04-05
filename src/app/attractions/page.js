@@ -9,9 +9,9 @@ import AttractionGrid from "@/components/attractions/AttractionsGrid";
 import MobileBottomBar from "@/components/home/MobileBottomBar";
 
 async function getAttractionsPageData() {
-  const allAttractionUrl = "http://13.48.85.216:1337/api/all-attraction?populate=*";
-  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
-  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
+  const allAttractionUrl = "https://strapi.saiteerth.in/api/all-attraction?populate=*";
+  const offersUrl = "https://strapi.saiteerth.in/api/offers?populate=*";
+  const attractionsUrl = "https://strapi.saiteerth.in/api/attractions?populate=*";
 
   const [allAttrRes, offersRes, attractionsRes] = await Promise.all([
     fetch(allAttractionUrl, { cache: "no-store" }),

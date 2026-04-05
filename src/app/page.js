@@ -16,9 +16,9 @@ import Footer from "@/components/home/Footer";
 import Vip from "@/components/home/Vip";
 
 async function getHomePageData() {
-  const homeUrl = "http://13.48.85.216:1337/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*&populate[review][populate][comments][populate]=*&populate[instagram][populate][logo][populate]=*&populate[instagram][populate][reel][populate]=*";
-  const offersUrl = "http://13.48.85.216:1337/api/offers?populate=*";
-  const attractionsUrl = "http://13.48.85.216:1337/api/attractions?populate=*";
+  const homeUrl = "https://strapi.saiteerth.in/api/home?populate[hero_video][populate]=*&populate[stories][populate]=*&populate[samadhi][populate]=*&populate[indoor][populate]=*&populate[eats][populate]=*&populate[youtube][populate]=*&populate[destination][populate]=*&populate[faq][populate]=*&populate[review][populate][comments][populate]=*&populate[instagram][populate][logo][populate]=*&populate[instagram][populate][reel][populate]=*";
+  const offersUrl = "https://strapi.saiteerth.in/api/offers?populate=*";
+  const attractionsUrl = "https://strapi.saiteerth.in/api/attractions?populate=*";
 
   // Fetching all three APIs simultaneously
   const [homeRes, offersRes, attractionsRes] = await Promise.all([

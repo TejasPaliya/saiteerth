@@ -8,7 +8,7 @@ const Samadhi = ({ data }) => {
     <div className="w-full aspect-[400/800] sm:aspect-[600/800] md:aspect-[800/800] lg:aspect-[1256/800] xl:aspect-[1456/800] relative overflow-hidden">
       <video
         className="w-full h-full object-cover"
-        src={"http://13.48.85.216:1337"+videoSrc}
+        src={"https://strapi.saiteerth.in"+videoSrc}
         autoPlay
         loop
         muted

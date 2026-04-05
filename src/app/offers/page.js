@@ -9,8 +9,8 @@ import RegularTicket from "@/components/offers/RegularTicket";
 
 async function getPageData() {
   const [allOfferRes, offersRes] = await Promise.all([
-    fetch("http://13.48.85.216:1337/api/all-offer?populate=*", { cache: "no-store" }),
-    fetch("http://13.48.85.216:1337/api/offers?populate=*&sort=seq", { cache: "no-store" })
+    fetch("https://strapi.saiteerth.in/api/all-offer?populate=*", { cache: "no-store" }),
+    fetch("https://strapi.saiteerth.in/api/offers?populate=*&sort=seq", { cache: "no-store" })
   ]);
 
   const allOfferData = await allOfferRes.json();

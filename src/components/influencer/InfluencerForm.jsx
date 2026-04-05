@@ -36,7 +36,7 @@ export default function InfluencerForm() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const response = await fetch('http://13.48.85.216:1337/api/influencer-forms', {
+      const response = await fetch('https://strapi.saiteerth.in/api/influencer-forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -23,7 +23,7 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus('loading');
     try {
-      const response = await fetch('http://13.48.85.216:1337/api/contact-forms', {
+      const response = await fetch('https://strapi.saiteerth.in/api/contact-forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
