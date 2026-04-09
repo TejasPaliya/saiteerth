@@ -56,7 +56,7 @@ export default async function Attractions({ params }) {
       <FiveD data={attraction.cta} />
       <Stories attractionsList={attractionsData}></Stories>
           <div className="flex justify-center py-2 pb-6">
-            <a href="https://saiteerth.in/book/" className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-2 px-8 font-bold text-lg md:text-2xl">
+            <a href="https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10" className="rounded-[50px] font-['Anek_Latin'] mx-auto mt-6 bg-[#FCD503] hover:scale-105 transition-transform p-2 px-8 font-bold text-lg md:text-2xl">
             Explore More offers
                     </a>
           </div>

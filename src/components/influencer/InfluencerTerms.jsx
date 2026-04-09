@@ -32,7 +32,7 @@ const InfluencerTerms = () => {
         </ul>
 
         <div className="flex justify-center">
-            <a href="https://saiteerth.in/book/" className="rounded-[50px] font-['Anek_Latin'] bg-[#FCD503] hover:scale-105 transition-transform p-3 px-10 font-bold text-lg md:text-2xl text-black">
+            <a href="https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10" className="rounded-[50px] font-['Anek_Latin'] bg-[#FCD503] hover:scale-105 transition-transform p-3 px-10 font-bold text-lg md:text-2xl text-black">
             Book Your Tickets Now
           </a>
         </div>

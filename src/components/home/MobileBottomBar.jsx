@@ -28,7 +28,7 @@ const MobileBottomBar = () => {
         />
 
         {/* Floating Center Button */}
-        <a style={{ top: "-8px" }} href='https://saiteerth.in/book/' className="relative flex flex-col items-center">
+        <a style={{ top: "-8px" }} href='https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10' className="relative flex flex-col items-center">
           <div className="bg-white p-2 rounded-full shadow-md">
             <button className="bg-white text-red p-3 rounded-full   transition-colors flex items-center justify-center">
               {/* Dummy Plus Icon */}

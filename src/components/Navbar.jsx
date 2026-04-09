@@ -91,7 +91,7 @@ const Navbar = () => {
             <a href="/about-sai-teerth" className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>ABOUT US</a>
             <a href="/contact-us" className={`${textColor} font-bold text-[18px] cursor-pointer uppercase`}>CONTACT US</a>
             <DesktopDropdown title="QUICK LINKS" links={menuData.quickLinks} href="#" />
-            <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[16px] border border-[#FCD503] p-2 px-4 transition-all ${
+            <Link href="https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10" className={`rounded-[50px] font-bold text-[16px] border border-[#FCD503] p-2 px-4 transition-all ${
                 scrolled ? "bg-[#FCD503] text-black shadow-md" : "bg-[#FCD503] text-black shadow-[0_0_24.3px_0_rgba(255,255,255,0.66)]"
               }`}>
               BOOK NOW
@@ -100,7 +100,7 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <div className="flex lg:hidden items-center gap-2">
-            <Link href="https://saiteerth.in/book/" className={`rounded-[50px] font-bold text-[14px] border border-[#FCD503] ${scrolled ? "bg-[#FCD503] text-black" : "bg-[#FCD503] text-black"} p-1 px-3`}>
+            <Link href="https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10" className={`rounded-[50px] font-bold text-[14px] border border-[#FCD503] ${scrolled ? "bg-[#FCD503] text-black" : "bg-[#FCD503] text-black"} p-1 px-3`}>
               BOOK NOW
             </Link>
             <button onClick={() => setDrawerOpen(true)}>
