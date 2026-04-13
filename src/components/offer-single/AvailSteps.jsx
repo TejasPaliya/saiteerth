@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AvailSteps = ({ steps }) => {
+const AvailSteps = ({ steps, url }) => {
   // Defensive check: if steps are missing, don't break the UI
   if (!steps) return null;
 
@@ -43,11 +43,11 @@ const AvailSteps = ({ steps }) => {
 
       {/* Responsive Button */}
       <div className="flex justify-center mt-8 md:mt-12 pb-16 md:pb-0">
-        <button className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
+        <a href={url} className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
           <span className="font-['Anek_Latin',sans-serif] font-bold text-[#000000] text-xl md:text-[29px] uppercase">
             AVAIL THIS OFFER
           </span>
-        </button>
+        </a>
       </div>
     </div>
   )

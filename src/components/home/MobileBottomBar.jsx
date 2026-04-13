@@ -39,7 +39,7 @@ const MobileBottomBar = () => {
 </svg>
             </button>
           </div>
-          <span className="text-[#8B2318] text-xs font-bold mt-1">Book Ticket</span>
+          <span className="text-[#8B2318] text-xs font-bold mt-1">Book Tickets</span>
         </a>
 
         {/* Right Side Items */}

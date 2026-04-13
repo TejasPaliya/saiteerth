@@ -130,7 +130,7 @@ const Footer = () => {
 
       {/* 2. Building Image (Highest Layer for Overlap Effect) 
           Z-30 ensures it sits ON TOP of the bottom of the orange card */}
-      <div className="absolute -bottom-24 max-md:hidden left-0 w-full z-30 pointer-events-none">
+      <div className="absolute -bottom-24 2xl:-bottom-54 max-md:hidden left-0 w-full z-30 pointer-events-none">
         <img 
           alt="Building" 
           className="w-full object-cover align-bottom" 
@@ -174,6 +174,10 @@ const Footer = () => {
                   <div className="space-y-1">
                     <p><a href="tel:+919767840000" className="hover:text-white transition-colors">+91 9767840000</a></p>
                     <p><a href="tel:+919767540000" className="hover:text-white transition-colors">+91 9767540000</a></p>
+                  </div>
+                  <div className="mt-4">
+                    <p className="font-bold">Park Timings</p>
+                    <p>10:00 AM – 06:00 PM</p>
                   </div>
          
                 </div>
@@ -263,6 +267,10 @@ const Footer = () => {
               <p><a href="tel:+919767540000" className="hover:text-white transition-colors">+91 9767540000</a></p>
               <p><a href="mailto:enquiry@saiteerth.in" className="hover:text-white transition-colors">enquiry@saiteerth.in</a></p>
               <p><a href="mailto:care@saiteerth.in" className="hover:text-white transition-colors">care@saiteerth.in</a></p>
+              <div className="pt-2">
+                <p className="font-bold">Park Timings</p>
+                <p>10:00 AM – 06:00 PM</p>
+              </div>
             </div>
 
             <div className="space-y-2">

@@ -28,17 +28,17 @@ const RegularTicket = ({ tickets }) => {
             "
           >
             <div className="text-center mb-3 md:mb-6 z-10">
-              <h2 className="text-white  text-xs md:text-3xl font-bold tracking-wide drop-shadow-md mb-1">
+              <h2 className="text-white  text-xs md:text-2xl font-bold tracking-wide drop-shadow-md mb-1">
                 {ticket.name}
               </h2>
               <p className="text-white/90 text-sm md:text-lg font-light tracking-wide drop-shadow-sm">
-                [{ticket.height}]
+            
               </p>
             </div>
 
             <div className="flex gap-6 w-full justify-center px-4 md:px-12 z-10">
-              <PriceBox title="Mon To Fri" price={ticket.weekday_price} />
-              <PriceBox title="Sat, Sun & Holidays" price={ticket.weekend_price} />
+              <PriceBox title="Online" price={ticket.weekday_price} />
+              <PriceBox title="Offline" price={ticket.weekend_price} />
             </div>
           </div>
         ))}
@@ -56,7 +56,7 @@ const PriceBox = ({ title, price }) => {
         </span>
       </div>
       <div className="bg-white py-2 flex items-center justify-center">
-        <span className="text-[#7a2b15] font-bold text-2xl md:text-4xl">
+        <span className="text-[#7a2b15] font-bold text-2xl md:text-3xl">
           ₹{price}*
         </span>
       </div>

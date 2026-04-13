@@ -39,9 +39,10 @@ export default async function Offers({ params }) {
   title={offerData.name} 
   description={offerData.description} 
   imageUrl={offerData.image?.url} 
+  url={offerData.link}
 />
-<AvailOffer details={offerData.details} />
-<AvailSteps steps={offerData.steps} />
+<AvailOffer  details={offerData.details} url={offerData.link} />
+<AvailSteps steps={offerData.steps} url={offerData.link}/>
 <Accordion data={offerData.faq} />
 <MobileBottomBar></MobileBottomBar>
 <Footer></Footer>

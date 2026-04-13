@@ -1,6 +1,5 @@
 import React from 'react'
 
-// Destructure the props we passed from the page
 const AttractionHero = ({ title, type, description, videoUrl }) => {
   return (
     <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden flex flex-col">
@@ -11,7 +10,7 @@ const AttractionHero = ({ title, type, description, videoUrl }) => {
         muted
         loop
         playsInline
-        key={videoUrl} // Helps React reset video when slug changes
+        key={videoUrl}
         className="absolute inset-0 w-full h-full object-cover z-[-10]"
       >
         <source src={videoUrl || "/hero.mp4"} type="video/mp4" />
@@ -23,9 +22,8 @@ const AttractionHero = ({ title, type, description, videoUrl }) => {
         style={{ background: '#000000C9' }}
       ></div>
 
-      {/* content */}
-      <div className="flex-1 flex flex-col items-center justify-center lg:mt-40 z-10 mx-4">
-        
+      {/* content - Centered vertically and horizontally */}
+      <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 pb-20">
         <div className="font-['Anek_Latin'] font-extrabold text-white text-center leading-[1.16] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[58px]">
           {title}
         </div>
@@ -35,10 +33,10 @@ const AttractionHero = ({ title, type, description, videoUrl }) => {
         </div>
       </div>
 
-      {/* bottom image */}
+      {/* bottom image - Anchored to bottom */}
       <img
         src="/bottom-design.png"
-        className="w-full z-10"
+        className="absolute bottom-0 left-0 w-full z-20 pointer-events-none"
         alt=""
       />
     </div>

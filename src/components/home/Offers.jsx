@@ -12,7 +12,7 @@ const Offers = ({ heading, offersList = [] }) => {
 
   return (
     <div className="max-w-[100vw] mx-auto bg-[url('/circle-bg.png')] bg-bottom bg-no-repeat bg-[length:100%_100%]">
-      <div className="md:p-2 flex flex-col">
+      <div className="md:p-2 max-w-[1700px] mx-auto flex flex-col">
         <div className="flex max-lg:justify-center justify-between items-center px-4">
           <div className="text-[#892201] font-['Anek_Latin'] font-bold text-center text-[40px] mt-4 leading-[100%] md:text-5xl lg:text-[50px] mb-8">
             {heading || "Exclusive Offers & Packages"}

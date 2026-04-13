@@ -31,9 +31,9 @@ const OfferCard = ({ offer }) => {
 
         <div className="flex gap-3 mt-4">
           {/* Action Button */}
-          <button className="bg-[#80050A] flex-1 rounded-[12px] p-2 text-center font-semibold text-white cursor-pointer hover:bg-[#a0060d] transition-colors">
+          <Link href={offer.link} className="bg-[#80050A] flex-1 rounded-[12px] p-2 text-center font-semibold text-white cursor-pointer hover:bg-[#a0060d] transition-colors">
             Book Now
-          </button>
+          </Link>
 
           {/* View More Link */}
           <Link 

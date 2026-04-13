@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AvailOffer = ({ details }) => {
+const AvailOffer = ({ details, url }) => {
   if (!details) return null;
 
   // Helper to format the date: 2026-04-24T18:30:00.000Z -> 24 Apr, 2026 | 06:30 PM
@@ -127,11 +127,11 @@ return (
       </div>
 
       <div className="flex justify-center mt-12 md:mt-16">
-        <button className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
+        <a href={url} className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
           <span className="font-['Anek_Latin',sans-serif] font-bold text-black text-xl md:text-[29px] uppercase">
             AVAIL THIS OFFER
           </span>
-        </button>
+        </a>
       </div>
     </div>
   )
