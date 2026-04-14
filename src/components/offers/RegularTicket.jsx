@@ -18,8 +18,8 @@ const RegularTicket = ({ tickets }) => {
                Replaced flex-1 with basis-full (mobile), basis-1/2 (tablet), basis-1/3 (desktop)
             */
             className="
-              basis-full md:basis-1/2 lg:basis-1/3
-          
+              basis-full md:basis-1/2 lg:basis-1/3 
+              lg:p-4
               aspect-[1.85/1] 
               bg-[url('/ticket.png')] bg-contain bg-center bg-no-repeat
               flex flex-col items-center justify-center
@@ -32,13 +32,13 @@ const RegularTicket = ({ tickets }) => {
                 {ticket.name}
               </h2>
               <p className="text-white/90 text-sm md:text-lg font-light tracking-wide drop-shadow-sm">
-            
+             {ticket.description}
               </p>
             </div>
 
             <div className="flex gap-6 w-full justify-center px-4 md:px-12 z-10">
-              <PriceBox title="Online" price={ticket.weekday_price} />
-              <PriceBox title="Offline" price={ticket.weekend_price} />
+              <PriceBox title="Online" price={ticket.online} />
+              <PriceBox title="Offline" price={ticket.offline} />
             </div>
           </div>
         ))}
