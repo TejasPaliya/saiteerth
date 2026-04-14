@@ -37,8 +37,8 @@ const RegularTicket = ({ tickets }) => {
             </div>
 
             <div className="flex gap-6 w-full justify-center px-4 md:px-12 z-10">
-              <PriceBox title="Online" price={ticket.online} />
-              <PriceBox title="Offline" price={ticket.offline} />
+              <PriceBox title="Online" price={ticket.online_price} />
+              <PriceBox title="Offline" price={ticket.offline_price} />
             </div>
           </div>
         ))}
