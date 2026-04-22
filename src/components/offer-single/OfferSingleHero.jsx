@@ -1,5 +1,61 @@
 import React from 'react'
 
+const renderRichText = (blocks) => {
+  if (!Array.isArray(blocks)) return blocks;
+
+  return blocks.map((block, index) => {
+    if (block.type === 'paragraph') {
+      return (
+        <p key={index} className="mb-2">
+          {block.children?.map((child, i) => {
+            if (child.type === 'text') {
+              return child.bold ? <strong key={i}>{child.text}</strong> : child.text;
+            }
+            return null;
+          })}
+        </p>
+      );
+    }
+    if (block.type === 'list') {
+      const ListTag = block.format === 'ordered' ? 'ol' : 'ul';
+      const listClass = block.format === 'ordered' ? 'list-decimal list-inside' : 'list-disc list-inside space-y-2';
+      return (
+        <ListTag key={index} className={`${listClass} mb-2`}>
+          {block.children?.map((child, i) => {
+            if (child.type === 'list-item') {
+              return (
+                <li key={i}>
+                  {child.children?.map((c, j) => {
+                    if (c.type === 'text') {
+                      return c.bold ? <strong key={j}>{c.text}</strong> : (c.text || "");
+                    }
+                    return null;
+                  })}
+                </li>
+              );
+            }
+            return null;
+          })}
+        </ListTag>
+      );
+    }
+    if (block.type === 'heading') {
+      const HeadingTag = `h${block.level || 2}`;
+      return (
+        <HeadingTag key={index} className="font-bold mb-2">
+          {block.children?.map((child, i) => {
+            if (child.type === 'text') {
+              return child.bold ? <strong key={i}>{child.text}</strong> : child.text;
+            }
+            return null;
+          })}
+        </HeadingTag>
+      );
+    }
+    return null;
+  });
+};
+
 const OfferSingleHero = ({ title, description, imageUrl, url }) => {
   return (
     <div>
@@ -17,7 +73,7 @@ const OfferSingleHero = ({ title, description, imageUrl, url }) => {
 
       {/* Dynamic Description */}
       <div className="text-[#444] text-center font-['Anek_Latin'] text-[16px] px-8 leading-[24px] font-normal sm:text-[#696969] sm:text-[22px] md:text-[30px] sm:leading-[39px]">
-        {description}
+        {renderRichText(description)}
       </div>
 
       {/* CTA Button */}

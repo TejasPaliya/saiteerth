@@ -23,11 +23,9 @@ const OfferCard = ({ offer }) => {
           {offer.name}
         </div>
         
-        <ul className="list-disc ml-4 text-[#474747] text-sm sm:text-base mt-2 flex-1">
-          {offer?.point?.map((item) => (
-            <li key={item.id}>{item.point}</li>
-          ))}
-        </ul>
+        <div className="text-[#474747] text-sm sm:text-base mt-2 flex-1 line-clamp-3">
+          {offer?.description}
+        </div>
 
         <div className="flex gap-3 mt-4">
           {/* Action Button */}

@@ -37,7 +37,7 @@ export default async function Offers({ params }) {
    <AvailNavbar></AvailNavbar>
 <OfferSingleHero 
   title={offerData.name} 
-  description={offerData.description} 
+  description={offerData.offer_description} 
   imageUrl={offerData.image?.url} 
   url={offerData.link}
 />

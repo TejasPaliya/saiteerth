@@ -60,11 +60,9 @@ const Offers = ({ heading, offersList = [] }) => {
                     <div className="text-[#80050A] font-semibold text-xl sm:text-[24px] md:text-[26px] line-clamp-1">
                       {item.name}
                     </div>
-                    <ul className="list-disc  mt-2 text-black font-normal text-sm h-[60px] overflow-hidden">
-                      {item.point?.map((p) => (
-                        <li key={p.id} className="line-clamp-2">{p.point}</li>
-                      )) || <li>No details available</li>}
-                    </ul>
+                    <div className="mt-2 text-black font-normal text-sm h-[60px] line-clamp-3">
+                      {item.description || "No details available"}
+                    </div>
                     <div className="flex gap-3 mt-5">
                       <a href={item.link} className="bg-[#80050A] flex-1 rounded-[12px] py-2 text-center font-semibold text-white hover:bg-red-900 transition-colors">
                         Book Now
