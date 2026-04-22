@@ -127,7 +127,7 @@ return (
       </div>
 
       <div className="flex justify-center mt-12 md:mt-16">
-        <a href={url} className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors w-full md:w-auto max-w-xs md:max-w-none">
+        <a href={url} className="bg-[#FCD503] rounded-[41.5px] px-8 md:px-12 py-3 md:py-4 hover:bg-[#e5aa04] transition-colors">
           <span className="font-['Anek_Latin',sans-serif] font-bold text-black text-xl md:text-[29px] uppercase">
             AVAIL THIS OFFER
           </span>
