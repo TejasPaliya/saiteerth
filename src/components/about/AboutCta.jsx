@@ -10,20 +10,13 @@ const AboutCta = () => {
         <div className="space-y-8">
           <header>
             <h2 className="text-4xl md:text-5xl lg:text-6xl max-md:text-center font-extrabold text-[#892201] leading-tight mb-6">
-              India's First Devotional <br className='max-md:hidden'/> Theme Park
+            Shirdi’s top tourist destination
             </h2>
             <div className="space-y-6 text-black max-md:text-center text-lg leading-relaxed">
               <p>
-                Situated in the holy town of Shirdi, Sai Teerth is India's first 
-                devotional theme park dedicated to the revered saint Sai Baba. 
-                Sai Teerth is a perfect amalgamation of devotion, technology 
-                and entertainment.
+            Sai Teerth is one of Shirdi’s top tourist destinations, offering a unique blend of devotion, technology, and immersive storytelling. Situated in the holy town of Shirdi, it brings spiritual experiences to life through 7+ engaging shows and modern attractions. As an indoor, air-conditioned theme park, Sai Teerth combines entertainment and learning, creating a meaningful experience for visitors of all age groups.
               </p>
-              <p>
-                Four custom-built, world-class themed attractions amaze visitors with 
-                their grandeur, innovation and attention to detail. Experience the 
-                divine through cutting-edge technology and immersive storytelling.
-              </p>
+          
             </div>
           </header>
 

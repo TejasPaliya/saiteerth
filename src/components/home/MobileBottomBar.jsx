@@ -29,9 +29,9 @@ const MobileBottomBar = () => {
 
         {/* Floating Center Button */}
         <a style={{ top: "-8px" }} href='https://saiteerth.in/book-now?theme=sai-teerth&location_id=5&destination_id=10' className="relative flex flex-col items-center">
-          <div className="bg-white p-2 rounded-full shadow-md">
+          <div className="bg-white  rounded-full">
             <button className="bg-white text-red p-3 rounded-full transition-colors flex items-center justify-center">
-              <img src="/bottom/book_normal.svg" alt="Book Tickets" className="w-[31px] h-[27px]" />
+              <img src="/bottom/book_normal.svg" alt="Book Tickets" className="w-[50px] h-[40px]" />
             </button>
           </div>
           <span className="text-[#8B2318] text-xs font-bold mt-1">Book Tickets</span>

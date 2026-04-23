@@ -40,8 +40,7 @@ export default function RestaurantFoodZone() {
             Restaurant & <br /> Food Zone
           </h2>
           <p className="text-gray-800 text-base mb-8 font-['Anek_Latin']">
-            Discover unique travel perspectives from experts <br className="hidden md:block" />
-            who've explored Sai Tirth first-hand.
+           The Restaurant & Food Zone at Sai Teerth offers a wide range of multi-cuisine food and refreshing beverages to suit every taste. Designed to be hygienic, spacious, and comfortable, it provides the perfect spot to relax and recharge during your visit. Whether you’re in the mood for a quick bite or a full meal, you’ll find quality, variety, and a pleasant dining experience all in one place.
           </p>
 
           {/* Video Placeholder */}

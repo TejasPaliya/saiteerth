@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 export default function About(){
     return (<div>
         <Navbar></Navbar>
-        <InfluencerHero heading="About Us" description="After enjoying the amazing shows at Sai Teerth, head to our restaurants for a delightful dining experience. We offer a variety of delicious and hygienic food and beverages to suit all tastes."></InfluencerHero>
+        <InfluencerHero heading="About Us" description="Discover the vision and inspiration behind Sai Teerth. A unique theme park blending devotion, culture, and storytelling."></InfluencerHero>
         <AboutCta></AboutCta>
         <AboutCardGrid></AboutCardGrid>
         <AboutMalpani></AboutMalpani>

@@ -22,7 +22,7 @@ export default async function HowToReach(){
     return(
         <>
         <Navbar></Navbar>
-        <InfluencerHero heading="How To Reach" description="Plan the perfect day with exciting ticket combos designed to give you endless fun and incredible savings!"></InfluencerHero>
+        <InfluencerHero heading="How To Reach" description="Plan your journey to Sai Teerth with clear directions and travel options. Choose the route that’s most comfortable and convenient for you."></InfluencerHero>
         <Nearby></Nearby>
         <SaiTeerthCard></SaiTeerthCard>
         <Cities></Cities>

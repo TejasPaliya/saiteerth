@@ -148,7 +148,8 @@ const Footer = () => {
             {/* Header Row */}
             <div className="flex items-center justify-between mb-10 pb-8 border-b border-white/20">
               <h2 className="text-[32px] leading-tight text-white font-medium">
-                Come with us to experience Sai's divine journey!
+                Ready to Experience Sai Teerth?
+
               </h2>
               <div className="flex gap-6 items-center">
                 <InstagramIcon />
@@ -251,7 +252,7 @@ const Footer = () => {
         {/* Mobile Layout */}
         <div className="lg:hidden w-full px-6"> 
           <div className="bg-[#CD3F0D]/95 rounded-[30px] p-8 shadow-xl text-white">
-            <h2 className="text-2xl font-bold mb-6 text-center">Come with us to experience<br />Sai's divine journey!</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Ready to Experience Sai Teerth?</h2>
             
             <div className="flex justify-center gap-6 mb-8">
               <InstagramIcon /> <YouTubeIcon /> <FacebookIcon />
