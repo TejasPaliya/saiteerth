@@ -60,8 +60,17 @@ const Offers = ({ heading, offersList = [] }) => {
                     <div className="text-[#80050A] font-semibold text-xl sm:text-[24px] md:text-[26px] line-clamp-1">
                       {item.name}
                     </div>
-                    <div className="mt-2 text-black font-normal text-sm h-[60px] line-clamp-3">
-                      {item.description || "No details available"}
+                    <div className="mt-2 text-black font-normal text-sm h-[60px] overflow-hidden flex flex-col gap-0.5">
+                      {item.point?.length > 0 ? (
+                        item.point.slice(0, 3).map((p, idx) => (
+                          <div key={p.id || idx} className="flex gap-1.5 items-start">
+                            <span className="text-[#80050A] leading-tight">•</span>
+                            <span className="line-clamp-1 leading-tight">{p.point}</span>
+                          </div>
+                        ))
+                      ) : (
+                        <span className="line-clamp-3 leading-tight">{item.description || "No details available"}</span>
+                      )}
                     </div>
                     <div className="flex gap-3 mt-5">
                       <a href={item.link} className="bg-[#80050A] flex-1 rounded-[12px] py-2 text-center font-semibold text-white hover:bg-red-900 transition-colors">

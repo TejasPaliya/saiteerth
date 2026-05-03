@@ -23,8 +23,17 @@ const OfferCard = ({ offer }) => {
           {offer.name}
         </div>
         
-        <div className="mt-2 text-black font-normal text-sm h-[60px] line-clamp-3">
-          {offer?.description || "No details available"}
+        <div className="mt-2 text-black font-normal text-sm h-[60px] overflow-hidden flex flex-col gap-0.5">
+          {offer?.point?.length > 0 ? (
+            offer.point.slice(0, 3).map((p, idx) => (
+              <div key={p.id || idx} className="flex gap-1.5 items-start">
+                <span className="text-[#80050A] leading-tight">•</span>
+                <span className="line-clamp-1 leading-tight">{p.point}</span>
+              </div>
+            ))
+          ) : (
+            <span className="line-clamp-3 leading-tight">{offer?.description || "No details available"}</span>
+          )}
         </div>
 
         <div className="flex gap-3 mt-4">
