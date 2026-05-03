@@ -19,7 +19,7 @@ export default async function Contact(){
 
     return (<div>
         <Navbar></Navbar>
-        <InfluencerHero heading="Contact Us" description="If you got any questions, please do not hesitate to send us a message. We reply within 24 hours !"></InfluencerHero>
+        <InfluencerHero heading="Contact Us" description="Have questions or need help planning your visit? Reach out to us anytime for assistance."></InfluencerHero>
         <ContactForm> </ContactForm>
 <ContactMap></ContactMap>
         <InfluencerFaq faqData={faqData}></InfluencerFaq>

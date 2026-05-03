@@ -23,8 +23,8 @@ const OfferCard = ({ offer }) => {
           {offer.name}
         </div>
         
-        <div className="text-[#474747] text-sm sm:text-base mt-2 flex-1 line-clamp-3">
-          {offer?.description}
+        <div className="mt-2 text-black font-normal text-sm h-[60px] line-clamp-3">
+          {offer?.description || "No details available"}
         </div>
 
         <div className="flex gap-3 mt-4">

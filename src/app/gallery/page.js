@@ -29,7 +29,7 @@ export default async function Gallery(){
 
     return (<div>
         <Navbar></Navbar>
-        <InfluencerHero heading="Attractions Gallery at Sai Teerth Theme Park" description="Plan the perfect group outing with our specialized group packages. From team-building to family gatherings, we've curated everything you need for an amazing day at the park."></InfluencerHero>
+        <InfluencerHero heading="Attractions Gallery at Sai Teerth Theme Park" description="Explore the highlights and experiences across Sai Teerth. Get a glimpse of the moments that make every visit memorable."></InfluencerHero>
         <GalleryTabs></GalleryTabs>
         <TopDestination data={destination} />
         <Footer></Footer>
