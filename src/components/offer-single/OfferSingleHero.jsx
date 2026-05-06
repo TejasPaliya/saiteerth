@@ -60,11 +60,13 @@ const OfferSingleHero = ({ title, description, imageUrl, url }) => {
   return (
     <div>
       {/* Dynamic Image from Strapi */}
-      <img
-        src={"https://strapi.saiteerth.in" + imageUrl || "/single-hero.png"}
-        className='w-full h-auto p-8 aspect-video md:aspect-[24/9]  max-w-6xl mx-auto '
-        alt={title}
-      />
+  <div className="w-full max-md:aspect-video p-2 md:px-8 xl:px-16 md:aspect-[3/1] overflow-hidden">
+  <img
+    src={"https://strapi.saiteerth.in" + imageUrl || "/single-hero.png"}
+    className="w-full h-full object-fill"
+    alt={title}
+  />
+</div>
 
       {/* Dynamic Title */}
       <div className="text-[#AE3232] text-center font-['Anek_Latin'] text-[28px] sm:text-[32px] md:text-[36px] font-bold leading-[1.2] md:leading-[78px] mb-4">
